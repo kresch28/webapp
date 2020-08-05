@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <h2>Kontaktdaten</h2>
-    <form class="form" @submit.prevent="updateUser">
+    <!--<form class="form" @submit.prevent="updateUser">-->
       <!--
       <div class="form-item">
         <span class="label">Vorname</span>
@@ -14,7 +14,7 @@
       -->
       <div class="form-item">
         <span class="label">Geburtsdatum</span>
-        <input class="input-text" type="text" v-model="user.profile.birthdate" name="" id=""/>
+        <input class="input-text" type="date" v-model="user.profile.birthdate" name="" id=""/>
       </div>
       <div class="form-item">
         <span class="label">Telefon</span>
@@ -40,11 +40,11 @@
         <span class="label">Firma</span>
         <input class="input-text" type="text" v-model="user.profile.company" name="" id=""/>
       </div>
-    </form>
+    <!--</form>-->
     <div class="wizard-checkbox">
       <p>Wir gehen verantwortungsvoll mit deinen Daten um.</p>
       <label>
-        <Checkbox :value="dsBool" theme="form">Ja, ich habe die Datenschutzerklärung gelesen und bin damit einverstanden.</Checkbox>
+        <Checkbox :value="dsBool" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</Checkbox>
       </label>
     </div>
   </div>
@@ -89,9 +89,17 @@ export default {
     user() {
       return this.$store.state.user;
     },
+    window(){
+      return window.location.origin
+    },
   }
 }
 </script>
 
 <style lang="scss">
+  @import '@/assets/scss/styles.scss';
+  .checkbox-link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 </style>

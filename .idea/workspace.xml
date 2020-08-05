@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:doebi" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="CON-99 Kurse sind im Memberbereich auf der Website">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webapp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\katharina.resch\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="" />
+      <created>1594885264305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594885264305</updated>
+      <workItem from="1594885268870" duration="648000" />
+      <workItem from="1594886011148" duration="705000" />
+      <workItem from="1594887138773" duration="22383000" />
+      <workItem from="1594971883569" duration="16580000" />
+      <workItem from="1595223231750" duration="13761000" />
+      <workItem from="1595313633913" duration="21614000" />
+      <workItem from="1595396554296" duration="10989000" />
+      <workItem from="1595420757914" duration="7705000" />
+      <workItem from="1595484335657" duration="14547000" />
+      <workItem from="1595573889438" duration="11856000" />
+      <workItem from="1595829484459" duration="19101000" />
+      <workItem from="1595914862970" duration="22787000" />
+      <workItem from="1596004753440" duration="17182000" />
+      <workItem from="1596027208244" duration="141000" />
+      <workItem from="1596027358819" duration="79000" />
+      <workItem from="1596027449575" duration="4336000" />
+      <workItem from="1596087955470" duration="22949000" />
+      <workItem from="1596178111991" duration="8097000" />
+      <workItem from="1596433518125" duration="8681000" />
+      <workItem from="1596453104277" duration="8656000" />
+      <workItem from="1596519454606" duration="15919000" />
+      <workItem from="1596546190573" duration="1598000" />
+      <workItem from="1596548108244" duration="3758000" />
+      <workItem from="1596605876061" duration="8584000" />
+    </task>
+    <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
+      <created>1596026248307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596026248307</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".gitignore updated">
+      <created>1596027482199</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596027482199</updated>
+    </task>
+    <task id="LOCAL-00003" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch">
+      <created>1596191191555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596191191555</updated>
+    </task>
+    <task id="LOCAL-00004" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - Presentation">
+      <created>1596436154293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596436154293</updated>
+    </task>
+    <task id="LOCAL-00005" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - content">
+      <created>1596436773662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596436773662</updated>
+    </task>
+    <task id="LOCAL-00006" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - Header">
+      <created>1596441850407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596441850407</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CON-14 - Aktivitäten vom Connector auslesen und anzeigen">
+      <created>1596452895758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596452895758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="HP-4 Blog 2.0 Relaunch - Header Upate">
+      <created>1596457672202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596457672202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CON-99 Kurse sind im Memberbereich auf der Website">
+      <created>1596546001412</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596546001412</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten" />
+    <MESSAGE value=".gitignore updated" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - Presentation" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - content" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - Header" />
+    <MESSAGE value="CON-14 - Aktivitäten vom Connector auslesen und anzeigen" />
+    <MESSAGE value="HP-4 Blog 2.0 Relaunch - Header Upate" />
+    <MESSAGE value="CON-99 Kurse sind im Memberbereich auf der Website" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-99 Kurse sind im Memberbereich auf der Website" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594898606696">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1594898606696" />
+    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1596191264906">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596191264906" />
+    <state width="1127" height="262" key="Git.Branch.Popup" timestamp="1596548124884">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1127" height="262" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596548124884" />
+    <state x="2424" y="266" key="MergeDialog" timestamp="1596548239756">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596548239756" />
+    <state x="2701" y="345" key="SettingsEditor" timestamp="1596191312494">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596191312494" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1596546012847">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596546012847" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595416741588">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1595416741588" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1596548202077">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596548202077" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1594886387611">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1594886387611" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1596551971007">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596551971007" />
+  </component>
+</project>

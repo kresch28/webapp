@@ -2,9 +2,10 @@
   <div class="wizard" v-if="user !== null">
     <div class="header">
       <h2>Mitglied werden</h2>
-      <p>In 4 Schritten zu deiner Mitgliedschaft</p>
+      <p>In 4 Schritten zu deiner <a :href="window+'/de/mitgliedschaften'" target="_blank">Mitgliedschaft</a></p>
     </div>
     <div class="wizard-section">
+      <form @submit="checkForm" method="post">
       <div class="wizard-section-menu">
         <div class="steps">
           <div v-for="s,i in steps" class="step" :class="{ 'icon': index > i, 'color': index >= i}">
@@ -25,10 +26,12 @@
           <div class="button-row">
             <button class="input-button-primary" v-if="index > 0" @click="back()">Zurück</button>
             <div class="spacer"></div>
-            <button class="input-button-primary" v-if="index < steps.length-1" @click="next()">Weiter</button>
+            <input class="input-button-primary" v-if="index < steps.length-1" @click="next()" type="submit" value="Weiter">
+            <!--<button class="input-button-primary" v-if="index < steps.length-1" @click="next()">Weiter </button>-->
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </template>
@@ -38,10 +41,15 @@ export default {
   middleware: 'authenticated',
   data () {
     return {
-      steps: ['index', 'contact', 'payment', 'done']
+      steps: ['index', 'contact', 'payment', 'done'],
+      profileData: [],
+      type: 'regulär',
+      periode: 'monatlich',
+      personalData: [],
     }
   },
   created() {
+    console.log(this.profileData);
   },
   methods: {
     back() {
@@ -58,7 +66,21 @@ export default {
       let ni = this.index + 1 < 0 ? 0 : this.index + 1;
       let path = this.steps[ni];
       this.$router.push('/wizard/onboarding/' + path);
+      this.profileData.type = this.type;
+      this.profileData.periode = this.periode;
+      console.log(this.profileData);
+      this.personalData.birthday = this.user.profile.birthdate;
+      this.personalData.phone = this.user.profile.phone;
+      this.personalData.address = this.user.profile.address;
+      this.personalData.address2 = this.user.profile.address2;
+      this.personalData.zip = this.user.profile.zip;
+      this.personalData.city = this.user.profile.city;
+      console.log(this.personalData);
+
     },
+    checkForm(e){
+      e.preventDefault();
+    }
   },
   computed: {
     activeStep() {
@@ -69,6 +91,9 @@ export default {
     },
     user() {
       return this.$store.state.user;
+    },
+    window(){
+      return window.location.origin
     },
   }
 }
