@@ -5,31 +5,31 @@
     <form id="index" @submit="checkForm" method="post">
     <div class="options">
       <div class="option">
-        <input class="radio" type="radio"  v-model="type" id="regulär" name="type" value="regulär">
+        <input class="radio" type="radio"  v-model="user.type" id="regulär" name="type" value="regulär">
         <b>regulär</b>
         </div>
       <div class="option">
-        <input class="radio" type="radio" v-model="type" id="ermäßigt" name="type" value="ermäßigt">
+        <input class="radio" type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt">
         <b>ermäßigt</b>
         </div>
       <div class="option">
-        <input class="radio" type="radio" v-model="type" id="free" name="type" value="free">
+        <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free">
         <b>free</b>
         </div>
     </div>
     <div>
-      <div v-if="type != 'free'">
+      <div v-if="user.type != 'free'">
         <div class="info">
           <p><b>Tipp:</b> Bei jährlicher Zahlung bekommst du 2 Monate geschenkt.</p>
         </div>
         <div class="options">
           <div class="option">
-            <input class="radio" type="radio"  v-model="periode" id="monatlich" name="periode" value="monatlich">
-            <b>monatlich {{ type == 'regulär' ? "40€" : "15€"}}</b>
+            <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month">
+            <b>monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</b>
           </div>
           <div class="option">
-            <input class="radio" type="radio"  v-model="periode" id="jährlich" name="periode" value="jährlich">
-            <b>jährlich {{ type == 'regulär' ? "400€" : "150€"}}</b>
+            <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year">
+            <b>jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</b>
           </div>
         </div>
       </div>
@@ -37,7 +37,10 @@
     </div>
     <div class="spacer"></div>
     <div class="wizard-checkbox-agb">
-      <Checkbox :value="agbBool" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</Checkbox>
+      <!--<Checkbox :value="agbBool" @click="checkTrue" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</Checkbox>
+    -->
+      <input type="checkbox" id="agb" name="agb" value="!agbBool" v-model="user.agbBool">
+      <label for="agb">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</label><br>
     </div>
     </form>
   </div>
@@ -57,7 +60,7 @@ export default {
       loading: false,
       agbBool: false,
       type: 'regulär',
-      periode: 'monatlich',
+      periode: 'month'
     }
   },
   created() {
@@ -66,7 +69,10 @@ export default {
   methods: {
     checkForm() {
 
-    }
+    },
+    checkTrue(e) {
+
+    },
   },
   computed: {
     user() {

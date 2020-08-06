@@ -27,6 +27,7 @@
             <button class="input-button-primary" v-if="index > 0" @click="back()">Zurück</button>
             <div class="spacer"></div>
             <input class="input-button-primary" v-if="index < steps.length-1" @click="next()" type="submit" value="Weiter">
+            <input class="input-button-primary" v-if="index == steps.length-1" @click="submit" type="submit" value="Abschicken">
             <!--<button class="input-button-primary" v-if="index < steps.length-1" @click="next()">Weiter </button>-->
           </div>
         </div>
@@ -43,9 +44,9 @@ export default {
     return {
       steps: ['index', 'contact', 'payment', 'done'],
       profileData: [],
-      type: 'regulär',
-      periode: 'monatlich',
       personalData: [],
+      payment: [],
+      newUser: [],
     }
   },
   created() {
@@ -63,23 +64,64 @@ export default {
       this.$router.push('/wizard/onboarding/' + path);
     },
     next() {
-      let ni = this.index + 1 < 0 ? 0 : this.index + 1;
-      let path = this.steps[ni];
-      this.$router.push('/wizard/onboarding/' + path);
-      this.profileData.type = this.type;
-      this.profileData.periode = this.periode;
-      console.log(this.profileData);
-      this.personalData.birthday = this.user.profile.birthdate;
-      this.personalData.phone = this.user.profile.phone;
-      this.personalData.address = this.user.profile.address;
-      this.personalData.address2 = this.user.profile.address2;
-      this.personalData.zip = this.user.profile.zip;
-      this.personalData.city = this.user.profile.city;
-      console.log(this.personalData);
+      console.log(this.index);
+      if(this.user.agbBool == true && this.index < 1){
+        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+        let path = this.steps[ni];
+        console.log(ni);
+        this.$router.push('/wizard/onboarding/' + path);
+        this.profileData.type = this.user.type;
+        this.profileData.periode = this.user.periode;
+        this.profileData.agbBool = this.user.agbBool;
+        this.newUser.profile = this.profileData;
+      }
+      if(this.user.agbBool != true && this.index != 1) {
+        alert('Hast du die ANB und die Werkstattordnung gelesen?');
+      }
+      if(this.user.dsBool == true && this.index == 1) {
+        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+        let path = this.steps[ni];
+        console.log(ni);
+        this.$router.push('/wizard/onboarding/' + path);
+        this.personalData.birthday = this.user.profile.birthdate;
+        this.personalData.phone = this.user.profile.phone;
+        this.personalData.address = this.user.profile.address;
+        this.personalData.address2 = this.user.profile.address2;
+        this.personalData.zip = this.user.profile.zip;
+        this.personalData.city = this.user.profile.city;
+        this.newUser.person = this.personalData;
+      }
+      if(this.user.dsBool != true && this.index == 1) {
+        alert('Hast du die Datenschutzerklärung gelesen?');
+        return;
+      }
+
+      if(this.user.sepaBool == true && this.user.payment.iban != null) {
+        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+        let path = this.steps[ni];
+        console.log(ni);
+        this.$router.push('/wizard/onboarding/' + path);
+        this.payment.iban = this.user.payment.iban;
+        this.payment.bank = this.user.payment.bank;
+        this.newUser.payment = this.payment;
+      }
+
+      if(this.user.sepaBool != true && this.index == 2) {
+        alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
+      }
+
+      console.log(this.newUser);
+      if(this.user.file != null) {
+        this.newUser.file = this.user.file;
+      }
 
     },
     checkForm(e){
       e.preventDefault();
+    },
+    submit(e){
+      e.preventDefault();
+      console.log(this.newUser);
     }
   },
   computed: {

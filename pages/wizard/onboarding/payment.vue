@@ -1,9 +1,14 @@
 <template>
   <div class="section onboarding-wizard">
-    <h2>Wie möchtest du zahlen?</h2>
-    <div class="options">
+    <h2>Zahlung</h2>
+    <div v-if="this.user.type = 'ermäßigt'">
+      <p>Bestätige deine Berechtigung, dass du eine ermäßigte Mitgliedschaft bekommen kannst:</p>
+      <p>Lade eines der folgenden Dokumente oder eines der folgenden Ausweise hoch: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
+      <input type="file" v-on:change="getFile" ref="file">
+    </div>
+      <!--<div class="options">
       <div class="option">
-        <b>monatliche Zahlung</b>
+        <b>monatliche Zahlung {{}}</b>
         <p>40 / Monat</p>
       </div>
       <div class="option">
@@ -12,6 +17,8 @@
       </div>
     </div>
     <p><b>Tipp:</b> Bei jährlicher Zahlung bekommst du 2 Monate geschenkt.</p>
+    -->
+    <h2 class="payment-option">Wie möchtest du zahlen?</h2>
     <form class="form wizard">
       <div class="form-item">
         <span class="label">IBAN</span>
@@ -25,7 +32,10 @@
 
     <div class="wizard-checkbox">
       <label>
-        <Checkbox :value="sepaBool" theme="form">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</Checkbox>
+        <!--<Checkbox :value="sepaBool" theme="form">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</Checkbox>
+        -->
+        <input type="checkbox" id="sepa" name="sepa" value="!sepaBool" v-model="user.sepaBool">
+        <label for="sepa">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</label><br>
       </label>
     </div>
 
@@ -43,12 +53,22 @@ export default {
   data () {
     return {
       sepaBool: false,
-      loading: false
+      loading: false,
+      type: null,
+      reduction: null,
+      file: null
     }
   },
   created() {
   },
   methods: {
+    getFile(e) {
+      console.log(e.target.value);
+      this.file = this.$refs.file.files[0];
+      console.log(this.file);
+      this.user.file = this.file;
+
+    }
   },
   computed: {
     user() {
@@ -86,6 +106,9 @@ export default {
     &.wizard {
       margin: 20px 0;
     }
+  }
+  .payment-option {
+    margin-top: 40px;
   }
 }
 
