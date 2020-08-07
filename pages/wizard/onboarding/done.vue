@@ -53,7 +53,7 @@
           <h4 class="title">Zahlungsmethode: SEPA</h4>
           <div class="pricetag">
             <div class="price-value_">IBAN: {{this.user.payment.iban}}</div>
-            <div class="price-value_">BIC: {{this.user.payment.bic}}</div>
+            <div class="price-value_">BIC: {{this.user.payment.bank}}</div>
           </div>
         </div>
         <!--<ul class="feature-list">

@@ -25,11 +25,11 @@
     <form class="form wizard">
       <div class="form-item">
         <span class="label">IBAN</span>
-        <input class="input-text" type="text" v-model="user.payment.iban" name="" id=""/>
+        <input class="input-text" v-bind:class="{missing: user.errors.iban === false}" type="text" v-model="user.payment.iban" name="" id=""/>
       </div>
       <div class="form-item">
         <span class="label">BIC</span>
-        <input class="input-text" type="text" v-model="user.payment.bic" name="" id=""/>
+        <input class="input-text"  v-bind:class="{missing: user.errors.bank === false}" type="text" v-model="user.payment.bank" name="" id=""/>
       </div>
     </form>
 
@@ -59,6 +59,8 @@ export default {
       loading: false,
       type: null,
       reduction: null,
+      bank: '',
+      iban: '',
       file: null
     }
   },
@@ -90,15 +92,21 @@ export default {
     display: flex;
     justify-content: space-around;
     margin: 0 -10px;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
     .option {
       margin: 10px;
       flex: 1;
       cursor: pointer;
       padding: 25px;
       background-color: #FFF;
-      border: 2px solid #FFF;
+      // border: 2px solid #FFF;
       &:hover {
         border: 2px solid $color-orange;
+      }
+      .missing {
+        border: 1px solid #ff0000;
       }
     }
   }

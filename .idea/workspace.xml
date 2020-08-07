@@ -38,11 +38,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="CON-95 Blog Detail View mobile Ansicht">
+    <list default="true" id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="CON-99 Kurse im Memberbereich mobile Ansicht">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MembershipGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MembershipGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,9 +259,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1594886387611" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1596551971007">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1596799731301">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596551971007" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596799731301" />
   </component>
 </project>

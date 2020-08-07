@@ -4,16 +4,16 @@
     <p>für <b>ermäßigt</b> bist du berechtigt bei Vorlage folgender Ausweise: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
     <form id="index" @submit="checkForm" method="post">
     <div class="options">
-      <div class="option">
-        <input class="radio" type="radio"  v-model="user.type" id="regulär" name="type" value="regulär">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio" type="radio" v-model="user.type" id="regulär" name="type" value="regulär" @click="checkTrue">
         <b>regulär</b>
         </div>
-      <div class="option">
-        <input class="radio" type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio"  type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt" @click="checkTrue">
         <b>ermäßigt</b>
         </div>
-      <div class="option">
-        <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free" @click="checkTrue">
         <b>free</b>
         </div>
     </div>
@@ -23,12 +23,12 @@
           <p><b>Tipp:</b> Bei jährlicher Zahlung bekommst du 2 Monate geschenkt.</p>
         </div>
         <div class="options">
-          <div class="option">
-            <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month">
+          <div class="option" v-bind:class="{missing: user.errors.periode === false}">
+            <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month" @click="checkTrue">
             <b>monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</b>
           </div>
-          <div class="option">
-            <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year">
+          <div class="option" v-bind:class="{missing: user.errors.periode === false}">
+            <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year" @click="checkTrue">
             <b>jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</b>
           </div>
         </div>
@@ -59,19 +59,26 @@ export default {
     return {
       loading: false,
       agbBool: false,
+      empty: true,
       type: 'regulär',
       periode: 'month'
     }
   },
   created() {
     console.log(this.user);
+    console.log('errors');
+    console.log(this.user.errors);
   },
   methods: {
     checkForm() {
 
     },
-    checkTrue(e) {
-
+    checkTrue() {
+      let counter = 1;
+      // for (let i = 0; i < counter; i++){
+        console.log(this.user.type);
+      console.log(this.user.periode);
+      //}
     },
   },
   computed: {
@@ -102,8 +109,26 @@ export default {
   .spacer {
     flex: 1;
   }
-  .option b {
-    padding-left: 25px;
+  .options {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 -10px;
+
+    .option {
+      margin: 10px;
+      flex: 1;
+      cursor: pointer;
+      padding: 25px;
+      background-color: #FFF;
+      b {
+        padding-left: 25px;
+      }
+
+      &:hover {
+        border: 2px solid $color-orange;
+      }
+    }
   }
   /*.info {
     position: absolute;

@@ -45,11 +45,17 @@ export default {
   data () {
     return {
       steps: ['index', 'contact', 'payment', 'done'],
+      typeErrors: {
+        'type' : '',
+        'periode' : '',
+        'iban' : '',
+        'bank' : ''
+      },
       profileData: [],
       profileCheck: false,
       personalData: [],
       personalCheck: false,
-      payment: [],
+      payment: {},
       paymentCheck: false,
       newUser: {
         'profile' : '',
@@ -61,6 +67,7 @@ export default {
   },
   created() {
     console.log(this.profileData);
+    this.user.errors = this.typeErrors;
   },
   methods: {
     back() {
@@ -74,7 +81,6 @@ export default {
       this.$router.push('/wizard/onboarding/' + path);
     },
     next() {
-      console.log(this.index);
       if (this.user.type !== undefined && this.user.periode !== undefined) {
         if (this.user.agbBool == true && this.index < 1) {
           let ni = this.index + 1 < 0 ? 0 : this.index + 1;
@@ -89,6 +95,15 @@ export default {
         }
       }
       if(this.profileCheck != true && this.index == 0){
+        if (this.user.type == undefined) {
+          this.typeErrors.type = false;
+        }
+        if (this.user.periode == undefined) {
+          this.typeErrors.periode = false;
+        }
+        console.log(this.typeErrors)
+        this.user.errors = this.typeErrors;
+        this.profileCheck = null;
         alert('Bitte alle Felder auswählen');
       }
       if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
@@ -105,13 +120,14 @@ export default {
         this.personalData.address2 = this.user.profile.address2;
         this.personalData.zip = this.user.profile.zip;
         this.personalData.city = this.user.profile.city;
+        this.personalData.company = this.user.profile.company;
         this.newUser.person = this.personalData;
       }
       if(this.user.dsBool != true && this.index == 1) {
         alert('Hast du die Datenschutzerklärung gelesen?');
         return;
       }
-      if (this.user.payment.iban !== undefined && this.user.payment.bic !== undefined) {
+      if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
         this.paymentCheck = false;
         if (this.user.sepaBool == true) {
           let ni = this.index + 1 < 0 ? 0 : this.index + 1;
@@ -119,17 +135,36 @@ export default {
           console.log(ni);
           this.$router.push('/wizard/onboarding/' + path);
           this.payment = {'iban' : this.user.payment.iban};
-          this.payment.bic = this.user.payment.bic;
+          this.payment.bank = this.user.payment.bank;
           this.paymentCheck = true;
           this.newUser.payment = this.payment;
           console.log(this.paymentCheck);
         }
       }
 
-      if(this.user.payment.bic == undefined && this.paymentCheck != true && this.index == 2){
+      if(this.index == 2) {
+        if(this.user.payment.iban == '' || this.user.payment.bank == '') {
+          if (this.user.payment.iban == '') {
+            this.typeErrors.iban = false;
+          }
+          if (this.user.payment.bank == '') {
+            this.typeErrors.bank = false;
+          }
+          alert('Bitte alle Felder auswählen');
+          this.paymentCheck = null;
+        }
+      }
+
+      /*if(this.paymentCheck != true && this.index == 2){
+        if (this.user.payment.iban == '') {
+          this.typeErrors.iban = false;
+        }
+        if (this.user.payment.bank == '') {
+          this.typeErrors.bank = false;
+        }
         alert('Bitte alle Felder auswählen');
         this.paymentCheck = null;
-      }
+      }*/
 
       console.log(this.paymentCheck);
       if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
@@ -140,8 +175,10 @@ export default {
         this.newUser.file = this.user.file;
       }
 
+      console.log(this.typeErrors);
+      /*console.log(this.user);
       console.log(this.newUser);
-      console.log(JSON.stringify(this.newUser));
+      console.log(JSON.stringify(this.newUser));*/
 
     },
     checkForm(e){
@@ -186,6 +223,9 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
     .wizard-section-menu {
       .steps {
         .step {
@@ -254,6 +294,12 @@ export default {
         }
       }
     }
+  }
+  .missing {
+    border: 1px solid #ff0000 !important;
+  }
+  .missingInput {
+    outline: auto;
   }
 }
 </style>
