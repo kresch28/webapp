@@ -18,7 +18,7 @@
    <h2>Übersicht:</h2>
     <div class="col">
       <div class="plan">
-        <h2 class="title">BASIC GARAGE {{this.user.periode == month ? 'monatlich' : 'jährlich'}}</h2>
+        <h2 class="title">BASIC GARAGE {{this.user.periode == 'month' ? 'monatlich' : 'jährlich'}}</h2>
         <transition name="changeprice">
           <div class="pricewrapper" v-if="this.user.periode == 'month'">
             <div class="price" v-if="this.user.type == 'ermäßigt'">
@@ -53,7 +53,7 @@
           <h4 class="title">Zahlungsmethode: SEPA</h4>
           <div class="pricetag">
             <div class="price-value_">IBAN: {{this.user.payment.iban}}</div>
-            <div class="price-value_">Bank: {{this.user.payment.bank}}</div>
+            <div class="price-value_">BIC: {{this.user.payment.bic}}</div>
           </div>
         </div>
         <!--<ul class="feature-list">

@@ -38,15 +38,25 @@
 </template>
 
 <script>
+  import saveAs from 'save-as'
+
 export default {
   middleware: 'authenticated',
   data () {
     return {
       steps: ['index', 'contact', 'payment', 'done'],
       profileData: [],
+      profileCheck: false,
       personalData: [],
+      personalCheck: false,
       payment: [],
-      newUser: [],
+      paymentCheck: false,
+      newUser: {
+        'profile' : '',
+        'person' : '',
+        'payment' : '',
+        'file' : ''
+      },
     }
   },
   created() {
@@ -65,17 +75,23 @@ export default {
     },
     next() {
       console.log(this.index);
-      if(this.user.agbBool == true && this.index < 1){
-        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
-        let path = this.steps[ni];
-        console.log(ni);
-        this.$router.push('/wizard/onboarding/' + path);
-        this.profileData.type = this.user.type;
-        this.profileData.periode = this.user.periode;
-        this.profileData.agbBool = this.user.agbBool;
-        this.newUser.profile = this.profileData;
+      if (this.user.type !== undefined && this.user.periode !== undefined) {
+        if (this.user.agbBool == true && this.index < 1) {
+          let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+          let path = this.steps[ni];
+          console.log(ni);
+          this.$router.push('/wizard/onboarding/' + path);
+          this.profileData = {'type' : this.user.type};
+          this.profileData.periode =  this.user.periode;
+          this.profileCheck = true;
+          this.newUser.profile = this.profileData;
+          console.log(this.profileCheck);
+        }
       }
-      if(this.user.agbBool != true && this.index != 1) {
+      if(this.profileCheck != true && this.index == 0){
+        alert('Bitte alle Felder auswählen');
+      }
+      if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
         alert('Hast du die ANB und die Werkstattordnung gelesen?');
       }
       if(this.user.dsBool == true && this.index == 1) {
@@ -83,7 +99,7 @@ export default {
         let path = this.steps[ni];
         console.log(ni);
         this.$router.push('/wizard/onboarding/' + path);
-        this.personalData.birthday = this.user.profile.birthdate;
+        this.personalData = {'birthday' : this.user.profile.birthdate};
         this.personalData.phone = this.user.profile.phone;
         this.personalData.address = this.user.profile.address;
         this.personalData.address2 = this.user.profile.address2;
@@ -95,25 +111,37 @@ export default {
         alert('Hast du die Datenschutzerklärung gelesen?');
         return;
       }
-
-      if(this.user.sepaBool == true && this.user.payment.iban != null) {
-        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
-        let path = this.steps[ni];
-        console.log(ni);
-        this.$router.push('/wizard/onboarding/' + path);
-        this.payment.iban = this.user.payment.iban;
-        this.payment.bank = this.user.payment.bank;
-        this.newUser.payment = this.payment;
+      if (this.user.payment.iban !== undefined && this.user.payment.bic !== undefined) {
+        this.paymentCheck = false;
+        if (this.user.sepaBool == true) {
+          let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+          let path = this.steps[ni];
+          console.log(ni);
+          this.$router.push('/wizard/onboarding/' + path);
+          this.payment = {'iban' : this.user.payment.iban};
+          this.payment.bic = this.user.payment.bic;
+          this.paymentCheck = true;
+          this.newUser.payment = this.payment;
+          console.log(this.paymentCheck);
+        }
       }
 
-      if(this.user.sepaBool != true && this.index == 2) {
+      if(this.user.payment.bic == undefined && this.paymentCheck != true && this.index == 2){
+        alert('Bitte alle Felder auswählen');
+        this.paymentCheck = null;
+      }
+
+      console.log(this.paymentCheck);
+      if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
         alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
       }
 
-      console.log(this.newUser);
       if(this.user.file != null) {
         this.newUser.file = this.user.file;
       }
+
+      console.log(this.newUser);
+      console.log(JSON.stringify(this.newUser));
 
     },
     checkForm(e){
@@ -122,7 +150,15 @@ export default {
     submit(e){
       e.preventDefault();
       console.log(this.newUser);
-    }
+      this.getDocument();
+    },
+    getDocument() {
+        console.log(this.newUser);
+        console.log(JSON.stringify(this.newUser));
+        let blob = new Blob([JSON.stringify(this.newUser)], { type: "text/plain" });
+        console.log(blob);
+        saveAs(blob, 'onboarding.json');
+    },
   },
   computed: {
     activeStep() {

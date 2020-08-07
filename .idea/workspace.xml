@@ -38,16 +38,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="CON-95-BlogDetailView Anpassung Darstellung">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="CON-95 Blog Detail View mobile Ansicht">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Checkbox.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MembershipGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MembershipGrid.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +123,7 @@
       <workItem from="1596548108244" duration="3758000" />
       <workItem from="1596605876061" duration="8584000" />
       <workItem from="1596692865286" duration="7754000" />
+      <workItem from="1596778517961" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -247,10 +243,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596546012847" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596628461226">
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596721616773">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596628461226" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596721616773" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1596548202077">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>

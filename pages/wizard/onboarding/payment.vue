@@ -4,7 +4,10 @@
     <div v-if="this.user.type = 'ermäßigt'">
       <p>Bestätige deine Berechtigung, dass du eine ermäßigte Mitgliedschaft bekommen kannst:</p>
       <p>Lade eines der folgenden Dokumente oder eines der folgenden Ausweise hoch: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
-      <input type="file" v-on:change="getFile" ref="file">
+      <label for="file" class="custom-file-upload">
+        Datei hochladen
+      <input type="file" v-on:change="getFile" ref="file" id="file">
+      </label>
     </div>
       <!--<div class="options">
       <div class="option">
@@ -25,8 +28,8 @@
         <input class="input-text" type="text" v-model="user.payment.iban" name="" id=""/>
       </div>
       <div class="form-item">
-        <span class="label">Name der Bank</span>
-        <input class="input-text" type="text" v-model="user.payment.bank" name="" id=""/>
+        <span class="label">BIC</span>
+        <input class="input-text" type="text" v-model="user.payment.bic" name="" id=""/>
       </div>
     </form>
 
@@ -112,4 +115,19 @@ export default {
   }
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #ff6f00;
+  color: #FFF;
+  min-width: 30%;
+  border: 1px solid #ff8c33;
+  padding: 7px 12px 8px;
+  line-height: 1;
+  outline: none;
+}
 </style>
