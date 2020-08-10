@@ -21,7 +21,7 @@
       <div class="wizard-section-content">
         <NuxtChild :key="$route.params.slug"></NuxtChild>
       </div>
-      <div class="wizard-section-nav">
+      <div class="wizard-section-nav" v-if="done == false">
         <div class="form">
           <div class="button-row">
             <button class="input-button-primary" v-if="index > 0" @click="back()">Zurück</button>
@@ -32,6 +32,10 @@
           </div>
         </div>
       </div>
+        <div v-if="done == true" class="check">
+          Mitgliedschaft erflogreich abgeschlossen
+          <img src="~/assets/img/icons/check-solid.svg" class="status">
+        </div>
       </form>
     </div>
   </div>
@@ -45,13 +49,28 @@ export default {
   data () {
     return {
       steps: ['index', 'contact', 'payment', 'done'],
+      done: false,
       typeErrors: {
         'type' : '',
         'periode' : '',
         'iban' : '',
         'bank' : ''
       },
-      profileData: [],
+    profileData: {
+        'profile_type' : '',
+        'profile_period' : '',
+        'firstname' : '',
+        'lastname' : '',
+        'birthdate' : '',
+        'phone' : '',
+        'street' : '',
+        'street_additional' : '',
+        'zip' : '',
+        'city' : '',
+        'country' : '',
+        'iban' : '',
+        'bic' : '',
+      },
       profileCheck: false,
       personalData: [],
       personalCheck: false,
@@ -66,7 +85,6 @@ export default {
     }
   },
   created() {
-    console.log(this.profileData);
     this.user.errors = this.typeErrors;
   },
   methods: {
@@ -81,17 +99,31 @@ export default {
       this.$router.push('/wizard/onboarding/' + path);
     },
     next() {
+
+      console.log(this.user.payment.iban.length);
+      console.log(this.user.payment.bank.length)
+
       if (this.user.type !== undefined && this.user.periode !== undefined) {
         if (this.user.agbBool == true && this.index < 1) {
           let ni = this.index + 1 < 0 ? 0 : this.index + 1;
           let path = this.steps[ni];
-          console.log(ni);
           this.$router.push('/wizard/onboarding/' + path);
-          this.profileData = {'type' : this.user.type};
-          this.profileData.periode =  this.user.periode;
+          if(this.user.periode == 'month') {
+            this.newUser = {'profile_period' : 1};
+          }
+          if(this.user.type == 'year') {
+            this.newUser= {'profile_period' : 2};
+          }
+          if(this.user.type == 'regulär') {
+            this.newUser.profile_type = 1;
+          }
+          if(this.user.type == 'ermäßigt') {
+            this.newUser.profile_type = 2;
+          }
+          if(this.user.type == 'free') {
+            this.newUser.profile_type = 3;
+          }
           this.profileCheck = true;
-          this.newUser.profile = this.profileData;
-          console.log(this.profileCheck);
         }
       }
       if(this.profileCheck != true && this.index == 0){
@@ -101,7 +133,6 @@ export default {
         if (this.user.periode == undefined) {
           this.typeErrors.periode = false;
         }
-        console.log(this.typeErrors)
         this.user.errors = this.typeErrors;
         this.profileCheck = null;
         alert('Bitte alle Felder auswählen');
@@ -112,45 +143,65 @@ export default {
       if(this.user.dsBool == true && this.index == 1) {
         let ni = this.index + 1 < 0 ? 0 : this.index + 1;
         let path = this.steps[ni];
-        console.log(ni);
         this.$router.push('/wizard/onboarding/' + path);
-        this.personalData = {'birthday' : this.user.profile.birthdate};
+        this.newUser.birthdate = this.user.profile.birthdate;
+        this.newUser.phone = this.user.profile.phone;
+        this.newUser.street = this.user.profile.address;
+        this.newUser.street_additional = this.user.profile.address2;
+        this.newUser.zip = this.user.profile.zip;
+        this.newUser.city = this.user.profile.city;
+        /*this.personalData = {'birthday' : this.user.profile.birthdate};
         this.personalData.phone = this.user.profile.phone;
         this.personalData.address = this.user.profile.address;
         this.personalData.address2 = this.user.profile.address2;
         this.personalData.zip = this.user.profile.zip;
         this.personalData.city = this.user.profile.city;
         this.personalData.company = this.user.profile.company;
-        this.newUser.person = this.personalData;
+        this.newUser.person = this.personalData;*/
       }
       if(this.user.dsBool != true && this.index == 1) {
         alert('Hast du die Datenschutzerklärung gelesen?');
         return;
       }
       if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
+        if(this.user.payment.iban.length > 19 && this.user.payment.bank.length > 10){
         this.paymentCheck = false;
-        if (this.user.sepaBool == true) {
-          let ni = this.index + 1 < 0 ? 0 : this.index + 1;
-          let path = this.steps[ni];
-          console.log(ni);
-          this.$router.push('/wizard/onboarding/' + path);
-          this.payment = {'iban' : this.user.payment.iban};
-          this.payment.bank = this.user.payment.bank;
-          this.paymentCheck = true;
-          this.newUser.payment = this.payment;
-          console.log(this.paymentCheck);
+          if (this.user.sepaBool == true) {
+            let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+            let path = this.steps[ni];
+            console.log(ni);
+            this.$router.push('/wizard/onboarding/' + path);
+            /*this.payment = {'iban' : this.user.payment.iban};
+            this.payment.bank = this.user.payment.bank;*/
+            console.log(this.user.payment.iban.length);
+            this.newUser.iban = this.user.payment.iban;
+            this.newUser.bank = this.user.payment.bank;
+            this.paymentCheck = true;
+            /*this.newUser.payment = this.payment;*/
+            console.log(this.newUser);
+          }
         }
       }
 
       if(this.index == 2) {
-        if(this.user.payment.iban == '' || this.user.payment.bank == '') {
+        if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
           if (this.user.payment.iban == '') {
             this.typeErrors.iban = false;
+            alert('Bitte alle Felder auswählen');
           }
-          if (this.user.payment.bank == '') {
+          if(this.user.payment.iban.length < 20) {
+            this.typeErrors.iban = false;
+            alert('Bitte einen gültigen IBAN angeben');
+          }
+          if (this.user.payment.bank == '' && this.user.payment.bank.length < 11) {
             this.typeErrors.bank = false;
+            alert('Bitte alle Felder auswählen');
           }
-          alert('Bitte alle Felder auswählen');
+          if(this.user.payment.bank.length < 11) {
+            this.typeErrors.iban = false;
+            alert('Bitte einen gültigen BIC angeben');
+          }
+
           this.paymentCheck = null;
         }
       }
@@ -175,7 +226,6 @@ export default {
         this.newUser.file = this.user.file;
       }
 
-      console.log(this.typeErrors);
       /*console.log(this.user);
       console.log(this.newUser);
       console.log(JSON.stringify(this.newUser));*/
@@ -186,15 +236,34 @@ export default {
     },
     submit(e){
       e.preventDefault();
-      console.log(this.newUser);
-      this.getDocument();
+      this.profileData.profile_type = this.newUser.profile_type;
+      this.profileData.profile_period = this.newUser.profile_period;
+      this.profileData.firstname = this.user.profile.firstName;
+      this.profileData.lastname = this.user.profile.lastName;
+      this.profileData.birthdate = this.newUser.birthdate;
+      this.profileData.phone = this.newUser.phone;
+      this.profileData.street = this.newUser.street;
+      this.profileData.street_additional = this.newUser.street_additional;
+      this.profileData.zip = this.newUser.zip;
+      this.profileData.city = this.newUser.city;
+      this.profileData.country = 'at';
+      this.profileData.iban = this.newUser.iban;
+      this.profileData.bic = this.newUser.bank;
+      this.$store.dispatch("updateInvoiceContact", this.profileData).then((data) => {
+        if(data) {
+          this.done = true;
+        }
+        console.log(data);
+      }).catch((err)=> {
+        console.log(err);
+      });
     },
     getDocument() {
-        console.log(this.newUser);
-        console.log(JSON.stringify(this.newUser));
-        let blob = new Blob([JSON.stringify(this.newUser)], { type: "text/plain" });
+        console.log(JSON.stringify(this.profileData));
+        let blob = new Blob([JSON.stringify(this.profileData)], { type: "application/json" });
         console.log(blob);
         saveAs(blob, 'onboarding.json');
+        return blob;
     },
   },
   computed: {
@@ -300,6 +369,13 @@ export default {
   }
   .missingInput {
     outline: auto;
+  }
+  .status {
+    margin-left: 10px;
+    width: 5%;
+  }
+  .check {
+    text-align: center;
   }
 }
 </style>

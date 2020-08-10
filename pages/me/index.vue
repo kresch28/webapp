@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.packages.length == 0" class="section">
+  <div v-if="user.packages.length !== 0" class="section">
     <h2>Kontaktdaten</h2>
     <form class="form" @submit.prevent="updateUser">
       <div class="form-item">
@@ -12,12 +12,14 @@
       </div>
       <div class="form-item">
         <span class="label">Adresse</span>
-        <input class="input-text" type="text" v-model="user.profile.address" name="" id=""/>
-      </div>
+        <input class="input-text"  type="text" v-model="user.profile.address" name="" id=""/>
+        <!--<input class="input-text" v-if="user.profile.address == null" type="text" v-model="invoiceUser.street" name="" id=""/>
+     --> </div>
       <div class="form-item">
         <span></span>
         <input class="input-text" type="text" v-model="user.profile.address2" name="" id=""/>
-      </div>
+        <!--<input class="input-text" v-if="user.profile.address == null" type="text" v-model="invoiceUser.street_additional" name="" id=""/>
+      --></div>
       <div class="form-item">
         <span class="label">PLZ</span>
         <input class="input-text" type="text" v-model="user.profile.zip" name="" id=""/>
@@ -80,11 +82,32 @@
     data () {
       return {
         loading: false,
-        priceView: 'monthly'
+        priceView: 'monthly',
+        inUser: '',
+        newInUser: {
+        'profile_type' : '',
+                'profile_period' : '',
+                'firstname' : '',
+                'lastname' : '',
+                'birthdate' : '',
+                'phone' : '',
+                'street' : '',
+                'street_additional' : '',
+                'zip' : '',
+                'city' : '',
+                'country' : '',
+                'iban' : '',
+                'bic' : '',
+        }
       }
     },
     created() {
       console.log(this.story);
+      this.$store.dispatch("getInvoiceContact", this.profileData).then((data) => {
+        this.inUser =  data.data;
+      }).catch((err)=> {
+        console.log(err);
+      });
     },
     methods: {
       register() {
@@ -96,6 +119,30 @@
       },
       updateUser(event) {
         this.loading = true;
+        console.log(this.user.profile);
+        console.log(this.inUser);
+        this.newInUser.profile_type = this.inUser.profile_type;
+        this.newInUser.profile_period = this.inUser.profile_period;
+        this.newInUser.firstname = this.user.profile.firstName;
+        this.newInUser.lastname = this.user.profile.lastName;
+        this.newInUser.birthdate = this.inUser.birthdate;
+        this.newInUser.phone = this.inUser.phone;
+        this.newInUser.street = this.user.profile.address;
+        this.newInUser.street_additional = this.user.profile.address2;
+        this.newInUser.zip = this.user.profile.zip;
+        this.newInUser.city = this.user.profile.city;
+        this.newInUser.country = 'at';
+        this.newInUser.iban = this.inUser.iban;
+        this.newInUser.bic = this.inUser.bank;
+
+        console.log(this.newInUser);
+
+        this.$store.dispatch("updateInvoiceContact", this.newInUser).then((data) => {
+          console.log(data);
+        }).catch((err)=> {
+          console.log(err);
+        });
+
         this.$store.dispatch('updateUser', Object.assign({}, this.user.profile)).then(() => {
           this.loading = false;
           this.$notify({
@@ -114,7 +161,11 @@
     },
     computed: {
       user() {
+        console.log(this.$store.state.user);
         return this.$store.state.user;
+      },
+      invoiceUser(){
+        return this.inUser;
       },
       window(){
         return window.location.origin

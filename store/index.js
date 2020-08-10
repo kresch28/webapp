@@ -14,6 +14,8 @@ let webAuth = new auth0.WebAuth({
   redirectUri:  origin + '/auth'
 });
 
+let connector;
+
 const version = process.env.NODE_ENV == 'development' ? 'draft' : 'published';
 
 const createStore = () => {
@@ -91,8 +93,10 @@ const createStore = () => {
       },
       updateUser({ state, commit, dispatch }, data) {
         return axios.post(`${origin}/.netlify/functions/updateUser`, data).then((r) => {
+          console.log(data);
           let patch = { profile: r.data }
           let user = Object.assign(state.user, patch);
+          console.log(user);
           commit('setUser', user);
         });
       },
@@ -104,6 +108,27 @@ const createStore = () => {
           console.log(err);
         });
       },
+      updateInvoiceContact({state}, data){
+        return connector.post('/member/updateInvoiceContact', data).then((r) => {
+          return r;
+          if(r.data.success) {
+            return r.data;
+          }
+        }).catch((err) => {
+          console.log(err);
+          console.log(err.response.data.msg);
+        });
+      },
+      getInvoiceContact({state}){
+        return connector.get('/member/getInvoiceContact').then((r) => {
+            return r;
+
+        }).catch((err) => {
+          console.log(err);
+          console.log(err.response.data.msg);
+        });
+      },
+
       checkAuth({ commit, dispatch, state }) {
         if (state.auth || getUserFromLocalStorage()) {
           // renew Token
@@ -120,6 +145,10 @@ const createStore = () => {
                 }
                 setToken(authResult.accessToken);
                 commit('setAuth', auth);
+                connector = axios.create({
+                  baseURL: 'https://connector.grandgarage.eu/api',
+                  headers: {'Authorization': `Bearer ${auth.accessToken}`}
+                });
                 resolve();
               }
             });
