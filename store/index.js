@@ -29,8 +29,13 @@ const createStore = () => {
       user: null,
       auth: null,
       fabman: null,
+      courses: null,
+      memberCourses: null,
     },
     getters: {
+      getMemberCourseById: (state) => (id) => {
+        return state.memberCourses.find(c => c.course_id === id);
+      },
       getPackageById: (state) => (id) => {
         return state.fabman.packages.find(p => p.id === id);
       },
@@ -50,6 +55,12 @@ const createStore = () => {
       },
       setFabman (state, data) {
         state.fabman = data;
+      },
+      setCourses (state, data) {
+        state.courses = data;
+      },
+      setMemberCourses (state, data) {
+        state.memberCourses = data;
       },
       setSettings (state, settings) {
         state.settings = settings;
@@ -76,6 +87,30 @@ const createStore = () => {
           }
         }
         return Promise.all(chain);
+      },
+      saveQuiz({state }, data) {
+        return connector.post('/courses/save-quiz', data).then((r) => {
+          if (r.data.success) {
+            return r.data.data;
+          }
+        });
+      },
+      getQuiz({state }, id) {
+        let params = {
+          course_id: id
+        }
+        return connector.get('/courses/get-quiz', { params }).then((r) => {
+          if (r.data.success) {
+            return r.data.data
+          }
+        });
+      },
+      getBookings({ state }, id) {
+        return axios.get(`${origin}/.netlify/functions/getBookings\?id\=${id}`).then((r) => {
+          return r.data;
+        }).catch((err) => {
+          console.log(err);
+        });
       },
       checkStatus({ state }, id) {
         return axios.get(`${origin}/.netlify/functions/checkStatus\?id\=${id}`).then((r) => {
@@ -149,6 +184,8 @@ const createStore = () => {
                   baseURL: 'https://connector.grandgarage.eu/api',
                   headers: {'Authorization': `Bearer ${auth.accessToken}`}
                 });
+                dispatch('getCourses');
+                dispatch('getMemberCourses');
                 resolve();
               }
             });
@@ -179,6 +216,13 @@ const createStore = () => {
         commit('setAuth', null)
         unsetToken();
       },
+      startCourse({ commit }, context) {
+        return connector.post('/courses/start-course', context).then((r) => {
+          if (r.data.success) {
+            return r.data.data;
+          }
+        });
+      },
       loginUser({ commit }, context) {
         return new Promise((resolve, reject) => {
           webAuth.login({
@@ -206,6 +250,26 @@ const createStore = () => {
       },
       setSidebar({state}, value) {
         state.sidebar = value;
+      },
+      getMemberCourses({ state, commit }, id) {
+        if (!state.auth) return null;
+
+        return connector.get('/courses/get-member-courses').then((r) => {
+          if (r.data.success) {
+            commit('setMemberCourses', r.data.data);
+          }
+        });
+      },
+      getCourses({ state, commit }, id) {
+        if (!state.auth) return null;
+
+        return connector.get('/courses/get-courses').then((r) => {
+          if (r.data.success) {
+            commit('setCourses', r.data.data);
+          }
+        }).catch((err) => {
+          console.log(err);
+        });
       },
       loadTags ({state}) {
         return this.$storyapi.get(`cdn/tags`, {
@@ -258,6 +322,17 @@ const createStore = () => {
           console.log(res);
         });
       },
+      loadMachineItemById ({state}, id) {
+        let endpoint = `cdn/stories/${state.language}/machines/${id}`;
+        return this.$storyapi.get(endpoint, {
+          version: version,
+          cv: state.cacheVersion
+        }).then((res) => {
+          return res.data;
+        }).catch((res) => {
+          console.log(res);
+        });
+      },
       loadEventItem ({state}, slug) {
         let endpoint = `cdn/stories/${state.language}/events/${slug}`;
         return this.$storyapi.get(endpoint, {
@@ -277,6 +352,9 @@ const createStore = () => {
         }).then((res) => {
           return res.data.story;
         });
+        if (!workshop) {
+          console.log('workshop not found: ', workshop);
+        }
         let dates = await this.$storyapi.get(`cdn/stories`, {
           filter_query: {
             workshop: {
@@ -297,11 +375,31 @@ const createStore = () => {
         });
         return { workshop, dates }
       },
+      findStatusMachines ({state}) {
+        return this.$storyapi.get(`cdn/stories`, {
+          filter_query: {
+            'component': {
+              'in': 'machine'
+            },
+            'machine_status_items': {
+              'is': 'not_empty_array'
+            }
+          },
+          version: version,
+          cv: state.cacheVersion,
+          per_page: 150
+        }).then((res) => {
+          return res.data;
+        }).catch((res) => {
+          console.log(res);
+        });
+      },
       findMachines ({state}, filters) {
         return this.$storyapi.get(`cdn/stories`, {
           ...filters,
           version: version,
           cv: state.cacheVersion,
+          per_page: 150
         }).then((res) => {
           return res.data;
         }).catch((res) => {
@@ -326,7 +424,7 @@ const createStore = () => {
           cv: state.cacheVersion,
           resolve_relations: 'workshop',
           sort_by: 'content.starttime:asc',
-          per_page: 50
+          per_page: 100
         }).then((res) => {
           let workshopdates = res.data.stories;
           let workshops = {};
@@ -348,7 +446,8 @@ const createStore = () => {
           ...filters,
           version: version,
           cv: state.cacheVersion,
-          sort_by: 'content.starttime:asc'
+          sort_by: 'content.starttime:asc',
+          per_page: 100
         }).then((res) => {
           return res.data.stories;
         }).catch((res) => {

@@ -76,6 +76,7 @@
             :blok="item"
             :key="item.id"
             class="list-item"
+            :slim="false"
             ></workshop-list-item>
         </transition-group>
       </div>

@@ -34,7 +34,7 @@ module.exports = {
       pathRewrite: {'^/.netlify/functions': ''},
     },
   },
-  modules: [
+  buildModules: [
     ['storyblok-nuxt', { accessToken: storyblokToken, cacheProvider: 'memory' }],
     '@nuxtjs/proxy',
     ['@nuxtjs/google-analytics', {
@@ -102,7 +102,6 @@ module.exports = {
 },
   css: [
     '@/assets/scss/styles.scss',
-    '@/assets/scss/vueDatePick.scss',
     'swiper/dist/css/swiper.css',
   ],
   /*

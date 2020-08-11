@@ -1,34 +1,18 @@
 <template>
-  <section class="machine-overview">
-    <div class="machine-filters">
-      <code class="loading" v-if="loading">loading…</code>
-      <div class="tags" :class="(tagsCollapsed ? 'collapsed' : '')">
-        <div class="expander" @click="toggleTags()">
-        </div>
-        <div class="headline">
-          Bereiche
-        </div>
-        <div class="tag-list">
-          <div v-for="t in tags" :key="t.key" class="tag">
-            <checkbox
-              v-model="t.value"
-              class="tag"
-              theme="white"
-              >{{t.name}}</checkbox>
-          </div>
-        </div>
-      </div>
-      <div class="search">
-        <input type="text" placeholder="Maschinen suchen" v-model="search" name="" id=""/>
-      </div>
-    </div>
-    <div class="machine-list-wrapper">
-      <div v-if="machines && machines.length > 0" class="machine-list">
+  <section class="workshop-overview">
+    <div class="workshop-list-wrapper">
+      <div v-if="workshops && workshops.length > 0" class="workshop-list">
         <transition-group name="list">
-          <machine-list-item v-for="item in machines" :blok="item" :key="item.id" class="list-item"></machine-list-item>
+          <workshop-list-item
+            v-for="item in workshops"
+            :blok="item"
+            :key="item.id"
+            class="list-item"
+            :slim="true"
+            ></workshop-list-item>
         </transition-group>
       </div>
-      <div v-else class="machine-list-none">
+      <div v-else class="workshop-list-none">
         <code>Keine Suchergebnisse</code>
       </div>
     </div>
@@ -37,8 +21,10 @@
 
 <script>
 import Checkbox from "~/components/Checkbox.vue";
+import moment from "moment";
 
 export default {
+  layout: 'screen',
   components: {
     Checkbox,
   },
@@ -46,13 +32,11 @@ export default {
     return {
       loading: false,
       search: '',
-      tagsCollapsed: true,
+      workshops: [],
+      tags: []
     }
   },
   created() {
-    this.$watch('tags', (newVal, oldVal) => {
-      this.update();
-    }, { deep: true });
   },
   watch: {
     search() {
@@ -62,69 +46,103 @@ export default {
   methods: {
     update() {
       this.loading = true;
-      let result = this.$store.dispatch("findMachines", this.filters).then((data) => {
-        this.loading = false;
-        this.machines = data.stories;
-      });
-    },
-    toggleTags() {
-      this.tagsCollapsed = !this.tagsCollapsed;
+      let result = this.$store
+        .dispatch("findWorkshops", this.filters)
+        .then(data => {
+          this.loading = false;
+          this.workshops = data;
+        });
     }
   },
   computed: {
-    filters() {
-      return {
-        filter_query: {
-          'component': {
-            'in': 'machine'
-          }
-        },
-        search_term: this.search,
-        with_tag: this.filterTags.join(',')
-      }
-    },
-    filterTags() {
-      return this.tags.filter((t) => {
-        return t.value;
-      }).map((t) => {
-        return t.name;
+    selectedCategories() {
+      return this.categories.filter((c) => {
+        return c.value;
+      }).map((v) => {
+        return v.key;
       });
+    },
+    filters() {
+      let filter_query = {
+        component: {
+          in: "workshop-date"
+        },
+        starttime: {
+          "gt-date": moment().subtract(24, "hours").format("YYYY-MM-DD HH:mm")
+        }
+      };
+      return {
+        filter_query,
+        search_term: this.search,
+      }
     }
   },
   async asyncData (context) {
-    let tags = await context.store.dispatch("loadTags");
+    //let tags = await context.store.dispatch("loadTags");
     let filters = {
       filter_query: {
-        'component': {
-          'in': 'machine'
+        component: {
+          in: "workshop-date"
+        },
+        starttime: {
+          "gt-date": moment().subtract(24, "hours").format("YYYY-MM-DD HH:mm")
         }
       }
     };
-    let machines = await context.store.dispatch("findMachines", filters).then((data) => {
-      if (data.stories) {
-        return { machines: data.stories };
+    let workshops = await context.store.dispatch("findWorkshops", filters).then((data) => {
+      if (data) {
+        return { workshops: data };
       }
-      return { machines: [] };
+      return { workshops: [] };
     });
-    return {tags, ...machines};
+    return {...workshops};
   },
 }
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/styles.scss';
+@import "@/assets/scss/styles.scss";
 
-.machine-overview {
+.workshop-overview {
   .loading {
     position: absolute;
+    left: 50%;
+    transform: translate(-50%, -40px);
   }
-  .machine-filters {
+
+  .workshop-filters {
+    .filters {
+      background-color: $color-orange;
+      display: flex;
+      .tags {
+        flex: 3;
+      }
+      .calendar {
+        flex: 1;
+        max-width: 320px;
+        .reset {
+          margin-top: -3px;
+          background-color: #000;
+          padding: 10px;
+          .all {
+            padding: 10px;
+            color: #FFF;
+            &:hover {
+              cursor: pointer;
+              color: 000;
+              background-color: $color-yellow;
+            }
+          }
+        }
+      }
+    }
     .tags {
-      padding: 8vh 0;
+      padding-bottom: 4vh;
       @include media-breakpoint-down(sm) {
         padding: 4vh 0;
       }
       .headline {
+        padding-top: 4vh;
         color: #FFF;
         font-weight: bold;
         font-size: 1.8rem;
@@ -175,7 +193,6 @@ export default {
           }
         }
       }
-      background-color: $color-blue;
       @include media-breakpoint-down(sm) {
         overflow: hidden;
         position: relative;
@@ -209,7 +226,7 @@ export default {
           max-height: 17vh;
           .expander {
             height: 70px;
-            background: linear-gradient(rgba(0,0,0,0), $color-blue 80%);
+            background: linear-gradient(rgba(0,0,0,0), $color-orange 80%);
             &:after {
               transform: rotate(45deg);
               bottom: 18px;
@@ -218,12 +235,13 @@ export default {
         }
       }
     }
+
     .search {
       display: flex;
-      padding-top: 3vh;
-      @include margin-page-wide();
-      padding-bottom: 5vh;
-      input[type=text] {
+      margin: 0 4%;
+      padding-top: 1rem;
+      padding-bottom: 4rem;
+      input[type="text"] {
         flex: 1;
         display: block;
         width: 100%;
@@ -233,7 +251,7 @@ export default {
         font-size: 1.1rem;
         border: none;
       }
-      input[type=button] {
+      input[type="button"] {
         font-size: 1.1rem;
         margin-left: 10px;
         text-transform: uppercase;
@@ -245,31 +263,16 @@ export default {
       }
     }
   }
-  .machine-list-wrapper {
+  .workshop-list-wrapper {
+    margin: 0 4%;
     display: flex;
-    @include margin-page-wide();
-    .machine-list {
-      > span {
-        display: grid;
-        @include media-breakpoint-up(lg) {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        @include media-breakpoint-up(xl) {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-        grid-column-gap: 2vw;
-        grid-row-gap: 2vw;
-      }
+    .workshop-list {
       flex: 3;
       .list-item {
-        min-width: 150px;
-        padding: 0 30px;
-        @include media-breakpoint-up(lg) {
-          min-width: 200px;
-        }
+        margin-right: 10px;
       }
-      .list-enter-active, .list-leave-active {
+      .list-enter-active,
+      .list-leave-active {
         transition: all 0.5s;
       }
       .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
@@ -277,8 +280,8 @@ export default {
         transform: translateX(30px);
       }
     }
-    .machine-list-none {
-      flex: 1;
+    .workshop-list-none {
+      flex: 3;
       text-align: center;
     }
   }

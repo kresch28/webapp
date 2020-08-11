@@ -1,27 +1,8 @@
 <template>
   <div>
-    <nuxt-link :to="'/' + blok.full_slug" v-if="content.hasContent">
-      <div class="machine-list-item">
-        <div class="image">
-          <img :src="$resizeImage(content.image, '450x450')" alt=""/>
-        </div>
-        <div class="body">
-          <div class="title">
-            {{content.title}}
-          </div>
-          <div class="tags">
-          <span v-for="(tag, index) in tags">
-            {{tag}}<span v-if="index+1 < tags.length">, </span>
-          </span>
-        </div>
-          <div class="teaser">
-            <markdown :value="content.teaser"></markdown>
-          </div>
-        </div>
-      </div>
-    </nuxt-link>
-    <div class="machine-list-item" v-else>
+    <div class="machine-list-item">
       <div class="image">
+        <machine-status class="status" :id="fabmanId"></machine-status>
         <img :src="$resizeImage(content.image, '450x450')" alt=""/>
       </div>
       <div class="body">
@@ -42,9 +23,17 @@
 </template>
 
 <script>
+import MachineStatus from '@/components/MachineStatus';
+
 export default {
   props: ['blok'],
+  components: {
+    MachineStatus
+  },
   computed: {
+    fabmanId() {
+      return this.blok.content.machine_status_items[0].fabmanId;
+    },
     content() {
       return this.blok.content;
     },

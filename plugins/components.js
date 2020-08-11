@@ -36,6 +36,7 @@ import CorporateContent from '~/components/CorporateContent.vue'
 import EventListItem from '~/components/EventListItem.vue'
 
 import MachineListItem from '~/components/MachineListItem.vue'
+import MachineStatusListItem from '~/components/MachineStatusListItem.vue'
 import Machine from '~/components/Machine.vue'
 import JobTeaser from '~/components/JobTeaser.vue'
 import JobList from '~/components/JobList.vue'
@@ -47,6 +48,8 @@ import ImageSlideshowBlue from '~/components/ImageSlideshowBlue.vue'
 import SpotlightSlider from '~/components/SpotlightSlider.vue'
 import TextImage from '~/components/TextImage.vue'
 import Text from '~/components/Text.vue'
+
+import LinksSlideshow from "../components/LinksSlideshow";
 
 import LoginForm from '~/components/LoginForm.vue'
 import RegisterForm from '~/components/RegisterForm.vue'
@@ -66,6 +69,7 @@ import LevelItem from '~/components/LevelItem.vue'
 
 import Package from '~/components/Package.vue'
 import Training from '~/components/Training.vue'
+import Course from '~/components/Course.vue'
 
 import ExtrasGrid from '~/components/ExtrasGrid.vue'
 import ExtraItem from '~/components/ExtraItem.vue'
@@ -106,8 +110,10 @@ Vue.component('event-list-item', EventListItem)
 
 Vue.component('package', Package)
 Vue.component('training', Training)
+Vue.component('course', Course)
 
 Vue.component('machine-list-item', MachineListItem)
+Vue.component('machine-status-list-item', MachineStatusListItem)
 Vue.component('machine', Machine)
 Vue.component('job-teaser', JobTeaser)
 Vue.component('job-list', JobList)
@@ -123,6 +129,7 @@ Vue.component('image-slideshow', ImageSlideshow)
 Vue.component('image-slideshow-blue', ImageSlideshowBlue)
 Vue.component('text-image', TextImage)
 Vue.component('text-blok', Text)
+Vue.component('links-slideshow', LinksSlideshow)
 
 Vue.component('faq-block', FAQBlock)
 Vue.component('faq-item', FAQItem)
