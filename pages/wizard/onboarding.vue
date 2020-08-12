@@ -80,7 +80,8 @@ export default {
         'profile' : '',
         'person' : '',
         'payment' : '',
-        'file' : ''
+        'file' : '',
+        'picture': ''
       },
     }
   },
@@ -100,11 +101,11 @@ export default {
     },
     next() {
 
-      console.log(this.user.payment.iban.length);
-      console.log(this.user.payment.bank.length)
+      console.log(this.index);
 
       if (this.user.type !== undefined && this.user.periode !== undefined) {
-        if (this.user.agbBool == true && this.index < 1) {
+        /*if (this.user.agbBool == true && this.index < 1) {*/
+        if (this.index < 1) {
           let ni = this.index + 1 < 0 ? 0 : this.index + 1;
           let path = this.steps[ni];
           this.$router.push('/wizard/onboarding/' + path);
@@ -128,19 +129,18 @@ export default {
       }
       if(this.profileCheck != true && this.index == 0){
         if (this.user.type == undefined) {
+          this.user.typeError = true;
           this.typeErrors.type = false;
         }
         if (this.user.periode == undefined) {
+          this.user.periodeError = true;
           this.typeErrors.periode = false;
         }
         this.user.errors = this.typeErrors;
         this.profileCheck = null;
-        alert('Bitte alle Felder auswählen');
       }
-      if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
-        alert('Hast du die ANB und die Werkstattordnung gelesen?');
-      }
-      if(this.user.dsBool == true && this.index == 1) {
+
+      if(this.index == 1) {
         let ni = this.index + 1 < 0 ? 0 : this.index + 1;
         let path = this.steps[ni];
         this.$router.push('/wizard/onboarding/' + path);
@@ -150,6 +150,7 @@ export default {
         this.newUser.street_additional = this.user.profile.address2;
         this.newUser.zip = this.user.profile.zip;
         this.newUser.city = this.user.profile.city;
+        this.newUser.country = this.user.profile.state;
         /*this.personalData = {'birthday' : this.user.profile.birthdate};
         this.personalData.phone = this.user.profile.phone;
         this.personalData.address = this.user.profile.address;
@@ -159,14 +160,16 @@ export default {
         this.personalData.company = this.user.profile.company;
         this.newUser.person = this.personalData;*/
       }
-      if(this.user.dsBool != true && this.index == 1) {
-        alert('Hast du die Datenschutzerklärung gelesen?');
-        return;
-      }
+
+      console.log('here');
+      console.log(this.user.payment.iban);
+      console.log(this.user.payment.bank);
+
+
       if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
         if(this.user.payment.iban.length > 19 && this.user.payment.bank.length > 10){
         this.paymentCheck = false;
-          if (this.user.sepaBool == true) {
+          /*if (this.user.sepaBool == true) {*/
             let ni = this.index + 1 < 0 ? 0 : this.index + 1;
             let path = this.steps[ni];
             console.log(ni);
@@ -179,31 +182,33 @@ export default {
             this.paymentCheck = true;
             /*this.newUser.payment = this.payment;*/
             console.log(this.newUser);
-          }
+          //}
         }
       }
 
-      if(this.index == 2) {
-        if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
-          if (this.user.payment.iban == '') {
+      if(this.paymentCheck != true && this.index == 2) {
+        /*if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
+          */if (this.user.payment.iban === ''){
             this.typeErrors.iban = false;
-            alert('Bitte alle Felder auswählen');
+            this.user.ibanError = true;
           }
           if(this.user.payment.iban.length < 20) {
             this.typeErrors.iban = false;
+            this.user.ibanError = true;
             alert('Bitte einen gültigen IBAN angeben');
           }
-          if (this.user.payment.bank == '' && this.user.payment.bank.length < 11) {
+          if (this.user.payment.bank == ''){
             this.typeErrors.bank = false;
-            alert('Bitte alle Felder auswählen');
+            this.user.bankError = true;
           }
           if(this.user.payment.bank.length < 11) {
-            this.typeErrors.iban = false;
+            this.typeErrors.bank = false;
+            this.user.bankError = true;
             alert('Bitte einen gültigen BIC angeben');
           }
-
+          this.user.errors = this.typeErrors;
           this.paymentCheck = null;
-        }
+        //}
       }
 
       /*if(this.paymentCheck != true && this.index == 2){
@@ -218,16 +223,17 @@ export default {
       }*/
 
       console.log(this.paymentCheck);
-      if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
-        alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
-      }
 
       if(this.user.file != null) {
         this.newUser.file = this.user.file;
       }
 
-      /*console.log(this.user);
+      if(this.user.picture != null) {
+        this.newUser.picture = this.user.picture;
+      }
+
       console.log(this.newUser);
+      /*console.log(this.newUser);
       console.log(JSON.stringify(this.newUser));*/
 
     },
@@ -235,28 +241,45 @@ export default {
       e.preventDefault();
     },
     submit(e){
-      e.preventDefault();
-      this.profileData.profile_type = this.newUser.profile_type;
-      this.profileData.profile_period = this.newUser.profile_period;
-      this.profileData.firstname = this.user.profile.firstName;
-      this.profileData.lastname = this.user.profile.lastName;
-      this.profileData.birthdate = this.newUser.birthdate;
-      this.profileData.phone = this.newUser.phone;
-      this.profileData.street = this.newUser.street;
-      this.profileData.street_additional = this.newUser.street_additional;
-      this.profileData.zip = this.newUser.zip;
-      this.profileData.city = this.newUser.city;
-      this.profileData.country = 'at';
-      this.profileData.iban = this.newUser.iban;
-      this.profileData.bic = this.newUser.bank;
-      this.$store.dispatch("updateInvoiceContact", this.profileData).then((data) => {
-        if(data) {
-          this.done = true;
-        }
-        console.log(data);
-      }).catch((err)=> {
-        console.log(err);
-      });
+
+      if(this.user.agbBool != true && this.index > 2) {
+        alert('Hast du die ANB und die Werkstattordnung gelesen?');
+      }
+
+      if(this.user.dsBool != true && this.index > 2) {
+        alert('Hast du die Datenschutzerklärung gelesen?');
+        return;
+      }
+      if(this.user.sepaBool != true && this.index > 2) {
+        alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
+      }
+
+      if(this.user.agbBool == true && this.user.dsBool == true && this.user.sepaBool == true){
+          e.preventDefault();
+          this.profileData.profile_type = this.newUser.profile_type;
+          this.profileData.profile_period = this.newUser.profile_period;
+          this.profileData.firstname = this.user.profile.firstName;
+          this.profileData.lastname = this.user.profile.lastName;
+          this.profileData.birthdate = this.newUser.birthdate;
+          this.profileData.phone = this.newUser.phone;
+          this.profileData.street = this.newUser.street;
+          this.profileData.street_additional = this.newUser.street_additional;
+          this.profileData.zip = this.newUser.zip;
+          this.profileData.city = this.newUser.city;
+          /*this.profileData.country = this.newUser.country;*/
+          this.profileData.country = 'at';
+          this.profileData.iban = this.newUser.iban;
+          this.profileData.bic = this.newUser.bank;
+          console.log(this.profileData);
+          /*this.$store.dispatch("updateInvoiceContact", this.profileData).then((data) => {
+            if(data) {
+              this.done = true;
+            }
+            console.log(data);
+          }).catch((err)=> {
+            console.log(err);
+          });*/
+      }
     },
     getDocument() {
         console.log(JSON.stringify(this.profileData));
@@ -296,6 +319,10 @@ export default {
       display: block;
     }
     .wizard-section-menu {
+      @include media-breakpoint-down(sm) {
+        display: flex;
+        justify-content: center;
+      }
       .steps {
         .step {
           display: inline-block;

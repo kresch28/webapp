@@ -12,6 +12,16 @@
         <input class="input-text" disabled type="text" v-model="user.profile.lastName" name="" id=""/>
       </div>
       -->
+    <div class="form-item">
+      <div class="info-block">
+        <span class="label">Foto für deinen Mietgliedsausweis</span>
+        <label for="picture" class="picture-file-upload">
+          Datei hochladen
+          <input type="file" v-on:change="getPicture" ref="picture" id="picture">
+        </label>
+        </div>
+      <img class="preview" :src="imageData">
+      </div>
       <div class="form-item">
         <div class="info-block">
           <span class="label">Geburtsdatum</span>
@@ -48,6 +58,12 @@
           <input class="input-text" type="text" v-model="user.profile.city" name="" id=""/>
         </div>
       </div>
+    <div class="form-item">
+      <div class="info-block">
+        <span class="label">Land</span>
+        <input class="input-text" type="text" v-model="user.profile.state" name="" id=""/>
+      </div>
+    </div>
       <div class="form-item">
         <div class="info-block">
           <span class="label">Firma</span>
@@ -55,16 +71,7 @@
         </div>
       </div>
     <!--</form>-->
-    <div class="wizard-checkbox">
-      <p>Wir gehen verantwortungsvoll mit deinen Daten um.</p>
-      <label>
-        <!--<Checkbox :value="dsBool" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</Checkbox>
-        -->
-        <input type="checkbox" id="ds" name="ds" value="!dsBool" v-model="user.dsBool">
-        <label for="ds">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</label><br>
 
-      </label>
-    </div>
   </div>
 </template>
 
@@ -79,7 +86,10 @@ export default {
   data () {
     return {
       loading: false,
-      dsBool: false
+      dsBool: false,
+      picture: null,
+      imageEvent: null,
+      imageData: null
     }
   },
   created() {
@@ -101,6 +111,21 @@ export default {
           text: 'Ein Fehler ist aufgetreten.'
         });
       });
+    },
+    getPicture(e) {
+      console.log(e.target.value);
+      this.picture = this.$refs.picture.files[0];
+      var input = e.target;
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = (event) => {
+          this.imageData = event.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      console.log(this.picture);
+      this.user.picture = this.picture;
+
     }
   },
   computed: {
@@ -119,7 +144,9 @@ export default {
   .info-block {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    @include media-breakpoint-up(sm) {
+      width: 80%;
+    }
   }
   .checkbox-link {
     padding-left: 5px;
@@ -133,5 +160,18 @@ export default {
   }
   .wizard-checkbox {
     margin-top: 40px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .picture-file-upload {
+    cursor: pointer;
+    background-color: #ff6f00;
+    color: #FFF;
+    min-width: 40%;
+    border: 1px solid #ff8c33;
+    padding: 7px 12px 8px;
+    line-height: 1;
+    outline: none;
   }
 </style>

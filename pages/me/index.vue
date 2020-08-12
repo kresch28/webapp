@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.packages.length !== 0" class="section">
+  <div v-if="user.packages.length == 0" class="section">
     <h2>Kontaktdaten</h2>
     <form class="form" @submit.prevent="updateUser">
       <div class="form-item">
@@ -41,33 +41,14 @@
     <a :href="window+'/de/mitgliedschaften'" target="_blank">Hier bekommst du alle Infos zur Mitgliedschaft</a>
     <component v-if="story && story.content && story.content.component" :key="story.content._uid" :blok="story.content">
       <markdown class="info" :value="story.content.body[0].info"></markdown>
-      <div class="membership-details">
-        <div class="payment-options">
-          <div class="payment-options-title">Zahlungsintervall:</div>
-          <div class="pricetabs">
-            <div @click="setPriceView('monthly')" class="pricetab" :class="(priceView == 'monthly' ? 'active' : '')">
-              monatlich
-            </div>
-            <div @click="setPriceView('annually')" class="pricetab" :class="(priceView == 'annually' ? 'active' : '')">
-              jährlich
-            </div>
+      <div class="register-button">
+        <!--<div class="register-button" v-if="!hasUser">
+        <button @click="register">Jetzt Mitglied werden</button>-->
+        <div class="link-with-arrow">
+          <div class="link-text">
+            <Nuxt-Link to="/wizard/onboarding/" class="link">Mitglied werden</Nuxt-Link>
           </div>
         </div>
-        <div class="membership-plans">
-          <component v-for="blok in story.content.body[0].columns" :blok="blok" :priceView="priceView" :is="blok.component"></component>
-        </div>
-        <div class="register-button">
-          <!--<div class="register-button" v-if="!hasUser">
-          <button @click="register">Jetzt Mitglied werden</button>-->
-          <div class="link-with-arrow">
-            <div class="link-text">
-              <Nuxt-Link to="/wizard/onboarding/" class="link">Mitglied werden</Nuxt-Link>
-            </div>
-          </div>
-        </div>
-        <!--<div v-if="blok.plans_text" class="plans-text">
-          <markdown :value="blok.plans_text"></markdown>
-        </div>-->
       </div>
     </component>
   </div>
@@ -185,6 +166,9 @@
 
   .info{
     margin-top: 40px;
+    @include media-breakpoint-up(sm) {
+      width: 75%;
+    }
   }
 
   .membership-details {
@@ -226,30 +210,35 @@
       flex-direction: row;
       justify-content: center;
     }
-    .register-button {
-      text-align: center;
-      button {
-        outline: none;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #FFF;
-        border: none;
-        padding: 15px;
-        background-color: $color-orange;
-        margin: 1.5em 0;
-        transition: background-color .3s linear;
-        &:hover {
-          background-color: saturate(darken($color-orange, 5%), 100%);
-        }
-      }
-      .link {
-        background-color: #ff6f00;
-        color: #FFFFFF;
-        margin-top: 20px;
-        padding: 20px;
+  }
+  .register-button {
+    text-align: center;
+    button {
+      outline: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #FFF;
+      border: none;
+      padding: 15px;
+      background-color: $color-orange;
+      margin: 1.5em 0;
+      transition: background-color .3s linear;
+      &:hover {
+        background-color: saturate(darken($color-orange, 5%), 100%);
       }
     }
+    .link {
+      background-color: #ff6f00;
+      color: #FFFFFF;
+      margin-top: 20px;
+      padding: 20px;
+    }
+  }
 
+  .section {
+    @include media-breakpoint-down(sm) {
+      padding: 0 20px;
+    }
   }
 </style>

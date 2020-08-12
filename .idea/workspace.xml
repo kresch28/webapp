@@ -38,8 +38,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47d9e529-4064-4b3e-8777-37f389ab58b3" name="Default Changelist" comment="CON-99 Kurse sind im Memberbereich auf der Website">
+    <list default="true" id="47d9e529-4064-4b3e-8777-37f389ab58b3" name="Default Changelist" comment="CON-95 Blog Detail View - Blog Background">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getBookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getBookings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +93,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="last_opened_file_path" value="$USER_HOME$/webapp_newProfile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -89,7 +107,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46e709b7-a69e-4168-911e-9a7e70199c2c" name="Default Changelist" comment="" />
+      <changelist id="47d9e529-4064-4b3e-8777-37f389ab58b3" name="Default Changelist" comment="CON-95 Blog Detail View - Blog Background" />
       <created>1594885264305</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -121,6 +139,7 @@
       <workItem from="1596692865286" duration="7754000" />
       <workItem from="1596778517961" duration="2685000" />
       <workItem from="1597038262025" duration="17754000" />
+      <workItem from="1597210245552" duration="15359000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -227,6 +246,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1594898606696" />
+    <state x="2967" y="567" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog" timestamp="1597231211895">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2967" y="567" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597231211895" />
     <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1596191264906">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -263,9 +286,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597130038347" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1596799731301">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1597231210517">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596799731301" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597231210517" />
   </component>
 </project>

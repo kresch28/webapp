@@ -25,22 +25,15 @@
     <form class="form wizard">
       <div class="form-item">
         <span class="label">IBAN</span>
-        <input class="input-text" v-bind:class="{missing: user.errors.iban === false}" type="text" v-model="user.payment.iban" name="" id=""/>
+        <input class="input-text" v-bind:class="{missing: this.user.ibanError}" type="text" v-model="user.payment.iban" name="" id=""/>
       </div>
+      <p class="alert-payment" v-if="user.ibanError">Bitte gib eine gültige IBAN Nummer an</p>
       <div class="form-item">
         <span class="label">BIC</span>
-        <input class="input-text"  v-bind:class="{missing: user.errors.bank === false}" type="text" v-model="user.payment.bank" name="" id=""/>
+        <input class="input-text"  v-bind:class="{missing: this.user.bankError}" type="text" v-model="user.payment.bank" name="" id=""/>
       </div>
+      <p class="alert-payment" v-if="user.bankError">Bitte gib einen gültigen BIC an</p>
     </form>
-
-    <div class="wizard-checkbox">
-      <label>
-        <!--<Checkbox :value="sepaBool" theme="form">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</Checkbox>
-        -->
-        <input type="checkbox" id="sepa" name="sepa" value="!sepaBool" v-model="user.sepaBool">
-        <label for="sepa">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</label><br>
-      </label>
-    </div>
 
   </div>
 </template>
@@ -61,7 +54,9 @@ export default {
       reduction: null,
       bank: '',
       iban: '',
-      file: null
+      file: null,
+      ibanError: 'false',
+      bankError: 'false',
     }
   },
   created() {
@@ -138,4 +133,9 @@ input[type="file"] {
   line-height: 1;
   outline: none;
 }
+
+  .alert-payment {
+    color: #FF0000;
+    text-align: center;
+  }
 </style>

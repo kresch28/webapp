@@ -75,6 +75,25 @@
       </div>
     </div>
 
+    <img :src="url"/>
+
+    <div class="wizard-checkbox">
+      <div class="rights" >
+        <input type="checkbox" id="sepa" name="sepa" value="!sepaBool" v-model="user.sepaBool">
+        <label for="sepa">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</label><br>
+      </div>
+      <div class="rights" >
+        <input type="checkbox" id="agb" name="agb" value="!agbBool" v-model="user.agbBool">
+        <label for="agb">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</label><br>
+      </div>
+      <div class="rights" >
+        <span class="rights-info">Wir gehen verantwortungsvoll mit deinen Daten um.</span>
+        <br>
+        <input type="checkbox" id="ds" name="ds" value="!dsBool" v-model="user.dsBool">
+        <label for="ds">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</label>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -86,9 +105,11 @@ export default {
   data () {
     return {
       loading: false,
+      agbBool: false,
       type: '',
       periode: '',
       birthdate: '',
+      imageData: null,
     }
   },
   created() {
@@ -121,7 +142,7 @@ export default {
       }).catch(() => {
         this.loading = false;
       });
-    }
+    },
   },
   computed: {
     form() {
@@ -132,6 +153,10 @@ export default {
     user() {
       return this.$store.state.user;
     },
+    url() {
+      let reader  = new FileReader();
+      return reader.readAsDataURL( this.user.picture);
+    }
   }
 }
 </script>
@@ -157,6 +182,12 @@ export default {
       flex-direction: column;
       flex-grow: 1;
       margin-bottom: 2vh;
+      @include media-breakpoint-down(sm) {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
       h2.title {
         font-weight: normal;
         margin: 0;
@@ -184,5 +215,16 @@ export default {
   }
   .price-value_ {
     padding-top: 10px;
+  }
+  .rights {
+    margin: 30px 10px;
+    @include media-breakpoint-down(sm) {
+      margin: 40px 20px;
+    }
+  }
+  .rights.ds {
+    @include media-breakpoint-up(sm) {
+      margin-left: 10px;
+    }
   }
 </style>

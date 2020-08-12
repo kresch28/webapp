@@ -3,18 +3,15 @@
     <h2>Du willst also eine Mitgliedschaft abschließen?</h2>
     <p>für <b>ermäßigt</b> bist du berechtigt bei Vorlage folgender Ausweise: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
     <form id="index" @submit="checkForm" method="post">
+      <p class="alert" v-if="user.typeError">Bitte wähle welche Mitgliedschaf du haben möchtest</p>
     <div class="options">
-      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}" @click="setType('regulär')">
         <input class="radio" type="radio" v-model="user.type" id="regulär" name="type" value="regulär" @click="checkTrue">
-        <b>regulär</b>
+        <label class="label-big" for="regulär">regulär</label>
         </div>
-      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}" @click="setType('ermäßigt')">
         <input class="radio"  type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt" @click="checkTrue">
-        <b>ermäßigt</b>
-        </div>
-      <div class="option" v-bind:class="{missing: user.errors.type === false}">
-        <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free" @click="checkTrue">
-        <b>free</b>
+        <label class="label-big" for="ermäßigt">ermäßigt</label>
         </div>
     </div>
     <div>
@@ -22,25 +19,28 @@
         <div class="info">
           <p><b>Tipp:</b> Bei jährlicher Zahlung bekommst du 2 Monate geschenkt.</p>
         </div>
+        <p class="alert" v-if="user.periodeError">Bitte wähle welche Zahlperiode du haben möchtest</p>
         <div class="options">
           <div class="option" v-bind:class="{missing: user.errors.periode === false}">
             <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month" @click="checkTrue">
-            <b>monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</b>
+            <label class="label-small" for="month">monatlich {{ price ? "40€" : "15€"}}</label>
           </div>
           <div class="option" v-bind:class="{missing: user.errors.periode === false}">
             <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year" @click="checkTrue">
-            <b>jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</b>
+            <label class="label-small" for="year">jährlich {{ price ? "400€" : "150€"}}</label>
           </div>
         </div>
+
       </div>
 
     </div>
     <div class="spacer"></div>
     <div class="wizard-checkbox-agb">
       <!--<Checkbox :value="agbBool" @click="checkTrue" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</Checkbox>
-    -->
+
       <input type="checkbox" id="agb" name="agb" value="!agbBool" v-model="user.agbBool">
       <label for="agb">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</label><br>
+   -->
     </div>
     </form>
   </div>
@@ -58,10 +58,12 @@ export default {
   data () {
     return {
       loading: false,
-      agbBool: false,
       empty: true,
       type: 'regulär',
-      periode: 'month'
+      periode: 'month',
+      typeError: 'false',
+      periodeError: 'false',
+      price: true,
     }
   },
   created() {
@@ -80,6 +82,13 @@ export default {
       console.log(this.user.periode);
       //}
     },
+    setType(type) {
+      this.user.type = type;
+      if(type == 'ermäßigt') {
+        this.price = false;
+      }
+      console.log(this.user);
+    }
   },
   computed: {
     user() {
@@ -121,20 +130,35 @@ export default {
       cursor: pointer;
       padding: 25px;
       background-color: #FFF;
-      b {
+      border: 2px solid #FFFFFF;
+      .label-big {
+        cursor: pointer;
         padding-left: 25px;
+        padding-right: 70%;
+        @include media-breakpoint-down(sm) {
+          padding-left: 5px;
+          padding-right: 5%;
+        }
+      }
+      .label-small {
+        cursor: pointer;
+        padding-left: 25px;
+        padding-right: 65%;
+        @include media-breakpoint-down(sm) {
+          padding-left: 5px;
+          padding-right: 5%;
+        }
       }
 
       &:hover {
         border: 2px solid $color-orange;
+
       }
     }
   }
-  /*.info {
-    position: absolute;
-    right: 0;
-    margin-right: 23%;
-  }*/
 }
+  .alert {
+    color: #FF0000;
+  }
 
 </style>
