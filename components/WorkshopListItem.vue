@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  props: ['blok', 'slim'],
+  props: ['blok', 'slim', 'date'],
   computed: {
     dates() {
       return this.blok.dates;
@@ -75,7 +75,7 @@ export default {
     },
     linktext() {
       return "Mehr Infos";
-    }
+    },
   }
 }
 </script>
