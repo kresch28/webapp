@@ -38,8 +38,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47d9e529-4064-4b3e-8777-37f389ab58b3" name="Default Changelist" comment="CON-95 Blog Detail View - Blog Background">
+    <list default="true" id="47d9e529-4064-4b3e-8777-37f389ab58b3" name="Default Changelist" comment="CON-99 Slides der Kurse - mobile Ansicht">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/contact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/done.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding/payment.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="last_opened_file_path" value="$USER_HOME$/webapp_newProfile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -123,6 +134,14 @@
       <workItem from="1596778517961" duration="2685000" />
       <workItem from="1597038262025" duration="17754000" />
       <workItem from="1597210245552" duration="15359000" />
+      <workItem from="1597750684534" duration="1814000" />
+      <workItem from="1597752521426" duration="1795000" />
+      <workItem from="1597754343424" duration="1791000" />
+      <workItem from="1597756167326" duration="1797000" />
+      <workItem from="1597758157934" duration="1797000" />
+      <workItem from="1597761528297" duration="748000" />
+      <workItem from="1597815129002" duration="1794000" />
+      <workItem from="1597817012896" duration="1392000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>

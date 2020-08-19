@@ -16,6 +16,7 @@
       </div>
     </form>-->
    <h2>Übersicht:</h2>
+    <div class="sectionFlex">
     <div class="col">
       <div class="plan">
         <h2 class="title">BASIC GARAGE {{this.user.periode == 'month' ? 'monatlich' : 'jährlich'}}</h2>
@@ -74,23 +75,28 @@
         </div>
       </div>
     </div>
-
-    <img :src="url"/>
+      <div class="memberPicture">
+          <img v-if="this.user.picture != null" :src="imageData" style="height: 200px; width: 200px; margin: 10px">
+      </div>
+    </div>
 
     <div class="wizard-checkbox">
       <div class="rights" >
         <input type="checkbox" id="sepa" name="sepa" value="!sepaBool" v-model="user.sepaBool">
         <label for="sepa">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</label><br>
+        <p class="alert-payment" v-if="user.sepaBool != true">Bitte ankreuzen</p>
       </div>
       <div class="rights" >
         <input type="checkbox" id="agb" name="agb" value="!agbBool" v-model="user.agbBool">
         <label for="agb">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</label><br>
+        <p class="alert-payment" v-if="user.agbBool != true">Bitte ankreuzen</p>
       </div>
       <div class="rights" >
         <span class="rights-info">Wir gehen verantwortungsvoll mit deinen Daten um.</span>
         <br>
         <input type="checkbox" id="ds" name="ds" value="!dsBool" v-model="user.dsBool">
         <label for="ds">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</label>
+        <p class="alert-payment" v-if="user.dsBool != true">Bitte ankreuzen</p>
       </div>
     </div>
 
@@ -109,11 +115,18 @@ export default {
       type: '',
       periode: '',
       birthdate: '',
-      imageData: null,
+      imageData: '',
     }
   },
   created() {
-    console.log(this.user)
+    console.log(this.user);
+    if(this.user.picture != null){
+      var reader = new FileReader();
+      reader.onload = (event) => {
+        this.imageData = event.target.result;
+      }
+      reader.readAsDataURL(this.user.input.files[0]);
+    }
   },
   methods: {
     encode (data) {
@@ -155,7 +168,17 @@ export default {
     },
     url() {
       let reader  = new FileReader();
-      return reader.readAsDataURL( this.user.picture);
+      if(this.user.picture != null) {
+        return reader.readAsDataURL( this.user.picture);
+      }
+    },
+    image() {
+      var reader = new FileReader();
+      reader.onload = (event) => {
+        this.imageData = event.target.result;
+      }
+      reader.readAsDataURL(this.user.input.files[0]);
+      // this.imageData = this.user.picture.name;
     }
   }
 }
@@ -171,7 +194,7 @@ export default {
 
   .col {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     .plan {
       max-width: 500px;
       padding-left: 3vw;
@@ -226,5 +249,17 @@ export default {
     @include media-breakpoint-up(sm) {
       margin-left: 10px;
     }
+  }
+
+  .sectionFlex  {
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .memberPicture {
+    display: flex;
+    justify-content: center;
   }
 </style>

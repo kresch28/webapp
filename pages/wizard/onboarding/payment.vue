@@ -1,7 +1,7 @@
 <template>
   <div class="section onboarding-wizard">
     <h2>Zahlung</h2>
-    <div v-if="this.user.type = 'ermäßigt'">
+    <div v-if="this.user.type === 'ermäßigt'">
       <p>Bestätige deine Berechtigung, dass du eine ermäßigte Mitgliedschaft bekommen kannst:</p>
       <p>Lade eines der folgenden Dokumente oder eines der folgenden Ausweise hoch: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
       <label for="file" class="custom-file-upload">
@@ -25,12 +25,12 @@
     <form class="form wizard">
       <div class="form-item">
         <span class="label">IBAN</span>
-        <input class="input-text" v-bind:class="{missing: this.user.ibanError}" type="text" v-model="user.payment.iban" name="" id=""/>
+        <input class="input-text" v-bind:class="{missing: user.errors.iban === false}" type="text" v-model="user.payment.iban" name="" id=""/>
       </div>
       <p class="alert-payment" v-if="user.ibanError">Bitte gib eine gültige IBAN Nummer an</p>
       <div class="form-item">
         <span class="label">BIC</span>
-        <input class="input-text"  v-bind:class="{missing: this.user.bankError}" type="text" v-model="user.payment.bank" name="" id=""/>
+        <input class="input-text"  v-bind:class="{missing: user.errors.bank === false}" type="text" v-model="user.payment.bank" name="" id=""/>
       </div>
       <p class="alert-payment" v-if="user.bankError">Bitte gib einen gültigen BIC an</p>
     </form>
@@ -54,7 +54,7 @@ export default {
       reduction: null,
       bank: '',
       iban: '',
-      file: null,
+      file: '',
       ibanError: 'false',
       bankError: 'false',
     }
