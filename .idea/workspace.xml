@@ -38,15 +38,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-99 Kurse sind im Memberbereich auf der Website - Links zu Slides/PDF">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_08_2020_15_36__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_08_2020_08_28__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_08_24__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_08_2020_09_10__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 Blog Detail View Blog Header Image von Storyblok">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/WorkshopListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/WorkshopListItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
@@ -86,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="last_opened_file_path" value="$USER_HOME$/webapp_newProfile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -136,6 +129,9 @@
       <workItem from="1597835313868" duration="1796000" />
       <workItem from="1597837124220" duration="1898000" />
       <workItem from="1597839035765" duration="1193000" />
+      <workItem from="1598004703800" duration="778000" />
+      <workItem from="1598008313633" duration="1261000" />
+      <workItem from="1598010408221" duration="1416000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -278,9 +274,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597130038347" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1596799731301">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598011044076">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596799731301" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598011044076" />
   </component>
 </project>

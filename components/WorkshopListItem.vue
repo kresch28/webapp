@@ -32,7 +32,7 @@
           <div class="workshop-date" v-for="d,i in dates" :class="{ soldOut: d.content.sold_out }">
             <div class="info-row" v-if="!slim || i == 0">
               <div class="info-block">
-                <div class="col info">
+                <div class="col info" v-if="">
                   <icon name="calendar" />
                   {{d.content.starttime | date}}
                 </div>

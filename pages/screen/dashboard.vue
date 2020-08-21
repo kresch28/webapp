@@ -21,6 +21,17 @@
         <div class="dashboard-block">
             <div class="infos">
                 <div class="headline">
+                    <h4>Links</h4>
+                </div>
+                <div v-for="h, c in home">
+                    <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
+                </div>
+                <div>
+                    <a href="https://bit.ly/2G8mprC" >Schachermayer</a>
+
+                    <a href="https://bit.ly/2DHJ3W1">Haberkorn</a>
+
+                    <a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a>
                 </div>
             </div>
             <div class="faqs">
@@ -65,6 +76,9 @@
                 range: 1,
             }
         },
+        created() {
+          console.log(this.workshops);
+        },
         computed: {
             dateFormat() {
                 const ye = new Intl.DateTimeFormat('de', { year: 'numeric' }).format(this.date)
@@ -97,7 +111,7 @@
                         in: "workshop-date"
                     },
                     starttime: {
-                        "gt-date": moment().subtract(24, "hours").format("YYYY-MM-DD HH:mm")
+                        "gt-date": moment().format("YYYY-MM-DD HH:mm")
                     }
                 };
                 return {
@@ -105,9 +119,10 @@
                     search_term: this.search,
                 }
             },
-            counter() {
-                return this.workshops.length;
-            }
+            home() {
+                console.log(this.$store.state.settings.home_navi);
+                return this.$store.state.settings.home_navi;
+            },
         },
         methods: {
             update() {
