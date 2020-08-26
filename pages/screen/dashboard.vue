@@ -23,21 +23,30 @@
                 <div class="headline">
                     <h4>Links</h4>
                 </div>
-                <div v-for="h, c in home">
+                <img src="~/assets/img/icons/idea.svg" class="links-icon">
+                <div v-for="h, c in home" class="links-wiki">
                     <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
                 </div>
-                <div>
-                    <a href="https://bit.ly/2G8mprC" >Schachermayer</a>
-
-                    <a href="https://bit.ly/2DHJ3W1">Haberkorn</a>
-
-                    <a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a>
+                <div class="links-partner">
+                    <img src="~/assets/img/icons/partner.svg" class="links-icon-small">
+                    <ul>
+                        <li><a href="https://bit.ly/2G8mprC" >Schachermayer</a></li>
+                        <li><a href="https://bit.ly/2DHJ3W1">Haberkorn</a></li>
+                        <li><a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a></li>
+                    </ul>
+                </div>
+                <div class="shop-container">
+                    <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
+                    <div class="links-shop">
+                        <a href="/me/shop">Material bestellen</a>
+                    </div>
                 </div>
             </div>
             <div class="faqs">
             </div>
         </div>
         <div class="workshop-overview">
+            <h2 class="title-workshops">TIMETABLE WORKSHOPS</h2>
             <div class="workshop-list-wrapper">
                     <div v-if="workshops && workshops.length > 0" class="workshop-list">
                         <transition-group name="list">
@@ -54,6 +63,18 @@
                         <button class="more" @click="more">more</button>
                     </div>
                 <div v-else class="workshop-list-none">
+                    <code>Keine Workshops für heute geplant</code>
+                </div>
+            </div>
+        </div>
+        <div class="machine-overview">
+            <div class="machine-list-wrapper">
+                <div v-if="machines && machines.length > 0" class="machine-list">
+                    <transition-group name="list">
+                        <machine-status-list-item v-for="item in machines" :blok="item" :key="item.id" class="list-item"></machine-status-list-item>
+                    </transition-group>
+                </div>
+                <div v-else class="machine-list-none">
                     <code>Keine Suchergebnisse</code>
                 </div>
             </div>
@@ -72,12 +93,14 @@
                 loading: false,
                 search: '',
                 workshops: [],
+                machines: [],
                 tags: [],
                 range: 1,
             }
         },
         created() {
           console.log(this.workshops);
+            console.log(this.machines);
         },
         computed: {
             dateFormat() {
@@ -158,10 +181,47 @@
             };
             let workshops = await context.store.dispatch("findWorkshops", filters).then((data) => {
                 if (data) {
-                    return { workshops: data };
+                    console.log(data);
+                    let res = { workshops: [] };
+                    for(let i = 0; i < data.length; i++){
+                        // console.log(data[i].dates);
+                        for(let j = 0; j < data[i].dates.length; j++){
+                            // console.log(data[i].dates[j].content.starttime);
+                            let dt = data[i].dates[j].content.starttime.split('-', 3);
+                            // console.log(dt[1]);
+                            let mth = new Date().getMonth()+1;
+                            mth = '0'+mth;
+                            if(dt[2].split(1)[0] == new Date().getDate() && dt[1] == mth) {
+                                res.workshops.push(data[i]);
+                                // console.log(res);
+                            }
+                            else{
+                                // console.log(res);
+                            }
+                        }
+                    }
+                    return res;
+                    //return { workshops: data };
                 }
                 return { workshops: [] };
             });
+
+            let tags = await context.store.dispatch("loadTags");
+            let filtersM = {
+                filter_query: {
+                    'component': {
+                        'in': 'machine'
+                    }
+                }
+            };
+            let machines = await context.store.dispatch("findStatusMachines", filtersM).then((data) => {
+                if (data.stories) {
+                    console.log(data.stories);
+                    return { machines: data.stories };
+                }
+                return { machines: [] };
+            });
+            return {tags, ...machines};
             return {...workshops};
         },
     }
@@ -172,14 +232,18 @@
 
     .dashboard-block {
         display: flex;
+        margin-bottom: 20px;
         @include media-breakpoint-down(sm) {
             flex-direction: column-reverse;
+        }
+        @include media-breakpoint-up(sm) {
+            float: left;
+            width: 20%;
         }
         align-items: flex-start;
         @include margin-page-middle();
         .infos {
             padding: 25px;
-            flex: 1;
 
             .headline {
                 font-weight: bold;
@@ -205,7 +269,6 @@
     }
     .infos {
         padding: 25px;
-        flex: 1;
 
         .headline {
             font-weight: bold;
@@ -242,6 +305,9 @@
         }
     }
     .workshop-overview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .loading {
             position: absolute;
             left: 50%;
@@ -440,5 +506,97 @@
             left: 40%;
         }
     }
+    .links-icon {
+        background-color: #ebe223;
+        border-radius: 50%;
+        height: 18%;
+        width: 18%;
+        padding: 5px;
+        float: left;
+    }
 
+    .links-partner {
+        float: left;
+        margin-top: 20px;
+        li {
+            padding-bottom: 20px;
+            list-style: none;
+            margin-left: 60px;
+            @include  media-breakpoint-down(sm){
+                margin-left: 40px;
+            }
+        }
+    }
+
+    .links-wiki {
+        position: absolute;
+        margin-top: 1%;
+        margin-left: 5%;
+        @include media-breakpoint-down(sm){
+            margin-top: 4%;
+            margin-left: 25%;
+        }
+    }
+    .links-icon-small {
+        background-color: #ebe223;
+        border-radius: 50%;
+        height: 20%;
+        width: 20%;
+        padding: 5px;
+        float: left;
+        margin-top: 35px;
+    }
+
+    .links-icon-shop {
+        background-color: #ebe223;
+        border-radius: 50%;
+        height: 18%;
+        width: 18%;
+        padding: 10px;
+        float: left;
+    }
+
+    .shop-container {
+        float: left;
+        display: flex;
+    }
+
+    .links-shop {
+        margin-left: 40px;
+        margin-top: 15px;
+    }
+
+    .title-workshops {
+        text-align: center;
+    }
+
+    .machine-list-wrapper {
+        display: flex;
+        @include margin-page-wide();
+        .machine-list {
+            > span {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            }
+            flex: 3;
+            .list-item {
+                min-width: 150px;
+                padding: 0 30px;
+                .machine-list-item {
+                    margin-bottom: 0;
+                }
+            }
+            .list-enter-active, .list-leave-active {
+                transition: all 0.5s;
+            }
+            .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+        }
+        .machine-list-none {
+            flex: 1;
+            text-align: center;
+        }
+    }
 </style>

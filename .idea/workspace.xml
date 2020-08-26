@@ -38,10 +38,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 Blog Detail View Blog Header Image von Storyblok">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 - BlogDetailView Abrufen der Story mittels UUID">
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/idea.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/partner.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/supermarket.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WorkshopListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/WorkshopListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MachineStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatus.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MachineStatusListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatusListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getBookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getBookings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +141,16 @@
       <workItem from="1598004703800" duration="778000" />
       <workItem from="1598008313633" duration="1261000" />
       <workItem from="1598010408221" duration="1416000" />
+      <workItem from="1598358070811" duration="1719000" />
+      <workItem from="1598359907938" duration="1377000" />
+      <workItem from="1598362286841" duration="1821000" />
+      <workItem from="1598364154492" duration="1796000" />
+      <workItem from="1598365964814" duration="1696000" />
+      <workItem from="1598367984780" duration="1669000" />
+      <workItem from="1598420666259" duration="610000" />
+      <workItem from="1598422735952" duration="1792000" />
+      <workItem from="1598424543372" duration="1008000" />
+      <workItem from="1598426410551" duration="1926000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -274,9 +293,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597130038347" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598011044076">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598362746178">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598011044076" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598362746178" />
   </component>
 </project>
