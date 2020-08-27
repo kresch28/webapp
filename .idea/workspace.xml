@@ -38,20 +38,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 - BlogDetailView Abrufen der Story mittels UUID">
-      <change afterPath="$PROJECT_DIR$/assets/img/icons/idea.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/icons/partner.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/icons/supermarket.svg" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 BlogDetailView Test Output removed">
+      <change afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ProductItemHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ProductListItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MachineStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MachineStatusListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatusListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getBookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getBookings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/shop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/shop.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/components.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +146,23 @@
       <workItem from="1598422735952" duration="1792000" />
       <workItem from="1598424543372" duration="1008000" />
       <workItem from="1598426410551" duration="1926000" />
+      <workItem from="1598430179609" duration="1641000" />
+      <workItem from="1598431995557" duration="1795000" />
+      <workItem from="1598433804831" duration="1799000" />
+      <workItem from="1598435645813" duration="1202000" />
+      <workItem from="1598439665916" duration="674000" />
+      <workItem from="1598442960523" duration="1795000" />
+      <workItem from="1598444769912" duration="1692000" />
+      <workItem from="1598446579116" duration="1155000" />
+      <workItem from="1598448642652" duration="713000" />
+      <workItem from="1598450455306" duration="1130000" />
+      <workItem from="1598452425597" duration="310000" />
+      <workItem from="1598504342869" duration="607000" />
+      <workItem from="1598506151451" duration="1849000" />
+      <workItem from="1598508392966" duration="599000" />
+      <workItem from="1598510361874" duration="1201000" />
+      <workItem from="1598512903678" duration="1795000" />
+      <workItem from="1598514715252" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -293,9 +305,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597130038347" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598362746178">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598431944845">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598362746178" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598431944845" />
   </component>
 </project>

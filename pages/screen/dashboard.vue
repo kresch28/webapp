@@ -23,13 +23,27 @@
                 <div class="headline">
                     <h4>Links</h4>
                 </div>
-                <img src="~/assets/img/icons/idea.svg" class="links-icon">
+                <!--<img src="~/assets/img/icons/idea.svg" class="links-icon">
                 <div v-for="h, c in home" class="links-wiki">
                     <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
+                </div>-->
+                <div class="shop-container">
+                    <img src="~/assets/img/icons/idea.svg" class="links-icon-shop">
+                    <div v-for="h, c in home" class="links-shop">
+                        <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
+                    </div>
                 </div>
-                <div class="links-partner">
+                <!--<div class="links-partner">
                     <img src="~/assets/img/icons/partner.svg" class="links-icon-small">
                     <ul>
+                        <li><a href="https://bit.ly/2G8mprC" >Schachermayer</a></li>
+                        <li><a href="https://bit.ly/2DHJ3W1">Haberkorn</a></li>
+                        <li><a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a></li>
+                    </ul>
+                </div>-->
+                <div class="shop-container">
+                    <img src="~/assets/img/icons/partner.svg" class="links-icon-partner">
+                    <ul class="links-shop-list">
                         <li><a href="https://bit.ly/2G8mprC" >Schachermayer</a></li>
                         <li><a href="https://bit.ly/2DHJ3W1">Haberkorn</a></li>
                         <li><a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a></li>
@@ -38,7 +52,7 @@
                 <div class="shop-container">
                     <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
                     <div class="links-shop">
-                        <a href="/me/shop">Material bestellen</a>
+                        <NuxtLink to="/me/shop">Material bestellen</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -68,6 +82,7 @@
             </div>
         </div>
         <div class="machine-overview">
+            <h2 class="title-machine">UNSERE MACHINEN</h2>
             <div class="machine-list-wrapper">
                 <div v-if="machines && machines.length > 0" class="machine-list">
                     <transition-group name="list">
@@ -180,30 +195,29 @@
                 }
             };
             let workshops = await context.store.dispatch("findWorkshops", filters).then((data) => {
+                let res = { workshops: [] };
                 if (data) {
                     console.log(data);
-                    let res = { workshops: [] };
-                    for(let i = 0; i < data.length; i++){
+                    for (let i = 0; i < data.length; i++) {
                         // console.log(data[i].dates);
-                        for(let j = 0; j < data[i].dates.length; j++){
+                        for (let j = 0; j < data[i].dates.length; j++) {
                             // console.log(data[i].dates[j].content.starttime);
                             let dt = data[i].dates[j].content.starttime.split('-', 3);
                             // console.log(dt[1]);
-                            let mth = new Date().getMonth()+1;
-                            mth = '0'+mth;
-                            if(dt[2].split(1)[0] == new Date().getDate() && dt[1] == mth) {
+                            let mth = new Date().getMonth() + 1;
+                            mth = '0' + mth;
+                            if (dt[2].split(1)[0] == new Date().getDate() && dt[1] == mth) {
                                 res.workshops.push(data[i]);
                                 // console.log(res);
-                            }
-                            else{
+                            } else {
                                 // console.log(res);
                             }
                         }
                     }
-                    return res;
-                    //return { workshops: data };
+                    console.log(res.workshops)
+                    return { workshops : res.workshops };
                 }
-                return { workshops: [] };
+                return { workshops: []};
             });
 
             let tags = await context.store.dispatch("loadTags");
@@ -221,8 +235,8 @@
                 }
                 return { machines: [] };
             });
-            return {tags, ...machines};
-            return {...workshops};
+            return {tags, ...machines, ...workshops};
+
         },
     }
 </script>
@@ -236,7 +250,7 @@
         @include media-breakpoint-down(sm) {
             flex-direction: column-reverse;
         }
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(lg) {
             float: left;
             width: 20%;
         }
@@ -516,16 +530,12 @@
     }
 
     .links-partner {
+        background-color: #ebe223;
+        border-radius: 50%;
+        height: 18%;
+        width: 18%;
+        padding: 10px;
         float: left;
-        margin-top: 20px;
-        li {
-            padding-bottom: 20px;
-            list-style: none;
-            margin-left: 60px;
-            @include  media-breakpoint-down(sm){
-                margin-left: 40px;
-            }
-        }
     }
 
     .links-wiki {
@@ -547,6 +557,16 @@
         margin-top: 35px;
     }
 
+    .links-icon-partner {
+        background-color: #ebe223;
+        border-radius: 50%;
+        height: 18%;
+        width: 18%;
+        padding: 10px;
+        float: left;
+        margin-top: 5px;
+    }
+
     .links-icon-shop {
         background-color: #ebe223;
         border-radius: 50%;
@@ -559,14 +579,52 @@
     .shop-container {
         float: left;
         display: flex;
+        margin-top: 30px;
+        font-size: 22px;
+        /*@include media-breakpoint-down(md) {
+        margin-top: 60px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-top: 0;
+        }*/
     }
 
     .links-shop {
         margin-left: 40px;
-        margin-top: 15px;
+        margin-top: 4%;
+        @include media-breakpoint-down(md) {
+            margin-left: 80px;
+            margin-top: 30px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+    }
+
+    .links-shop-list {
+        list-style: none;
+        padding: 0;
+        margin-left: 40px;
+        margin-top: 0px;
+        @include media-breakpoint-down(md) {
+            margin-left: 80px;
+            margin-top: 30px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+        li {
+            padding: 5px;
+        }
     }
 
     .title-workshops {
+        text-align: center;
+    }
+
+    .title-machine {
         text-align: center;
     }
 
@@ -598,5 +656,8 @@
             flex: 1;
             text-align: center;
         }
+    }
+    .machine-overview {
+        margin-top: 120px;
     }
 </style>
