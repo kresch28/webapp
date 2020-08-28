@@ -11,7 +11,7 @@
           <NuxtLink to="/me/">Mein Profil</NuxtLink>
           <NuxtLink to="/me/packages">Packages</NuxtLink>
           <NuxtLink to="/me/trainings">Unterweisungen</NuxtLink>
-          <NuxtLink to="/me/shop">Material bestellen</NuxtLink>
+          <NuxtLink to="/order">Material bestellen</NuxtLink>
         </div>
         <div class="tab-section-content">
           <NuxtChild :key="$route.params.slug"></NuxtChild>

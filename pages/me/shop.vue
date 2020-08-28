@@ -70,4 +70,13 @@ export default {
     flex-wrap: wrap;
     margin-left: -20px;
   }
+
+  .list-item {
+    @include media-breakpoint-down(md){
+      width: 50%;
+    }
+    @include media-breakpoint-down(sm){
+      width: 100%;
+    }
+  }
 </style>

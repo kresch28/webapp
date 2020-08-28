@@ -38,15 +38,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 BlogDetailView Test Output removed">
-      <change afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ProductItemHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ProductListItem.vue" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98 IPadDashboard ProductListItem">
+      <change afterPath="$PROJECT_DIR$/pages/order.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/shopItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/me/shop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/shop.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/components.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="CON-95-BlogDetailView" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\pages" />
       <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
     </key>
   </component>
@@ -163,6 +165,20 @@
       <workItem from="1598510361874" duration="1201000" />
       <workItem from="1598512903678" duration="1795000" />
       <workItem from="1598514715252" duration="706000" />
+      <workItem from="1598525902794" duration="1798000" />
+      <workItem from="1598527719044" duration="2117000" />
+      <workItem from="1598529893387" duration="605000" />
+      <workItem from="1598531703221" duration="1794000" />
+      <workItem from="1598533626142" duration="960000" />
+      <workItem from="1598535440785" duration="605000" />
+      <workItem from="1598593078955" duration="605000" />
+      <workItem from="1598594961744" duration="1319000" />
+      <workItem from="1598596931613" duration="1813000" />
+      <workItem from="1598599017137" duration="857000" />
+      <workItem from="1598600831011" duration="896000" />
+      <workItem from="1598603693615" duration="1795000" />
+      <workItem from="1598605501977" duration="974000" />
+      <workItem from="1598607724777" duration="606000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -234,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597130022654</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="CON-98 IPadDashboard ProductListItem">
+      <created>1598526110703</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598526110703</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +285,8 @@
     <MESSAGE value="CON-14 - Aktivitäten vom Connector auslesen und anzeigen" />
     <MESSAGE value="HP-4 Blog 2.0 Relaunch - Header Upate" />
     <MESSAGE value="CON-99 Kurse sind im Memberbereich auf der Website" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-99 Kurse sind im Memberbereich auf der Website" />
+    <MESSAGE value="CON-98 IPadDashboard ProductListItem" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-98 IPadDashboard ProductListItem" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594898606696">
@@ -273,10 +297,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596191264906" />
-    <state width="1127" height="262" key="Git.Branch.Popup" timestamp="1596548124884">
+    <state width="1131" height="266" key="Git.Branch.Popup" timestamp="1598526356984">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1127" height="262" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596548124884" />
+    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598526356984" />
     <state x="2424" y="266" key="MergeDialog" timestamp="1597130217898">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -289,10 +313,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596191312494" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1596546012847">
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598526120896">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1596546012847" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598526120896" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596721616773">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -305,9 +329,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597130038347" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598431944845">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1598605166756">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598431944845" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1598605166756" />
   </component>
 </project>

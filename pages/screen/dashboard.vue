@@ -52,7 +52,7 @@
                 <div class="shop-container">
                     <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
                     <div class="links-shop">
-                        <NuxtLink to="/me/shop">Material bestellen</NuxtLink>
+                        <a :href="lang">Material bestellen</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                     v-if="c+1 <= (range*10)"
                             ></workshop-list-item>
                         </transition-group>
-                        <button class="more" @click="more">more</button>
+                        <button v-if="workshops.length > range*10" class="more" @click="more">more</button>
                     </div>
                 <div v-else class="workshop-list-none">
                     <code>Keine Workshops für heute geplant</code>
@@ -161,6 +161,11 @@
                 console.log(this.$store.state.settings.home_navi);
                 return this.$store.state.settings.home_navi;
             },
+            lang() {
+                console.log(this.$store.state.language+'/order');
+                console.log(this.$route.path);
+                return '/'+this.$store.state.language+'/order';
+            }
         },
         methods: {
             update() {

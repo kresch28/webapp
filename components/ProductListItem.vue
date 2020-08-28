@@ -1,7 +1,8 @@
 <template>
     <div>
-        <!--<nuxt-link :to="'/' + blok.full_slug" v-if="content.hasContent">-->
+        <nuxt-link :to="{ path: '/shopItem', query: { blok }}">
             <div class="product-list-item">
+                <!--{{content}}-->
                 <div class="image">
                     <img :src="$resizeImage(content.image, '300x300')" alt=""/>
                 </div>
@@ -15,12 +16,11 @@
                     <div class="teaser">
                         <markdown :value="content.teaser"></markdown>
                     </div>
-                    <button>Mehr</button>
+                    <button >Mehr</button>
                 </div>
             </div>
-        <!--</nuxt-link>-->
-        <!--<div class="product-list-item" v-else>-->
-        <div class="product-list-item">
+        </nuxt-link>
+        <!--<div class="product-list-item" v-else>
             <div class="image">
                 <img :src="$resizeImage(content.image, '300x300')" alt=""/>
             </div>
@@ -36,7 +36,7 @@
                 </div>
                 <button>Mehr</button>
             </div>
-        </div>
+        </div>-->
     </div>
 </template>
 
@@ -46,6 +46,7 @@
         props: ['blok'],
         computed: {
             content() {
+                console.log(this.blok)
                 return this.blok.content;
             },
         }
