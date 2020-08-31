@@ -18,6 +18,22 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+    <div>
+      <div class="newsletter-footer">
+        <div>
+          <div id="mc_embed_signup">
+            <form action="https://grandgarage.us20.list-manage.com/subscribe/post?u=ab921bf052a64b20bb1f16123&amp;id=8006406cc5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <h4>Immer am Ball bleiben</h4>
+              <div class="newsletter-subscribe">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"placeholder="Deine E-Mail Adresse">
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ab921bf052a64b20bb1f16123_8006406cc5" tabindex="-1" value=""></div>
+                <button type="submit">Zum Newsletter anmelden</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -113,6 +129,61 @@ export default {
         }
       }
     }
+  }
+}
+
+.newsletter-subscribe {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  input {
+    padding: 10px 0;
+    font-size: 1rem;
+    font-family: $font-secondary;
+    outline: none;
+    background: none;
+    color: #000000;
+    border: none;
+    flex: 1;
+    &::placeholder {
+      color: #000000;
+    }
+    .arrow {
+      display: inline-block;
+      position: relative;
+      width: 4em;
+      @include media-breakpoint-down(sm) {
+        width: 55%;
+      }
+      border-top: .1em solid #000;
+      margin: .25em 1em;
+      transition: transform .15s ease-out;
+      &:after {
+        content: "";
+        position: absolute;
+        right: -.1em;
+        top: -.05em;
+        border-top: .1em solid #000;
+        border-right: .1em solid #000;
+        width: .5em;
+        height: .5em;
+        transform-origin: right top;
+        transform: rotate(45deg);
+      }
+    }
+    &:hover {
+      .arrow {
+        transform: translateX(.5em);
+      }
+    }
+  }
+  button {
+    cursor: pointer;
+    font-family: $font-secondary;
+    font-size: 1.3rem;
+    color: #000000;
+    background: none;
+    border: none;
+    outline: none;
   }
 }
 </style>

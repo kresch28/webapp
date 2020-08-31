@@ -1,5 +1,6 @@
 <template>
   <div class="header-wrapper" :class="{ 'scrolled': scrolled }">
+    <div>
     <div class="login-header" v-if="hasAuth">
       <div class="login-header-content">
         <nuxt-link to="/me" v-if="hasUser">
@@ -69,6 +70,7 @@
 
       </div>
     </transition>
+    </div>
   </div>
 </template>
 
@@ -346,6 +348,19 @@ export default {
   .fadefromright-enter, .fadefromright-leave-to {
     opacity: 0;
     transform: translateX(50vw);
+  }
+}
+
+.newsletter-footer {
+  .hidden {
+    display: none;
+  }
+  .newsletter-msg {
+    text-align: center;
+  }
+  h4 {
+    max-width: 30%;
+    text-transform: uppercase;
   }
 }
 
