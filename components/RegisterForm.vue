@@ -1,4 +1,4 @@
-<template>
+c<template>
   <div class="register-form">
     <div v-if="loading">
       <loading-spinner color="black"></loading-spinner>

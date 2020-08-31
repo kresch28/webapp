@@ -15,7 +15,7 @@
         </svg>
       </div>
     </div>
-    <div class="form-item">
+    <!--<div class="form-item">
       <span class="label">Email</span>
       <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
     </div>
@@ -28,7 +28,23 @@
     </div>
     <div class="form-item button-row">
       <button @click="submit">Login</button>
-    </div>
+    </div>-->
+    <form>
+      <div class="form-item">
+        <span class="label">Email</span>
+        <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
+      </div>
+      <div class="form-item">
+        <span class="label">Password</span>
+        <input class="input" type="password" v-model="password" placeholder="dein passwort" @input="clearErrorMessage" />
+      </div>
+      <div class="error-message" v-if="errorMessage">
+        <span>{{errorMessage}}</span>
+      </div>
+      <div class="form-item button-row">
+        <input @click="submit" class="button" type="submit" value="Login"/>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -51,15 +67,49 @@ export default {
     register() {
       this.$store.dispatch('setSidebar', 'register');
     },
-    submit() {
+    submit(e) {
+      e.preventDefault();
       let data = {
         email: this.email,
         password: this.password
       }
-      this.$store.dispatch('loginUser', data).then((r) => {
-      }).catch((e) => {
-        this.errorMessage = e.description || e.error || e.code;
-      });
+      // if(this.email == ' ') {
+      //   this.errorMessage = 'Gib bitte eine gültige Email-Adresse an';
+      // }
+      // if(this.password == ' ') {
+      //   this.errorMessage = 'Gib bitte ein gültiges Passwort an';
+      // }
+
+      /*if(this.email =! ' ' && this.password != ' ') {*/
+        this.$store.dispatch('loginUser', data).then((r) => {
+        }).catch((e) => {
+          console.log(e);
+          if(this.email != ''){
+            console.log('in');
+            console.log(this.email);
+          }
+          if(e.description == 'Missing credentials') {
+            this.errorMessage = 'Gib bitte eine gültige Email-Adresse an'
+          }
+          else if((e.description == "Invalid request body. All and only of client_id, credential_type, username, password are required.") && (this.password = ' ')) {
+            if(this.email == ''){
+              console.log('pw');
+              this.errorMessage = 'Gib bitte gültige Daten an'
+            }
+            else {
+              console.log('none');
+              this.errorMessage = 'Gib bitte ein gültiges Passwort an';
+            }
+          }
+          /*else if((e.description == "Invalid request body. All and only of client_id, credential_type, username, password are required.") && (this.password = ' ') && (this.email = ' ')) {
+
+          }*/
+          else {
+            this.errorMessage = e.description || e.error || e.code;
+            console.log(this.errorMessage);
+          }
+        });
+      //}
     },
     clearErrorMessage() {
       this.errorMessage = null;
@@ -134,6 +184,19 @@ export default {
       justify-content: flex-end;
     }
     button {
+      cursor: pointer;
+      background-color: $color-orange;
+      color: #FFF;
+      min-width: 30%;
+      border: 1px solid lighten($color-orange, 10);
+      padding: 7px 12px 8px;
+      line-height: 1;
+      outline: none;
+      &:focus {
+        background-color: lighten($color-orange, 10);
+      }
+    }
+    .button {
       cursor: pointer;
       background-color: $color-orange;
       color: #FFF;
