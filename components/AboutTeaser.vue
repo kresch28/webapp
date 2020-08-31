@@ -52,7 +52,7 @@ export default {
   flex-direction: row;
   flex: 1;
   justify-content: center;
-  margin-top: 130px;
+  margin-top: 140px;
   .teaser-content {
     max-width: 100%;
     position: relative;

@@ -23,7 +23,10 @@
         <div>
           <div id="mc_embed_signup">
             <form action="https://grandgarage.us20.list-manage.com/subscribe/post?u=ab921bf052a64b20bb1f16123&amp;id=8006406cc5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <h4>Immer am Ball bleiben</h4>
+              <div class="newsletter-info">
+                <img src="~/assets/img/icons/newsletter.svg" class="newsletter-icon">
+                <h4>Immer am Ball bleiben - Abonniere jetzt unsere GARAGENPOST</h4>
+              </div>
               <div class="newsletter-subscribe">
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"placeholder="Deine E-Mail Adresse">
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ab921bf052a64b20bb1f16123_8006406cc5" tabindex="-1" value=""></div>
@@ -133,7 +136,6 @@ export default {
 }
 
 .newsletter-subscribe {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   input {
     padding: 10px 0;
@@ -142,7 +144,11 @@ export default {
     outline: none;
     background: none;
     color: #000000;
-    border: none;
+    border: 1px solid;
+      max-width: 20%;
+      padding: 5px;
+      margin-right: 20px;
+      margin-top: 20px;
     flex: 1;
     &::placeholder {
       color: #000000;
@@ -186,4 +192,16 @@ export default {
     outline: none;
   }
 }
+
+.newsletter-info {
+    display: flex;
+    margin-top: 20px;
+}
+  .newsletter-icon {
+      background-color: yellow;
+      border-radius: 25%;
+      height: 3%;
+      margin-right: 20px;
+      width: 3%;
+  }
 </style>
