@@ -35,6 +35,11 @@
         <button v-else type="submit" class="input-button-primary" @click="updateUser">Speichern</button>
       </div>
     </form>
+
+    <div>
+      <!--{{courses}}
+      {{memberCourses}}-->
+    </div>
   </div>
   <div v-else class="section">
     <h2>Mitgliedschaft</h2>
@@ -150,6 +155,14 @@
       },
       window(){
         return window.location.origin
+      },
+      memberCourses() {
+        console.log(this.$store.state);
+        return this.$store.state.memberCourses;
+      },
+      courses() {
+        console.log(this.$store.state.courses);
+        return this.$store.state.courses;
       },
     },
     asyncData (context) {
