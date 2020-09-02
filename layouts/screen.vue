@@ -118,7 +118,7 @@ h3 {
       cursor: pointer;
       background-color: $color-orange;
       color: #FFF;
-      min-width: 30%;
+      max-width: 30%;
       border: 1px solid lighten($color-orange, 10);
       padding: 7px 12px 8px;
       line-height: 1;

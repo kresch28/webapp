@@ -113,56 +113,56 @@
     .invoices {
         width: 100%;
         margin-top: 20px;
-    .invoices-info {
-        margin-top: 4px;
-        padding: 10px;
-        background-color: #FFF;
-    &.soldOut {
-         color: #666;
-         fill: #666;
-    .col {
-    &.info {
-         text-decoration: line-through;
-     }
-    }
-    }
-    .info-row {
-        @include media-breakpoint-down(md) {
-            flex-direction: column;
-        }
-        line-height: 1.6;
-        font-family: $font-mono;
-        font-size: 0.9rem;
-        font-weight: bold;
-        margin: -8px;
-        display: flex;
-        .info-block {
-            flex: 1;
-            flex-direction: row;
-            display: flex;
-        }
-        .col {
-            padding: 8px;
+        .invoices-info {
+                margin-top: 4px;
+                padding: 10px;
+                background-color: #FFF;
             &.soldOut {
-                 color: $color-orange;
-                 text-transform: uppercase;
+                 color: #666;
+                 fill: #666;
+            .col {
+            &.info {
+                 text-decoration: line-through;
              }
-            &.register {
-                 background-color: $color-orange;
-                a {
-                    color: #FFF;
+            }
+            }
+            .info-row {
+                @include media-breakpoint-down(md) {
+                    flex-direction: column;
                 }
+                line-height: 1.6;
+                font-family: $font-mono;
+                font-size: 0.9rem;
+                font-weight: bold;
+                margin: -8px;
+                display: flex;
+                .info-block {
+                    flex: 1;
+                    flex-direction: row;
+                    display: flex;
+                }
+                .col {
+                    padding: 8px;
+                    &.soldOut {
+                         color: $color-orange;
+                         text-transform: uppercase;
+                     }
+                    &.register {
+                         background-color: $color-orange;
+                        a {
+                            color: #FFF;
+                        }
+                    }
+                }
+                    .spacer {
+                        flex: 1;
+                    }
+                    svg {
+                        height: 1em;
+                        width: 1em;
+                    }
             }
         }
-            .spacer {
-                flex: 1;
-            }
-            svg {
-                height: 1em;
-                width: 1em;
-            }
-    }
-    }
         .paid {
             color: #90ee90;
         }
