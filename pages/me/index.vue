@@ -71,7 +71,7 @@
           </div>
         </div>
         <h4 class="title">Deine Aktivitäten</h4>
-        <div class="activities">
+        <div class="dashboard-activities">
           <!--<div v-for="m, z in machines" class="dashboard-resource-info">-->
 
             <!--<div class="dashboard-info-row">
@@ -132,7 +132,7 @@
     },
     created() {
       this.getLogs();
-      this.getUser();
+      this.user;
       this.getInvoices();
     },
     methods: {
@@ -217,8 +217,6 @@
               return 0;
             });
           }
-          console.log(this.items);
-          console.log(this.itemsSorted);
 
           this.machineType();
 
@@ -235,7 +233,7 @@
             }
           }
         }
-        console.log(this.empty);
+        /*console.log(this.empty);*/
       },
 
       getUser() {
@@ -250,9 +248,9 @@
         return this.$store.state.user;
       },
       memberCourse(id) {
-        console.log(id);
+        /*console.log(id);
         console.log(this.$store.getters.getMemberCourseById(id).manual_activation);
-        console.log(this.$store.getters.getMemberCourseById(id).is_valid);
+        console.log(this.$store.getters.getMemberCourseById(id).is_valid);*/
         if(this.$store.getters.getMemberCourseById(id).manual_activation != 0 && this.$store.getters.getMemberCourseById(id).is_valid != 0 ) {
           this.done = false;
         }
@@ -335,7 +333,7 @@
         }
       }
 
-      .activities {
+      .dashboard-activities {
         @include media-breakpoint-up(sm) {
           display: flex;
           flex-direction: column;
@@ -343,6 +341,10 @@
         }
         .dashboard-info-row {
           margin: 10px;
+          background-color: white;
+          padding: 10px 20px;
+          border: 1px solid red;
+          border-radius: 5px;
         }
         .dashboard-resource-info{
           margin: 15px;
@@ -522,5 +524,21 @@
       font-weight: 900;
     }
   }
+
+  .dashboard-info-row {
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: -8px;
+    line-height: 1.6;
+    .dashboard-resource-header{
+      color: #ff6f00;
+      font-size: large;
+      font-weight: 700;
+
+    }
+
+  }
+
 
 </style>
