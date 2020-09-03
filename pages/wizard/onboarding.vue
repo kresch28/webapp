@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import saveAs from 'save-as'
+  // import saveAs from 'save-as'
 
 export default {
   middleware: 'authenticated',

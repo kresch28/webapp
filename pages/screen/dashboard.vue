@@ -52,7 +52,7 @@
                 <div class="shop-container">
                     <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
                     <div class="links-shop">
-                        <a :href="lang">Material bestellen</a>
+                        <NuxtLink to="/order">Material bestellen</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,8 @@
             lang() {
                 console.log(this.$store.state.language+'/order');
                 console.log(this.$route.path);
-                return '/'+this.$store.state.language+'/order';
+                // return '/'+this.$store.state.language+'/order';
+                return '/order';
             }
         },
         methods: {

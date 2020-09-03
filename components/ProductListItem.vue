@@ -2,9 +2,8 @@
     <div>
         <nuxt-link :to="{ path: '/shopItem', query: { blok }}">
             <div class="product-list-item">
-                <!--{{content}}-->
                 <div class="image">
-                    <img :src="$resizeImage(content.image, '300x300')" alt=""/>
+                    <img :src="$resizeImage(content.image, '350x350')" alt=""/>
                 </div>
                 <div class="body">
                     <div class="title">
@@ -16,7 +15,8 @@
                     <div class="teaser">
                         <markdown :value="content.teaser"></markdown>
                     </div>
-                    <button >Mehr</button>
+                    <button v-if="!id">Mehr</button>
+                    <button v-if="id" v-bind:class="{ isSold: id }">Ausverkauft</button>
                 </div>
             </div>
         </nuxt-link>
@@ -43,12 +43,15 @@
 <script>
     export default {
         name: "ProductListItem",
-        props: ['blok'],
+        props: ['blok', 'key'],
         computed: {
             content() {
                 console.log(this.blok)
                 return this.blok.content;
             },
+            id() {
+                return this.blok.tag_list[0]=='CNC-Werkstatt';
+            }
         }
     }
 </script>
@@ -57,14 +60,15 @@
     @import '@/assets/scss/styles.scss';
 
     .product-list-item {
-        margin: 20px 10px;
-        padding: 20px 40px;
-        .title {
+        .body {
             padding: 10px;
+        }
+        .title {
+            padding-top: 10px;
         }
 
         .price {
-            padding: 10px;
+            padding: 10px 0;
         }
         button {
             cursor: pointer;
@@ -74,6 +78,16 @@
             outline: none;
             color: #FFF;
             background-color: $color-orange;
+        }
+
+        button.isSold {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            outline: none;
+            color: #FFF;
+            background-color: #808080;
         }
 
     }
