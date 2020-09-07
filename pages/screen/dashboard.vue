@@ -29,8 +29,8 @@
                 </div>-->
                 <div class="shop-container">
                     <img src="~/assets/img/icons/idea.svg" class="links-icon-shop">
-                    <div v-for="h, c in home" class="links-shop">
-                        <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
+                    <div v-for="h, c in home" class="links-shop" v-if="c == 0">
+                        <a :href="h.link.url" target="_blank">Grand Garage Wiki</a>
                     </div>
                 </div>
                 <!--<div class="links-partner">
@@ -266,9 +266,12 @@
             padding: 25px;
 
             .headline {
+                background-color: rgb(0, 105, 170);
+                color: #ffffff;
                 font-weight: bold;
+                padding: 5px;
                 text-transform: uppercase;
-                margin-bottom: .8em;
+                padding: 1px 10px;
             }
 
             background-color: #FFF;
@@ -293,7 +296,6 @@
         .headline {
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: .8em;
         }
 
         background-color: #FFF;
@@ -527,7 +529,6 @@
         }
     }
     .links-icon {
-        background-color: #ebe223;
         border-radius: 50%;
         height: 18%;
         width: 18%;
@@ -554,7 +555,6 @@
         }
     }
     .links-icon-small {
-        background-color: #ebe223;
         border-radius: 50%;
         height: 20%;
         width: 20%;
@@ -564,17 +564,15 @@
     }
 
     .links-icon-partner {
-        background-color: #ebe223;
         border-radius: 50%;
         height: 18%;
         width: 18%;
         padding: 10px;
         float: left;
-        margin-top: 5px;
+        margin-top: 15px;
     }
 
     .links-icon-shop {
-        background-color: #ebe223;
         border-radius: 50%;
         height: 18%;
         width: 18%;

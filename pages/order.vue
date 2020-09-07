@@ -3,12 +3,12 @@
     -->
     <div class="order-wrapper">
         <div class="order-container info">
-            <h4>Materialien bestellen</h4>
+            <h4 class="headline">Materialien bestellen</h4>
             <div class="filter">
                 <div class="filter-producer">
                     <span>Hersteller</span>
                     <div>
-                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings">
+                        <input type="checkbox" id="producer1" name="producer1" v-model="producer" value="Tiger-Coatings">
                         <label for="producer1">Tiger-Coatings</label><br>
                     </div>
                 </div>
@@ -80,6 +80,9 @@
         watch: {
             search() {
                 this.update();
+            },
+            producer() {
+
             }
         },
         methods: {
@@ -157,13 +160,28 @@
 
         .order-container.info {
             width: 20%;
+            border: 1px solid $color-blue;
+            margin-top: 35px;
+
+            .headline {
+                color: #fff;
+                background-color: $color-blue;
+                font-weight: 700;
+                font-size: 1.8rem;
+                margin-left: 4%;
+                margin-right: 4%;
+                margin-bottom: 20px;
+                padding: 5px;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+            }
 
             .filter {
                 margin-left: 20px;
                 margin-top: 60px;
                 .filter-producer {
                     span {
-                        border-bottom: 1px solid gray;
+                        color: #ff6f00;
                         margin: 10px 0;
                     }
                     div {
@@ -174,7 +192,7 @@
 
                 .filter-price {
                     span {
-                        border-bottom: 1px solid gray;
+                        color: #ff6f00;
                         margin: 10px 0;
                     }
                     div {
@@ -201,7 +219,8 @@
                 .order-search-input{
                     width: 100%;
                     background-color: $color-bright-bg;
-                    border: 1px solid #d3d3d3;
+                    border: 1px solid $color-blue;
+                    font-size: medium;
                     padding: 5px;
                 }
             }
@@ -214,6 +233,12 @@
                 margin-right: auto;
                 margin-top: 40px;
                 margin-bottom: 20px;
+
+                #sort {
+                padding: 5px;
+                font-size: medium;
+            }
+
             }
             .products-list-wrapper {
                 width: 100%;
@@ -223,7 +248,7 @@
                 .products-list {
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    justify-content: space-evenly;
                 }
 
                 .list-item {

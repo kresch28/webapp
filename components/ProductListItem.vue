@@ -10,7 +10,7 @@
                         {{content.title}}
                     </div>
                     <div class="price">
-                        €
+                        {{price}} €
                     </div>
                     <div class="teaser">
                         <markdown :value="content.teaser"></markdown>
@@ -51,6 +51,14 @@
             },
             id() {
                 return this.blok.tag_list[0]=='CNC-Werkstatt';
+            },
+            price() {
+                let price = this.blok.id;
+                let digit = (''+price)[1] + (''+price)[2];
+                if(digit < 10) {
+                    console.log((''+price)[1] + (''+price)[2]);
+                }
+                return (''+price)[1] + (''+price)[2];
             }
         }
     }
