@@ -8,7 +8,7 @@
                 <div class="filter-producer">
                     <span>Hersteller</span>
                     <div>
-                        <input type="checkbox" id="producer1" name="producer1" v-model="producer" value="Tiger-Coatings">
+                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings">  <!--v-model="producer"-->
                         <label for="producer1">Tiger-Coatings</label><br>
                     </div>
                 </div>
@@ -21,6 +21,13 @@
                         <label for="price2">10€ - 50€</label><br>
                         <input type="checkbox" id="price3" name="price3" value="30">
                         <label for="price1">50€ - 100€</label><br>
+                    </div>
+                </div>
+                <div class="filter-price">
+                    <span>Kategorie</span>
+                    <div v-for="t, c in tags" :key="c">
+                        <input type="checkbox" :id="c" v-model="tags[c]">
+                        <label :for="c">{{tags[c].name}}</label><br>
                     </div>
                 </div>
             </div>
@@ -105,6 +112,7 @@
                 return this.products.length;
             },
             items() {
+                console.log(this.tags);
                 return this.products;
             },
             filters() {

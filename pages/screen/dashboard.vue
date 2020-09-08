@@ -637,8 +637,10 @@
         @include margin-page-wide();
         .machine-list {
             > span {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                @include media-breakpoint-up(sm) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                }
             }
             flex: 3;
             .list-item {
