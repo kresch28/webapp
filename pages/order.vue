@@ -8,28 +8,31 @@
                 <div class="filter-producer">
                     <span>Hersteller</span>
                     <div>
-                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings">  <!--v-model="producer"-->
+                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings" v-model="producer">
                         <label for="producer1">Tiger-Coatings</label><br>
                     </div>
                 </div>
                 <div class="filter-price">
                     <span>Preisrahmen</span>
                     <div>
-                        <input type="checkbox" id="price1" name="price1" value="10">
+                        <input type="checkbox" id="price1" name="price1" value="1" v-model="price">
                         <label for="price1">1€ - 10€</label><br>
-                        <input type="checkbox" id="price2" name="price2" value="20">
+                        <input type="checkbox" id="price2" name="price2" value="2" v-model="price">
                         <label for="price2">10€ - 50€</label><br>
-                        <input type="checkbox" id="price3" name="price3" value="30">
-                        <label for="price1">50€ - 100€</label><br>
+                        <input type="checkbox" id="price3" name="price3" value="3" v-model="price">
+                        <label for="price3">50€ - 100€</label><br>
                     </div>
                 </div>
                 <div class="filter-price">
                     <span>Kategorie</span>
-                    <div v-for="t, c in tags" :key="c">
-                        <input type="checkbox" :id="c" v-model="tags[c]">
-                        <label :for="c">{{tags[c].name}}</label><br>
-                    </div>
+                        <ul class="filter-category">
+                            <li v-for="t, c in tags">
+                                <input v-bind:id="tags[c].name" type="checkbox" v-model="category" v-bind:value="tags[c].name" />
+                                <label v-bind:for="tags[c].name">{{tags[c].name}}</label>
+                            </li>
+                        </ul>
                 </div>
+                <input class="filter-button" type="button" value="Filtern" v-on:click="producers">
             </div>
         </div>
         <div class="order-container content">
@@ -38,7 +41,8 @@
                 <!--<img src="~/assets/img/icons/search.svg" class="search-icon">-->
             </div>
             <div class="order-content-info">
-                <div>1 - {{range}}  von {{articles}} Artikel</div>
+                <div v-if="range > articles">1 - {{articles}}  von {{articles}} Artikel</div>
+                <div v-else>1 - {{range}}  von {{articles}} Artikel</div>
                 <div>
                     <select name="sort" id="sort">
                         <option value="none">Sortieren nach</option>
@@ -54,7 +58,7 @@
                     <!--</transition-group>-->
                 </div>
             </div>
-            <div class="button-wrapper">
+            <div v-if="articles > range" class="button-wrapper">
                 <button>Mehr laden</button>
             </div>
         </div>
@@ -75,11 +79,21 @@
 
                 loading: false,
                 search: '',
+                producer: [],
+                category: [],
+                price: [],
+                priceRange: {
+                    1: [0,10],
+                    2: [10,50],
+                    3: [50,100]
+                },
+                amount: '',
                 tagsCollapsed: true,
             }
         },
         created() {
             console.log(this.products);
+            console.log(this.category);
             this.$watch('tags', (newVal, oldVal) => {
                 this.update();
             }, { deep: true });
@@ -88,9 +102,6 @@
             search() {
                 this.update();
             },
-            producer() {
-
-            }
         },
         methods: {
             update() {
@@ -102,7 +113,62 @@
             },
             toggleTags() {
                 this.tagsCollapsed = !this.tagsCollapsed;
-            }
+            },
+            setFilter(filter) {
+                if (this.filterApplied.indexOf(filter) > -1) {
+                    this.filterApplied.pop(filter);
+                } else {
+                    this.filterApplied.push(filter);
+                }
+                console.log(this.filterApplied);
+            },
+            clearFilter(){
+                this.filterApplied = []
+            },
+            producers() {
+                /*return this.products.filter(function (p) {
+                    return this.producer.includes(p.tag_list[0]);
+                }, this);*/
+
+                console.log(this.producer);
+                console.log(this.price);
+                console.log(this.category);
+                this.products = this.products.filter(p => {
+                    var productReturn = [];
+                    let low;
+                    let high;
+                    for (let i = 0; i < this.price.length; i++) {
+                        low = this.priceRange[this.price[i]][0];
+                        high = this.priceRange[this.price[i]][1]
+                    }
+                   let productReturnTo = (''+p.id)[1] + (''+p.id)[2];
+                    if (productReturnTo >= low && productReturnTo <= high) {
+                        console.log(p);
+                        productReturn.push(p)
+                    }
+                    console.log(productReturn);
+                    return productReturn;
+                })
+
+                this.products = this.products.filter(function (p) {
+                    return this.category.includes(p.tag_list[0]);
+                }, this);
+                /*
+                let price = [];
+                for(let i = 0; i < this.products.length; i++){
+                    price = (''+this.products[i].id)[1] + (''+this.products[i].id)[2];
+                }
+                this.products = this.products.filter(function (p) {
+                    return this.price  
+                })
+                return (''+price)[1] + (''+price)[2];
+                */
+
+                console.log(this.products);
+
+                /*this.search = this.producer;
+                this.update();*/
+            },
         },
         computed: {
             user() {
@@ -112,7 +178,7 @@
                 return this.products.length;
             },
             items() {
-                console.log(this.tags);
+                console.log(this.products);
                 return this.products;
             },
             filters() {
@@ -163,11 +229,15 @@
 <style lang="scss">
     @import '@/assets/scss/styles.scss';
     .order-wrapper {
-        display: flex;
-        flex-direction: row;
+        @include media-breakpoint-up(sm){
+            display: flex;
+            flex-direction: row;
+        }
 
         .order-container.info {
-            width: 20%;
+            @include media-breakpoint-up(sm){
+                width: 20%;
+            }
             border: 1px solid $color-blue;
             margin-top: 35px;
 
@@ -206,14 +276,30 @@
                     div {
                         margin: 20px 0;
                     }
+                    .filter-category {
+                        margin-left: -38px;
+                        li {
+                            list-style: none;
+                        }
+                    }
+                }
 
+                .filter-button {
+                    cursor: pointer;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border: none;
+                    outline: none;
+                    color: #FFF;
+                    background-color: $color-orange;
                 }
             }
         }
 
         .order-container.content {
-            width: 80%;
-
+            @include media-breakpoint-up(sm){
+                width: 80%;
+            }
 
             .order-search {
                 display: flex;
