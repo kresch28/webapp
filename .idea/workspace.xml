@@ -38,16 +38,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98 IPad Dashboard - Layout">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 BlogDetailView - order images contentBlocks">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getBookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getBookings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductListItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +197,20 @@
       <workItem from="1599546388722" duration="1186000" />
       <workItem from="1599548201143" duration="606000" />
       <workItem from="1599550563349" duration="591000" />
+      <workItem from="1599552417190" duration="1215000" />
+      <workItem from="1599554461425" duration="1992000" />
+      <workItem from="1599556824123" duration="1828000" />
+      <workItem from="1599558665504" duration="1019000" />
+      <workItem from="1599562286629" duration="2210000" />
+      <workItem from="1599564749271" duration="1532000" />
+      <workItem from="1599567572803" duration="1266000" />
+      <workItem from="1599569387778" duration="1715000" />
+      <workItem from="1599571213869" duration="1220000" />
+      <workItem from="1599629382644" duration="741000" />
+      <workItem from="1599631619371" duration="1053000" />
+      <workItem from="1599633444246" duration="1457000" />
+      <workItem from="1599639072641" duration="1740000" />
+      <workItem from="1599640880066" duration="1207000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>

@@ -6,12 +6,15 @@
                     <img :src="$resizeImage(product.image, '700x0')" alt=""/>
                 </div>
                 <div class="product-info">
+                    <div class="product-title">
+                        <h4>{{product.title}}</h4>
+                    </div>
                     <div class="description text">
                         <markdown :value="product.details"></markdown>
                     </div>
                     <div class="product-checkout" v-if="hasUser">
                         <form>
-                            <select class="amount select" v-model="amount">
+                            <select class="amount select" name="amount" id="amount">
                                 <option value="1" v-model="amount">1</option>
                                 <option value="2" v-model="amount">2</option>
                                 <option value="3" v-model="amount">3</option>
@@ -105,6 +108,16 @@
                 }
                 .product-info {
                     flex: 2;
+
+                    .product-title {
+                        margin-left: 40px;
+                        h4 {
+                            color: #ffffff;
+                            background-color: $color-blue;
+                            padding: 10px;
+                            width: 30%;
+                        }
+                    }
                 }
                 .text {
                     flex: 1;
