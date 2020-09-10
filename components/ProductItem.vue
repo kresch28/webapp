@@ -26,7 +26,8 @@
                                 <option value="9" v-model="amount">9</option>
                                 <option value="10" v-model="amount">10</option>
                             </select>
-                            <input class="button" type="submit" value="Bestellen">
+                            <!--<input class="button" type="submit" v-on:click="order" value="Bestellen">-->
+                            <NuxtLink :to="{ path: '/shop/basket', query: { product }}" class="button">Kaufen</NuxtLink>
                         </form>
                     </div>
                     <div v-else class="product-checkout">
@@ -67,6 +68,11 @@
             hasUser() {
                 return !!this.$store.state.user;
             },
+        },
+        methods: {
+            order() {
+
+            },
         }
     }
 </script>
@@ -76,6 +82,7 @@
 
     .button {
         cursor: pointer;
+        font-size: medium;
         font-weight: bold;
         padding: 10px;
         border: none;
@@ -110,12 +117,16 @@
                     flex: 2;
 
                     .product-title {
-                        margin-left: 40px;
+                        @include media-breakpoint-up(sm){
+                            margin-left: 40px;
+                        }
                         h4 {
                             color: #ffffff;
                             background-color: $color-blue;
                             padding: 10px;
-                            width: 30%;
+                            @include media-breakpoint-up(sm){
+                                width: 30%;
+                            }
                         }
                     }
                 }

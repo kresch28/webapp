@@ -8,7 +8,7 @@
                 <div class="filter-producer">
                     <span>Hersteller</span>
                     <div>
-                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings" v-model="producer">
+                        <input type="checkbox" id="producer1" name="producer1" value="CNC-Werkstatt" v-model="producer">
                         <label for="producer1">Tiger-Coatings</label><br>
                     </div>
                 </div>
@@ -87,6 +87,7 @@
                     2: [10,50],
                     3: [50,100]
                 },
+                productReturn : [],
                 amount: '',
                 tagsCollapsed: true,
             }
@@ -133,26 +134,37 @@
                 console.log(this.producer);
                 console.log(this.price);
                 console.log(this.category);
-                this.products = this.products.filter(p => {
-                    var productReturn = [];
-                    let low;
-                    let high;
-                    for (let i = 0; i < this.price.length; i++) {
-                        low = this.priceRange[this.price[i]][0];
-                        high = this.priceRange[this.price[i]][1]
-                    }
-                   let productReturnTo = (''+p.id)[1] + (''+p.id)[2];
-                    if (productReturnTo >= low && productReturnTo <= high) {
-                        console.log(p);
-                        productReturn.push(p)
-                    }
-                    console.log(productReturn);
-                    return productReturn;
-                })
 
-                this.products = this.products.filter(function (p) {
-                    return this.category.includes(p.tag_list[0]);
-                }, this);
+                if(this.producer.length > 0) {
+                    this.products = this.products.filter(function (p) {
+                        return this.producer.includes(p.tag_list[0]);
+                    }, this);
+                }
+
+                if(this.price.length > 0){
+                    console.log('in');
+                    for(let j = 0; j < this.products.length; j++) {
+                        let low;
+                        let high;
+                        for (let i = 0; i < this.price.length; i++) {
+                            low = this.priceRange[this.price[i]][0];
+                            high = this.priceRange[this.price[i]][1]
+                        }
+                        let productReturnTo = (''+this.products[j].id)[1] + (''+this.products[j].id)[2];
+                        if (productReturnTo >= low && productReturnTo <= high) {
+                            console.log(this.products[j]);
+                            this.productReturn.push(this.products[j])
+                        }
+                        console.log(this.productReturn);
+                    }
+                    this.products = this.productReturn;
+                }
+
+                if(this.category.length > 0){
+                    this.products = this.products.filter(function (p) {
+                        return this.category.includes(p.tag_list[0]);
+                    }, this);
+                }
                 /*
                 let price = [];
                 for(let i = 0; i < this.products.length; i++){
