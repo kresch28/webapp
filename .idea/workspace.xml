@@ -38,12 +38,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 BlogDetailView - order images contentBlocks">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98 IPadDashboard Filtering">
+      <change afterPath="$PROJECT_DIR$/components/Hotspot.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TeamMemberPreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMemberPreview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/components.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +61,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CON-90-DashboardMemberBereich" />
+        <entry key="$PROJECT_DIR$" value="CON-98-IPadDashboard" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -211,6 +211,18 @@
       <workItem from="1599633444246" duration="1457000" />
       <workItem from="1599639072641" duration="1740000" />
       <workItem from="1599640880066" duration="1207000" />
+      <workItem from="1599740553711" duration="1793000" />
+      <workItem from="1599742366153" duration="1792000" />
+      <workItem from="1599744216426" duration="1693000" />
+      <workItem from="1599746024949" duration="1670000" />
+      <workItem from="1599747834591" duration="998000" />
+      <workItem from="1599804545880" duration="619000" />
+      <workItem from="1599806671946" duration="610000" />
+      <workItem from="1599808825871" duration="1796000" />
+      <workItem from="1599810669593" duration="1796000" />
+      <workItem from="1599812481268" duration="696000" />
+      <workItem from="1599814294602" duration="1798000" />
+      <workItem from="1599816107496" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -335,27 +347,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="CON-98 IPadDashboard ProductListItem" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" />
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2965" y="455" key="FileChooserDialogImpl" />
-    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state width="1131" height="266" key="Git.Branch.Popup" />
-    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2424" y="266" key="MergeDialog" />
-    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2701" y="345" key="SettingsEditor" />
-    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599739053310" />
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599739053310" />
+    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state width="1133" height="268" key="Git.Branch.Popup" timestamp="1599739058546">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1133" height="268" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739058546" />
+    <state x="2424" y="266" key="MergeDialog" timestamp="1599739053310" />
+    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599739053310" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2701" y="345" key="SettingsEditor" timestamp="1599739053310" />
+    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1599739053310" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599739053310" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599739053310" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1599739053310" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2856" y="330" key="run.anything.popup" timestamp="1599812216755">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2856" y="330" key="run.anything.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599812216755" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599739053310" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
   </component>
 </project>

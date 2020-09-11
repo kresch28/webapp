@@ -9,7 +9,7 @@
       <div class="info">
         <div class="short-info">
           <div class="name-contact">
-            <div class="name">{{blok.name}}</div>
+            <div class="name">{{firstName}} <br> {{lastName}}</div>
             <div class="contact-options">
               <a class="option email" v-if="blok.email" :href="'mailto:'+blok.email">
                 <img class="icon" src="~/assets/img/icons/envelope.svg" alt=""/>
@@ -36,12 +36,92 @@
         <markdown :value="blok.description"></markdown>
       </div>
     </div>
+    <div class="hotspots" v-if="blok.hotspots">
+      <div class="hotspots-header">
+        <div class="hotspots-title">Meine <br> Hotspots</div>
+        <div class="hotspots-link">
+          <img src="~/assets/img/arrow-right.svg" class="link-arrow">
+          <div>Alle Hotspots</div>
+        </div>
+      </div>
+      <!--<div class="hotspots-items">
+        <div v-for="h in blok.hotspots">
+          <hotspot :blok="h"></hotspot>
+        </div>
+      </div>-->
+      <div v-editable="blok" class="hotspot-slideshow">
+        <div class="hotspot-swiper-container" v-swiper:swiper="swiperOption">
+          <div class="hotspot-swiper-wrapper">
+            <!--<div v-for="h in blok.hotspots" class="swiper-slide" :style="{ 'background-image': 'url(' + $resizeImage(h.image, '700x0') + ')' }">-->
+            <div v-for="h in blok.hotspots" class="hotspot-swiper-slide">
+              <div class="hotspot-content" :style="{ 'background-image': 'url(' + $resizeImage(h.image, '700x0') + ')' }">
+              <!--<img class="picture" v-if="h.image" :src="$resizeImage(h.image, '700x700')"/>-->
+              <span class="title"><b>{{h.title}}</b></span>
+              <span class="description">{{h.description}}</span>
+              </div>
+            </div>
+          </div>
+          <div v-if="count > 3" class="swiper-button-next"></div>
+          <div v-if="count > 3" class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: ['blok'],
+  created() {
+    console.log(this.blok)
+    },
+  computed: {
+    count() {
+      return this.blok.hotspots.length
+    },
+    firstName() {
+      let name = this.blok.name.split(' ');
+      return name[0];
+    },
+    lastName() {
+      let name = this.blok.name.split(' ');
+      let last = '';
+      for (let i = 1; i < name.length; i++) {
+        last = last + ' ' + name[i];
+      }
+      return last;
+    },
+    swiperOption() {
+      return {
+        slidesPerView: this.num,
+        spaceBetween: this.spaceBetween,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    },
+    spaceBetween() {
+      if (process.client && window && window.innerWidth) {
+        if (window.innerWidth < 786) {
+          return 0;
+        }
+      }
+      return 30;
+    },
+    num() {
+      if (process.client && window && window.innerWidth) {
+        if (window.innerWidth < 786) {
+          return 1;
+        }
+      }
+      return 3;
+    },
+  },
   methods: {
     touch(e) {
       if (e.target.localName !== 'img') {
@@ -101,8 +181,7 @@ export default {
           margin-top: 1rem;
           margin-bottom: 1rem;
           display: flex;
-          flex-direction: column-reverse;
-          align-items: flex-end;
+          flex-direction: row;
           justify-content: space-between;
           .name {
             font-family: $font-secondary;
@@ -115,6 +194,7 @@ export default {
             margin-bottom: .8rem;
             display: flex;
             flex-direction: column;
+            justify-content: flex-end;
             .option {
               display: flex;
               flex-direction: row-reverse;
@@ -247,5 +327,100 @@ export default {
       }
     }
   }
+
+  .hotspot-slideshow {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    .hotspot-swiper-container {
+      width: 100%;
+      height: 100%;
+
+      .hotspot-swiper-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        .hotspot-swiper-slide {
+          height: 250px;
+          width: 33%;
+
+          .hotspot-content {
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .picture {
+                  width: 70%;
+              height: 50%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            .title {
+              width: 70%;
+              margin-right: auto;
+              margin-top: 280px;
+              font-family: $font-secondary;
+            }
+            .description {
+              width: 70%;
+              margin-right: auto;
+              margin-top: 15px;
+              font-family: $font-secondary;
+            }
+          }
+        }
+
+        padding-bottom: 60px;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $color-yellow;
+      background-size: 12px;
+    }
+  }
+
 }
+.hotspots-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin-left: 160px;
+  margin-bottom: 60px;
+  .hotspots-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .2em;
+  }
+  .hotspots-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+    .link-arrow {
+      width: 10%;
+      height: 20%;
+      margin-right: 15px;
+    }
+  }
+}
+
+  .hotspots-items {
+    display: flex;
+    justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    width: 70%;
+  }
+
+
+
 </style>
