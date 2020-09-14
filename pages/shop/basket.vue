@@ -60,8 +60,6 @@
         background-color: $color-blue;
         font-weight: 700;
         font-size: 1.8rem;
-        margin-left: 4%;
-        margin-right: 4%;
         margin-bottom: 20px;
         padding: 10px;
         text-transform: uppercase;
@@ -69,7 +67,14 @@
         width: 20%;
         text-align: center;
 
+        @include media-breakpoint-up(sm) {
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+
         @include media-breakpoint-down(sm){
+            margin-left: auto;
+            margin-right: auto;
             width: 80%;
         }
     }
@@ -132,10 +137,14 @@
     }
 
     .item-container {
-        padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         margin-right: auto;
         margin-left: auto;
         width: 80%;
+        @include media-breakpoint-up(sm) {
+            padding: 20px;
+        }
 
         .item {
             display: flex;

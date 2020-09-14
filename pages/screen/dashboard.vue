@@ -203,25 +203,23 @@
             let workshops = await context.store.dispatch("findWorkshops", filters).then((data) => {
                 let res = { workshops: [] };
                 if (data) {
-                    console.log(data);
+                    //console.log(data);
                     for (let i = 0; i < data.length; i++) {
-                        // console.log(data[i].dates);
+                        //console.log(data[i].dates);
                         for (let j = 0; j < data[i].dates.length; j++) {
-                            // console.log(data[i].dates[j].content.starttime);
                             let dt = data[i].dates[j].content.starttime.split('-', 3);
-                            // console.log(dt[1]);
                             let mth = new Date().getMonth() + 1;
                             mth = '0' + mth;
-                            if (dt[2].split(1)[0] == new Date().getDate() && dt[1] == mth) {
+                            if (dt[2].split(' ')[0] == new Date().getDate() && dt[1] == mth) {
                                 res.workshops.push(data[i]);
-                                // console.log(res);
+                                console.log('res ' + res);
                             } else {
                                 // console.log(res);
                             }
                         }
                     }
-                    console.log(res.workshops)
-                    return { workshops : res.workshops };
+                    // console.log(res.workshops)
+                    return { workshops : res.workshops};
                 }
                 return { workshops: []};
             });

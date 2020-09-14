@@ -89,6 +89,9 @@
         outline: none;
         color: #FFF;
         background-color: $color-orange;
+        @include media-breakpoint-down(sm) {
+            font-size: smaller;
+        }
     }
 
     .amount {

@@ -38,8 +38,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95 BlogDetailView - order images contentBlocks">
-      <change afterPath="$PROJECT_DIR$/pages/shop/basket.vue" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-40-LayoutTeamseite - Bilde und Hotspot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
@@ -47,104 +46,17 @@
       <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shop/basket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shop/basket.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
-    <ignored path="H:\Daten\_Projects\GG\.idea\shelf/" />
-    <ignored path="$PROJECT_DIR$/node_modules/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/order.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="386" column="17" selection-start-line="386" selection-start-column="16" selection-end-line="394" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/screen/dashboard.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/shopItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/_language/news/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="146" column="17" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ProductListItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,32 +65,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>find</find>
-      <find>findW</find>
-      <find>workshop</find>
-      <find>button</find>
-      <find>border-</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="CON-90-DashboardMemberBereich" />
       </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/pages/order.vue" />
-        <option value="$PROJECT_DIR$/store/index.js" />
-        <option value="$PROJECT_DIR$/pages/screen/dashboard.vue" />
-        <option value="$PROJECT_DIR$/pages/shop/basket.vue" />
-        <option value="$PROJECT_DIR$/components/ProductItem.vue" />
-      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -189,91 +81,6 @@
   </component>
   <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-              <item name="workshops" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="me" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="wizard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="wizard" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -294,18 +101,6 @@
       <recent name="C:\Users\katharina.resch\webapp\pages" />
       <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\katharina.resch\AppData\Roaming\Subversion</configuration>
@@ -429,6 +224,9 @@
       <workItem from="1599640880066" duration="1207000" />
       <workItem from="1599656195097" duration="1972000" />
       <workItem from="1599714144947" duration="10629000" />
+      <workItem from="1599818041253" duration="978000" />
+      <workItem from="1599821957242" duration="2099000" />
+      <workItem from="1600063812803" duration="1359000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -510,75 +308,15 @@
     <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14249000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09105368" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49940357" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4970179" visible="true" weight="0.14029618" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5029821" side_tool="true" visible="true" weight="0.14029618" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.086282305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49900597" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500994" side_tool="true" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -597,6 +335,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten" />
@@ -613,127 +352,37 @@
     <option name="LAST_COMMIT_MESSAGE" value="CON-98 IPad Dashboard - Local Changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" />
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2965" y="455" key="FileChooserDialogImpl" />
-    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state width="1131" height="266" key="Git.Branch.Popup" />
-    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2424" y="266" key="MergeDialog" />
-    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2701" y="345" key="SettingsEditor" />
-    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/_language/workshops/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/WorkshopHeader.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/WorkshopInfo.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_language/news/_slug.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/NewsFeedItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_language/index.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_language/_.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/screen/dashboard.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_language/news/index.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/me/index.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/me.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="386" column="17" selection-start-line="386" selection-start-column="16" selection-end-line="394" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ProductListItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shopItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="146" column="17" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599817522694" />
+    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state width="1131" height="266" key="Git.Branch.Popup" timestamp="1599817522694" />
+    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2424" y="266" key="MergeDialog" timestamp="1599817522694" />
+    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599817522694" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
+    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1599817522694" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599817522694" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1599817776925">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817776925" />
+    <state x="3022" y="599" key="git4idea.ui.GitStashDialog" timestamp="1599817754964">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3022" y="599" key="git4idea.ui.GitStashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817754964" />
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog" timestamp="1599817771103">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599817522694" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
   </component>
 </project>

@@ -429,9 +429,6 @@ const createStore = () => {
           let workshopdates = res.data.stories;
           let workshops = {};
           for (let w of workshopdates) {
-            console.log(w);
-
-
             let wid = w.content.workshop.uuid;
             if (wid in workshops) {
             } else {
