@@ -38,12 +38,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98 IPadDashboard Filtering">
-      <change afterPath="$PROJECT_DIR$/components/Hotspot.vue" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98-IPadDashboard - mobiles Layout">
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/arrow-left-solid.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ImageSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageSlideshow.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TeamMemberPreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMemberPreview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/components.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,15 +79,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/webapp_newProfile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
       <recent name="H:\Daten\_Projects\GG\assets\img\icons" />
       <recent name="C:\Users\katharina.resch\webapp\pages" />
-      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -223,6 +222,11 @@
       <workItem from="1599812481268" duration="696000" />
       <workItem from="1599814294602" duration="1798000" />
       <workItem from="1599816107496" duration="639000" />
+      <workItem from="1600067465820" duration="1728000" />
+      <workItem from="1600069484289" duration="1882000" />
+      <workItem from="1600071399063" duration="601000" />
+      <workItem from="1600073446142" duration="1182000" />
+      <workItem from="1600075382127" duration="1299000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>

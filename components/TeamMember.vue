@@ -1,6 +1,7 @@
 <template>
   <div v-editable="blok" class="member-page" @touchstart="touch">
-    <a href="#" display="none" ref="hidden"></a>
+    <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
+      <b>{{firstName}} {{lastName}} - {{blok.title}}</b></a>
     <div class="header">
       <div class="image">
         <img class="picture" v-if="blok.image" :src="$resizeImage(blok.image, '700x700')" :alt="blok.name + ', ' + blok.title"/>
@@ -13,7 +14,16 @@
             <div class="contact-options">
               <a class="option email" v-if="blok.email" :href="'mailto:'+blok.email">
                 <img class="icon" src="~/assets/img/icons/envelope.svg" alt=""/>
-                <div class="text">{{blok.email}}</div>
+                <!--<div class="text">{{blok.email}}</div>-->
+              </a>
+              <a v-if="blok.fb_src" class="option-links" :href="blok.fb_src.url">
+                <img class="icon" :src="`/icons/fb.png`">
+              </a>
+              <a v-if="blok.linkedin_src" class="option-links linkedin" :href="blok.linkedin_src">
+                <img class="icon" src="~/assets/img/icons//linkedin.svg">
+              </a>
+              <a v-if="blok.twitter_src" class="option-links twitter" :href="blok.twitter_src.url">
+                <img class="icon" src="~/assets/img/icons/twitter.svg">
               </a>
             </div>
           </div>
@@ -73,9 +83,12 @@
 export default {
   props: ['blok'],
   created() {
-    console.log(this.blok)
+    console.log(this.$route.path.split('/'))
     },
   computed: {
+    back() {
+      return '/' + this.$route.path.split('/')[1] + '/' + this.$route.path.split('/')[2]
+    },
     count() {
       return this.blok.hotspots.length
     },
@@ -138,8 +151,18 @@ export default {
 .member-page {
   @include margin-page-wide();
   min-height: 150px;
+  .breadcrumb {
+    color: #000000;
+    font-size: smaller;
+    .icon-breadcrumb {
+      width: 12px;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+  }
   .header {
     display: flex;
+    margin-top: 20px;
     .image {
       position: relative;
       flex-grow: 1;
@@ -176,6 +199,7 @@ export default {
         flex-direction: column;
         justify-content: flex-end;
         .name-contact {
+          align-items: flex-end;
           padding-bottom: 1rem;
           border-bottom: .4rem solid black;
           margin-top: 1rem;
@@ -191,9 +215,8 @@ export default {
           }
           .contact-options {
             font-size: .9rem;
-            margin-bottom: .8rem;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: flex-end;
             .option {
               display: flex;
@@ -207,6 +230,35 @@ export default {
                 margin-left: .5em;
               }
               .text {
+              }
+            }
+            .option-links{
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: center;
+              padding: .4em 0;
+              color: inherit;
+              text-decoration: none;
+              margin-right: 5px;
+              .icon {
+                width: 10px;
+                margin-left: .5em;
+              }
+              .text {
+              }
+            }
+
+            .option-links.twitter{
+              .icon {
+                width: 18px;
+                margin-left: .5em;
+              }
+            }
+
+            .option-links.linkedin{
+              .icon {
+                width: 18px;
+                margin-left: .5em;
               }
             }
           }
