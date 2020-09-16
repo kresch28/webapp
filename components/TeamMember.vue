@@ -3,6 +3,9 @@
     <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
       <b>{{firstName}} {{lastName}} - {{blok.title}}</b></a>
     <div class="header">
+      <div class="sidebar-info">
+        <a :href="back" display="none" ref="hidden" class="link-sidebar"><span>GRANDGARAGE <span class="blue">TEAM</span></span></a>
+      </div>
       <div class="image">
         <img class="picture" v-if="blok.image" :src="$resizeImage(blok.image, '700x700')" :alt="blok.name + ', ' + blok.title"/>
         <img class="picture image-alt" v-if="blok.image_alt" :src="$resizeImage(blok.image_alt, '700x700')" :alt="blok.name + ', ' + blok.title"/>
@@ -163,6 +166,25 @@ export default {
   .header {
     display: flex;
     margin-top: 20px;
+    position: relative;
+
+    .sidebar-info {
+      transform: rotate(270deg);
+      left: 0;
+      position: absolute;
+      top: 50%;
+      margin-left: -110px;
+      .link-sidebar{
+        color: #000000;
+      }
+      span {
+        font-weight: bold;
+        .blue {
+          color: $color-blue;
+        }
+      }
+    }
+
     .image {
       position: relative;
       flex-grow: 1;
@@ -191,13 +213,12 @@ export default {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      justify-content: center;
       width: 50%;
       margin-left: 2%;
       .short-info {
         display: flex;
-        flex-grow: 1;
         flex-direction: column;
-        justify-content: flex-end;
         .name-contact {
           align-items: flex-end;
           padding-bottom: 1rem;
@@ -271,6 +292,7 @@ export default {
       }
       .short-description {
         line-height: 1.5;
+        margin-top: 40px;
         @include media-breakpoint-up(xl) {
           width: 80%;
         }
