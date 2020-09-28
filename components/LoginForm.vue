@@ -49,11 +49,11 @@
     </div>
     <div class="space" v-if="!resetInput">
       <a class="reset" v-on:click="reset">
-        Password vergessen
+        Passwort vergessen
       </a>
     </div>
     <div class="reset-info" v-if="resetInput">
-      <span class="reset-info">Gib deine Email-Adresse ein, dass wir dir einen Link zum Zurücksetzten des Passwortes schicken können:</span>
+      <span class="reset-info">Gib deine Email-Adresse ein, dass wir dir einen Link zum Zurücksetzten des Passworts schicken können:</span>
       <form>
         <div class="form-item">
           <span class="label">Email</span>
