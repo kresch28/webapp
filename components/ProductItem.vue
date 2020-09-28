@@ -61,6 +61,16 @@
     export default {
         name: "ProductItem",
         props: ['blok'],
+        data () {
+            return {
+                products: [],
+                loading: false,
+                search: '',
+            }
+        },
+        created() {
+            console.log(this.blok);
+        },
         computed: {
             product() {
                 return this.blok;
@@ -68,10 +78,35 @@
             hasUser() {
                 return !!this.$store.state.user;
             },
+            filters() {
+                return {
+                    filter_query: {
+                        'component': {
+                            'in': 'machine'
+                        }
+                    },
+                    search_term: this.search,
+                    with_tag: this.filterTags.join(',')
+                }
+            },
+            filterTags() {
+                return this.tags.filter((t) => {
+                    return t.value;
+                }).map((t) => {
+                    return t.name;
+                });
+            },
         },
         methods: {
             order() {
 
+            },
+            suggested() {
+                this.loading = true;
+                let result = this.$store.dispatch("findMachines", this.filters).then((data) => {
+                    this.loading = false;
+                    this.products = data.stories;
+                });
             },
         }
     }

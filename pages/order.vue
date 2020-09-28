@@ -6,7 +6,7 @@
             <h4 class="headline">Materialien bestellen</h4>
             <div class="filter">
                 <div class="filter-producer">
-                    <span>Hersteller</span>
+                    <span>Händler</span>
                     <div>
                         <input type="checkbox" id="producer1" name="producer1" value="CNC-Werkstatt" v-model="producer">
                         <label for="producer1">Tiger-Coatings</label><br>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="filter-price">
-                    <span>Kategorie</span>
+                    <span>Bereich</span>
                         <ul class="filter-category">
                             <li v-for="t, c in tags">
                                 <input v-bind:id="tags[c].name" type="checkbox" v-model="category" v-bind:value="tags[c].name" />
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div v-if="articles > range" class="button-wrapper">
-                <button>Mehr laden</button>
+                <button v-on:click="more">Mehr laden</button>
             </div>
         </div>
     </div>
@@ -79,6 +79,7 @@
 
                 loading: false,
                 search: '',
+                sort: '',
                 producer: [],
                 category: [],
                 price: [],
@@ -105,6 +106,12 @@
             },
         },
         methods: {
+            more() {
+                /*this.showMore[z] = this.range;
+                console.log(this.showMore);*/
+                this.range = this.range + 15;
+                console.log(this.range);
+            },
             update() {
                 this.loading = true;
                 let result = this.$store.dispatch("findMachines", this.filters).then((data) => {
@@ -249,6 +256,7 @@
         .order-container.info {
             @include media-breakpoint-up(sm){
                 width: 20%;
+                height: 90vh;
             }
             border: 1px solid $color-blue;
             margin-top: 35px;
@@ -264,6 +272,8 @@
                 padding: 5px;
                 text-transform: uppercase;
                 letter-spacing: .05em;
+                width: 90%;
+                text-align: left;
             }
 
             .filter {
@@ -304,6 +314,7 @@
                     outline: none;
                     color: #FFF;
                     background-color: $color-orange;
+                    margin-bottom: 15px;
                 }
             }
         }
@@ -372,6 +383,7 @@
             }
             .button-wrapper {
                 width: 12%;
+                margin-top: 15px;
                 margin-left: auto;
                 display: flex;
                 flex-direction: column;
