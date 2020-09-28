@@ -29,22 +29,42 @@
     <div class="form-item button-row">
       <button @click="submit">Login</button>
     </div>-->
-    <form>
-      <div class="form-item">
-        <span class="label">Email</span>
-        <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
-      </div>
-      <div class="form-item">
-        <span class="label">Password</span>
-        <input class="input" type="password" v-model="password" placeholder="dein passwort" @input="clearErrorMessage" />
-      </div>
-      <div class="error-message" v-if="errorMessage">
-        <span>{{errorMessage}}</span>
-      </div>
-      <div class="form-item button-row">
-        <input @click="submit" class="button" type="submit" value="Login"/>
-      </div>
-    </form>
+    <div class="form-login" v-if="!resetInput">
+      <form>
+        <div class="form-item">
+          <span class="label">Email</span>
+          <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
+        </div>
+        <div class="form-item">
+          <span class="label">Password</span>
+          <input class="input" type="password" v-model="password" placeholder="dein passwort" @input="clearErrorMessage" />
+        </div>
+        <div class="error-message" v-if="errorMessage">
+          <span>{{errorMessage}}</span>
+        </div>
+        <div class="form-item button-row">
+          <input @click="submit" class="button" type="submit" value="Login"/>
+        </div>
+      </form>
+    </div>
+    <div class="space" v-if="!resetInput">
+      <a class="reset" v-on:click="reset">
+        Password vergessen
+      </a>
+    </div>
+    <div class="reset-info" v-if="resetInput">
+      <span class="reset-info">Gib deine Email-Adresse ein, dass wir dir einen Link zum Zurücksetzten des Passwortes schicken können:</span>
+      <form>
+        <div class="form-item">
+          <span class="label">Email</span>
+          <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
+        </div>
+        <div class="form-item reset-row">
+          <a class="reset" v-on:click="back">Zurück</a>
+          <input @click="resetPassword" class="button" type="submit" value="Zurücksetzten"/>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -55,7 +75,8 @@ export default {
     return {
       email: '',
       password: '',
-      errorMessage: null
+      errorMessage: null,
+      resetInput: false
     }
   },
   computed: {
@@ -66,6 +87,15 @@ export default {
     },
     register() {
       this.$store.dispatch('setSidebar', 'register');
+    },
+    reset(){
+      this.resetInput = true;
+    },
+    back(){
+      this.resetInput = false;
+    },
+    resetPassword(){
+
     },
     submit(e) {
       e.preventDefault();
@@ -183,6 +213,10 @@ export default {
       display: flex;
       justify-content: flex-end;
     }
+    &.reset-row {
+      display: flex;
+      justify-content: space-between;
+    }
     button {
       cursor: pointer;
       background-color: $color-orange;
@@ -231,6 +265,24 @@ export default {
     padding: 5px 0;
     display: flex;
     color: red;
+  }
+
+  .reset {
+    font-size: 0.9rem;
+    color: $color-orange;
+    font-family: $font-mono;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .reset-info {
+    .form-item {
+      padding-top: 20px;
+      input{
+        width: 50%;
+      }
+    }
   }
 }
 </style>
