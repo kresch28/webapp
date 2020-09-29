@@ -30,7 +30,11 @@
               <div class="newsletter-subscribe">
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"placeholder="Deine E-Mail Adresse">
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ab921bf052a64b20bb1f16123_8006406cc5" tabindex="-1" value=""></div>
-                <button type="submit">Zum Newsletter anmelden</button>
+                <div class="submit">
+                  <img src="~/assets/img/icons/arrow-right-solid.svg" class="subscribe">
+                  <button type="submit" class="subsribe-text">Zum Newsletter anmelden</button>
+                </div>
+
               </div>
             </form>
           </div>
@@ -185,11 +189,26 @@ export default {
   button {
     cursor: pointer;
     font-family: $font-secondary;
-    font-size: 1.3rem;
-    color: #000000;
+    font-size: 1rem;
+    color: $color-red;
     background: none;
     border: none;
     outline: none;
+    margin-top: 15px;
+  }
+
+  .submit {
+    display: flex;
+    flex-direction: row;
+
+    .subscribe {
+      width: 10%;
+      padding: 5px;
+      padding-top: 15px;
+    }
+
+    .subscribe-text {
+    }
   }
 }
 
