@@ -188,7 +188,7 @@ export default {
     .image {
       position: relative;
       flex-grow: 1;
-      width: 46%;
+      width: 33%;
       margin-right: 2%;
       text-align: right;
       &:hover {
