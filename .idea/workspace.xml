@@ -38,105 +38,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-40-LayoutTeamseite - Social Links">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-10-LayoutTeamseite Image Size">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProductItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shop/basket.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shop/basket.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/order.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6562">
-              <caret line="386" column="17" selection-start-line="386" selection-start-column="16" selection-end-line="394" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/screen/dashboard.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3128">
-              <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/shopItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7123">
-              <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/_language/news/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ProductListItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,24 +58,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>item-price</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="CON-90-DashboardMemberBereich" />
       </map>
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/pages/shop/basket.vue" />
-      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -173,91 +74,6 @@
   </component>
   <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_language" type="462c0819:PsiDirectoryNode" />
-              <item name="workshops" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="me" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="screen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="wizard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="wizard" type="462c0819:PsiDirectoryNode" />
-              <item name="onboarding" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GG" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -268,28 +84,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/webapp_newProfile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/screen" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\pages\screen" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Daten\_Projects\GG\assets\img\icons" />
       <recent name="C:\Users\katharina.resch\webapp\pages" />
       <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\katharina.resch\AppData\Roaming\Subversion</configuration>
@@ -508,59 +315,6 @@
     <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5263000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="745" y="123" width="1796" height="1308" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13421659" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49900597" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49654377" visible="true" weight="0.15306123" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50345623" side_tool="true" visible="true" weight="0.15306123" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.086282305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49900597" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500994" side_tool="true" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -569,14 +323,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -595,6 +342,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten" />
@@ -613,6 +361,10 @@
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601993642782">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993642782" />
     <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599817522694" />
     <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state width="1131" height="266" key="Git.Branch.Popup" timestamp="1599817522694" />
@@ -629,10 +381,10 @@
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1599817776925">
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1601986239072">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817776925" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601986239072" />
     <state x="3022" y="599" key="git4idea.ui.GitStashDialog" timestamp="1599817754964">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -641,43 +393,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600676483107">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1601993318259">
+      <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993318259" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600676483107" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/me.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7123">
-          <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

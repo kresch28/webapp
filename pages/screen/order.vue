@@ -68,8 +68,10 @@
 <script>
     import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 
+
     export default {
         middleware: 'authenticated',
+        layout: 'screen',
         mixins: [storyblokLivePreview],
         data () {
             return {
