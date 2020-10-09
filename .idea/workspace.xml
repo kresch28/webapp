@@ -39,9 +39,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-10-LayoutTeamseite Image Size">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/checkStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/checkStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getBookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getBookings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getFabman.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getFabman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/getUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/getUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/updateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/updateUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -393,10 +399,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1601993318259">
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1602234559968">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993318259" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602234559968" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600676483107" />
   </component>
 </project>

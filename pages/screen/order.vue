@@ -1,6 +1,24 @@
 <template>
     <!--<component v-if="story && story.content && story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
     -->
+    <div class="order">
+    <div class="infos-order">
+        <div class="info-list">
+            <div>
+                <h4><a class="link-dashboard" href="/screen/dashboard"><- zurück zum Dashboard</a></h4>
+            </div>
+            <div class="daily">
+                <li class="list-item">
+                    <span><icon name="calendar" /></span>
+                    <span class="text">{{dateFormat}}</span>
+                </li>
+                <li class="list-item">
+                    <span><icon name="clock" /></span>
+                    <span class="text">{{timeFormat}}</span>
+                </li>
+            </div>
+        </div>
+    </div>
     <div class="order-wrapper">
         <div class="order-container info">
             <h4 class="headline">Materialien bestellen</h4>
@@ -63,16 +81,16 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
-    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+    // import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 
 
     export default {
-        middleware: 'authenticated',
         layout: 'screen',
-        mixins: [storyblokLivePreview],
+        // mixins: [storyblokLivePreview],
         data () {
             return {
                 products: [],
@@ -93,6 +111,8 @@
                 productReturn : [],
                 amount: '',
                 tagsCollapsed: true,
+
+                date: new Date(),
             }
         },
         created() {
@@ -219,7 +239,25 @@
                 }).map((t) => {
                     return t.name;
                 });
-            }
+            },
+            dateFormat() {
+                const ye = new Intl.DateTimeFormat('de', { year: 'numeric' }).format(this.date)
+                const mo = new Intl.DateTimeFormat('de', { month: 'short' }).format(this.date)
+                const da = new Intl.DateTimeFormat('de', { day: '2-digit' }).format(this.date)
+
+                return `${da}.${mo}.${ye}`;
+            },
+            timeFormat() {
+                let dateFormat = this.date.getHours();
+                if(this.date.getMinutes() < 10) {
+                    dateFormat = dateFormat + ":0" + this.date.getMinutes();
+                }
+                else {
+                    dateFormat = dateFormat + ":" + this.date.getMinutes();
+                }
+
+                return dateFormat;
+            },
         },
         async asyncData (context) {
             /*let path = '/members/shop';
@@ -249,6 +287,42 @@
 
 <style lang="scss">
     @import '@/assets/scss/styles.scss';
+    .infos-order {
+        background-color: #FFF;
+        padding: 25px;
+        height: 12vh;
+        .headline {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .info-list {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            .link-dashboard {
+                color: #000000;
+            }
+        }
+        .daily {
+            width: 15%;
+            @include media-breakpoint-down(sm) {
+                width: 60%;
+            }
+
+            div {
+                padding:0 20px;
+            }
+            li {
+                list-style: none;
+                svg {
+                    width: 10%;
+                }
+                .text {
+                    padding: 10px;
+                }
+            }
+        }
+    }
     .order-wrapper {
         @include media-breakpoint-up(sm){
             display: flex;
@@ -259,13 +333,14 @@
             @include media-breakpoint-up(sm){
                 width: 20%;
                 height: 90vh;
+                margin-left: 20px;
             }
             border: 1px solid $color-blue;
             margin-top: 35px;
 
             .headline {
                 color: #fff;
-                background-color: $color-blue;
+                background-color: rgb(0, 105, 170);
                 font-weight: 700;
                 font-size: 1.8rem;
                 margin-left: 4%;

@@ -148,11 +148,6 @@
             home() {
                 return this.$store.state.settings.home_navi;
             },
-
-            lang() {
-                // return '/'+this.$store.state.language+'/order';
-                return '/order';
-            },
         },
         methods: {
             update() {
