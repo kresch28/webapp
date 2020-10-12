@@ -37,12 +37,12 @@
                         <li><a href="https://bit.ly/2Se2AFO" target="_blank">Kellner und Kunz</a></li>
                     </ul>
                 </div>
-                <div class="shop-container">
+                <!--<div class="shop-container">
                     <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
                     <div class="links-shop">
                         <NuxtLink to= "order" target="_blank">Material bestellen</NuxtLink>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="faqs">
             </div>
