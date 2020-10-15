@@ -35,9 +35,9 @@ $margin-page-narrow: 0 176px 268px; // for text, content etc
 
 $grid-breakpoints: (
   'xs': 360px,
-  'sm': 576px,
-  'md': 800px,
-  'lg': 992px,
+  'sm': 576px, //576
+  'md': 800px, //992
+  'lg': 992px, //1365
   'xl': 1366px
 ) !default;
 

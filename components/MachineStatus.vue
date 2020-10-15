@@ -81,6 +81,15 @@ export default {
     div {
       display: inline-block;
       text-transform: uppercase;
+      @include media-breakpoint-down(sm){
+        font-size: 16px;
+      }
+      @include media-breakpoint-up(sm){
+        font-size: 12px;
+      }
+      @include media-breakpoint-up(xl){
+        font-size: 16px;
+      }
     }
   }
 }

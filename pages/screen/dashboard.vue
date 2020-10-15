@@ -237,13 +237,15 @@
         }
         @include media-breakpoint-up(lg) {
             float: left;
-            width: 20%;
+            width: 35%;
         }
         align-items: flex-start;
         @include margin-page-middle();
         .infos {
             padding: 25px;
-
+            @include media-breakpoint-down(lg) {
+                padding: 25px 40px;
+            }
             .headline {
                 background-color: rgb(0, 105, 170);
                 color: #ffffff;
@@ -286,9 +288,9 @@
             }
             .daily {
                 margin-top: 20px;
-                width: 15%;
+                width: 22%;
                 @include media-breakpoint-down(sm) {
-                    width: 60%;
+                    width: 35%;
                 }
             }
             div {
@@ -300,7 +302,7 @@
                     width: 10%;
                 }
                 .text {
-                    padding: 10px;
+                    padding: 25px 10px;
                 }
             }
         }
@@ -567,6 +569,9 @@
         padding: 10px;
         float: left;
         margin-top: 15px;
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
     }
 
     .links-icon-shop {
@@ -575,6 +580,9 @@
         width: 18%;
         padding: 10px;
         float: left;
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
     }
 
     .shop-container {
@@ -591,7 +599,7 @@
     }
 
     .links-shop {
-        margin-left: 40px;
+        margin-left: 30px;
         margin-top: 4%;
         @include media-breakpoint-down(md) {
             margin-left: 80px;
@@ -606,7 +614,7 @@
     .links-shop-list {
         list-style: none;
         padding: 0;
-        margin-left: 40px;
+        margin-left: 15px;
         margin-top: 0px;
         @include media-breakpoint-down(md) {
             margin-left: 80px;
@@ -661,9 +669,6 @@
         }
     }
     .machine-overview {
-        margin-top: 120px;
-        position: absolute;
-        width: 65%;
-        right: 0;
+        float: left;
     }
 </style>
