@@ -182,11 +182,11 @@ const createStore = () => {
           });
         });
       },
-      changePassword({comit}, context) {
-        return new Promise((resolve, reject) => {
+      changePassword({state}, data) {
+       return new Promise((resolve, reject) => {
           webAuth.changePassword({
             connection: 'Username-Password-Authentication',
-            email: context.email,
+            email: data.email,
           }, function (err, r) {
             if (err) reject(err);
             resolve(r);

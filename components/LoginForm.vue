@@ -43,7 +43,7 @@
       <form>
         <div class="form-item">
           <span class="label">Email</span>
-          <input class="input" type="text" v-model="email" placeholder="deine email" @input="clearErrorMessage" />
+          <input class="input" type="text" v-model="emailReset" placeholder="deine email" @input="clearErrorMessage" />
         </div>
         <div class="form-item reset-row">
           <a class="reset" v-on:click="back">Zurück</a>
@@ -62,7 +62,8 @@ export default {
       email: '',
       password: '',
       errorMessage: null,
-      resetInput: false
+      resetInput: false,
+      emailReset: ''
     }
   },
   computed: {
@@ -81,7 +82,15 @@ export default {
       this.resetInput = false;
     },
     resetPassword(){
-
+      console.log(this.emailReset);
+      let data = {
+        email: this.emailReset,
+      }
+      this.$store.dispatch('changePassword', data).then((r)=>{
+        console.log(r);
+              }).catch((e) => {
+                  console.log(e);
+      })
     },
     submit(e) {
       e.preventDefault();
