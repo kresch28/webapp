@@ -1,5 +1,5 @@
 <template>
-  <div class="training-item" v-if="course">
+  <div class="training-item" v-if="course && memberCourse != undefined" >
     <div class="body">
       <div class="content">
         <span class="course-heading"><b>{{course.name}}</b></span>
@@ -48,11 +48,15 @@ export default {
   },
   computed: {
     memberCourse() {
-      console.log(this.$store.getters.getMemberCourseById(this.course.id));
-      return this.$store.getters.getMemberCourseById(this.course.id);
+      if(this.$store.getters.getMemberCourseById(this.course.id) != undefined){
+        console.log(this.$store.getters.getMemberCourseById(this.course.id));
+        return this.$store.getters.getMemberCourseById(this.course.id);
+      }
     },
     createdDate() {
-      return new Date(this.memberCourse.created_at).toLocaleDateString("de-at");
+      if(this.memberCourse != undefined){
+        return new Date(this.memberCourse.created_at).toLocaleDateString("de-at");
+      }
     },
     updatedDate() {
       return new Date(this.memberCourse.updated_at).toLocaleDateString("de-at");
@@ -109,7 +113,7 @@ export default {
 }
   .status {
     float: right;
-    width: 5%;
+    width: 4%;
   }
 .info {
   @include media-breakpoint-up(sm) {

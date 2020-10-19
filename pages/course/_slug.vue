@@ -272,7 +272,7 @@ export default {
         }
         .answer-text {
           text-align: center;
-          padding: 10px 20px;
+          padding: 10px 420px 10px 20px;
         }
       }
     }
@@ -373,16 +373,9 @@ export default {
     outline: none;
     align-self: center;
     margin-top: 20px;
-    /*@include media-breakpoint-up(sm) {
-      position: absolute;
-      left: 48%;
-      right: 45%;
-    }
     @include media-breakpoint-down(sm) {
-      position: absolute;
-      left: 38%;
-      right: 33%;
-    }*/
+      float: right;
+    }
   }
   .quiz-description {
     text-align: center;
