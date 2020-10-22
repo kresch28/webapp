@@ -38,7 +38,8 @@ $grid-breakpoints: (
   'sm': 576px,
   'md': 800px,
   'lg': 992px,
-  'xl': 1366px
+  'xl': 1366px,
+  'screen' : 2200px,
 ) !default;
 
 // Name of the next breakpoint, or null for the last breakpoint.

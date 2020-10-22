@@ -238,8 +238,11 @@ export default {
     .answers {
       display: flex;
       justify-content: space-evenly;
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(lg) {
         flex-direction: column;
+      }
+      @include media-breakpoint-up(sm) {
+        align-items: center;
       }
       .answer {
         background-color: #FFFFFF;
@@ -294,8 +297,8 @@ export default {
     outline: none;
     width: 5%;
     align-self: center;
-    @include media-breakpoint-down(sm) {
-      width: 17%;
+    @include media-breakpoint-down(lg) {
+      width: 20%;
     }
   }
   .done {
