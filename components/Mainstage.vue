@@ -18,12 +18,15 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
-    <div>
+    <div class="newsletter-container">
       <div class="newsletter-footer">
         <div>
           <div id="mc_embed_signup">
             <form action="https://grandgarage.us20.list-manage.com/subscribe/post?u=ab921bf052a64b20bb1f16123&amp;id=8006406cc5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <h4>Immer am Ball bleiben</h4>
+              <div class="heading">
+                <img src="~/assets/img/icons/envelope.svg" class="icon-newsletter">
+                <h4>Immer am Ball bleiben</h4>
+              </div>
               <div class="newsletter-subscribe">
                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"placeholder="Deine E-Mail Adresse">
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ab921bf052a64b20bb1f16123_8006406cc5" tabindex="-1" value=""></div>
@@ -132,17 +135,57 @@ export default {
   }
 }
 
+.newsletter-container {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  @include media-breakpoint-up(md) {
+    height: 15%;
+  }
+  form {
+    padding-bottom: 20px;
+  }
+
+  h4 {
+    float: left;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
+
+  .icon-newsletter {
+    float: left;
+    width: 15%;
+    margin-right: 15px;
+  }
+}
+form {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .heading {
+
+      display: flex;
+      justify-content: center;
+
+  }
+}
 .newsletter-subscribe {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
+  @include media-breakpoint-up(md) {
+    width: 25%;
+  }
   input {
-    padding: 10px 0;
-    font-size: 1rem;
+    padding: 10px 5px;
+    font-size: 1 rem;
     font-family: $font-secondary;
-    outline: none;
     background: none;
     color: #000000;
-    border: none;
     flex: 1;
     &::placeholder {
       color: #000000;
@@ -178,12 +221,14 @@ export default {
   }
   button {
     cursor: pointer;
-    font-family: $font-secondary;
-    font-size: 1.3rem;
-    color: #000000;
-    background: none;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1 rem;
     border: none;
     outline: none;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #ff6f00;
+    color: #FFF;
   }
 }
 </style>
