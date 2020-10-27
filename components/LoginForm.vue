@@ -85,8 +85,6 @@ export default {
         }).catch((e) => {
           console.log(e);
           if(this.email != ''){
-            console.log('in');
-            console.log(this.email);
           }
           if(e.description == 'Missing credentials') {
             this.errorMessage = 'Gib bitte eine gültige Email-Adresse an'
@@ -106,7 +104,7 @@ export default {
           }*/
           else {
             this.errorMessage = e.description || e.error || e.code;
-            console.log(this.errorMessage);
+            //console.log(this.errorMessage);
           }
         });
       //}
