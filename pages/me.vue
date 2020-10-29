@@ -11,7 +11,7 @@
           <NuxtLink to="/me/">Mein Profil</NuxtLink>
           <NuxtLink to="/me/packages">Packages</NuxtLink>
           <NuxtLink to="/me/trainings">Unterweisungen</NuxtLink>
-          <NuxtLink to="/me/shop">Material bestellen</NuxtLink>
+          <NuxtLink to="/order">Material bestellen</NuxtLink>
           <NuxtLink to="/me/invoices">Meine Rechnungen</NuxtLink>
           <NuxtLink to="/me/log">Meine Aktivitäten</NuxtLink>
         </div>
@@ -117,7 +117,7 @@ export default {
       padding-left: 20px;
       flex: 3;
       @include media-breakpoint-down(sm) {
-        padding: 0 15px;
+        padding: 0;
       }
     }
   }

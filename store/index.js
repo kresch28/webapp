@@ -230,6 +230,27 @@ const createStore = () => {
           console.log(err);
         });
       },
+      updateInvoiceContact({state}, data){
+        return connector.post('/member/updateInvoiceContact', data).then((r) => {
+          return r;
+          if(r.data.success) {
+            return r.data;
+          }
+        }).catch((err) => {
+          console.log(err);
+          console.log(err.response.data.msg);
+        });
+      },
+      getInvoiceContact({state}){
+        return connector.get('/member/getInvoiceContact').then((r) => {
+            return r;
+
+        }).catch((err) => {
+          console.log(err);
+          console.log(err.response.data.msg);
+        });
+      },
+
       checkAuth({ commit, dispatch, state }) {
         if (state.auth || getUserFromLocalStorage()) {
           // renew Token

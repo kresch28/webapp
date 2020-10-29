@@ -1,22 +1,48 @@
 <template>
   <div class="section onboarding-wizard">
     <h2>Du willst also eine Mitgliedschaft abschließen?</h2>
-    <p>Blah blah blah</p>
+    <p>für <b>ermäßigt</b> bist du berechtigt bei Vorlage folgender Ausweise: 4you card, SchülerInnen, Studierende, Lehrlinge bis 28 Jahre, Behindertenpass</p>
+    <form id="index" @submit="checkForm" method="post">
     <div class="options">
-      <div class="option">
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio" type="radio" v-model="user.type" id="regulär" name="type" value="regulär" @click="checkTrue">
         <b>regulär</b>
-      </div>
-      <div class="option">
+        </div>
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio"  type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt" @click="checkTrue">
         <b>ermäßigt</b>
-      </div>
-      <div class="option">
+        </div>
+      <div class="option" v-bind:class="{missing: user.errors.type === false}">
+        <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free" @click="checkTrue">
         <b>free</b>
+        </div>
+    </div>
+    <div>
+      <div v-if="user.type != 'free'">
+        <div class="info">
+          <p><b>Tipp:</b> Bei jährlicher Zahlung bekommst du 2 Monate geschenkt.</p>
+        </div>
+        <div class="options">
+          <div class="option" v-bind:class="{missing: user.errors.periode === false}">
+            <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month" @click="checkTrue">
+            <b>monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</b>
+          </div>
+          <div class="option" v-bind:class="{missing: user.errors.periode === false}">
+            <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year" @click="checkTrue">
+            <b>jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</b>
+          </div>
+        </div>
       </div>
+
     </div>
     <div class="spacer"></div>
-    <div class="wizard-checkbox">
-      <Checkbox :value="agbBool" theme="form">Ja, ich habe die Allgemeinen Nutzungsbedingungen (ANB) und die Werkstattordnung gelesen und bin damit einverstanden.</Checkbox>
+    <div class="wizard-checkbox-agb">
+      <!--<Checkbox :value="agbBool" @click="checkTrue" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</Checkbox>
+    -->
+      <input type="checkbox" id="agb" name="agb" value="!agbBool" v-model="user.agbBool">
+      <label for="agb">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/agb'" target="_blank"> Allgemeinen Nutzungsbedingungen (ANB) </a> und die <a class="checkbox-link" :href="window+'/de/faq'" target="_blank"> Werkstattordnung </a> gelesen und bin damit einverstanden.</label><br>
     </div>
+    </form>
   </div>
 </template>
 
@@ -28,19 +54,39 @@ export default {
   components: {
     Checkbox
   },
+  props: ['data'],
   data () {
     return {
       loading: false,
       agbBool: false,
+      empty: true,
+      type: 'regulär',
+      periode: 'month'
     }
   },
   created() {
+    console.log(this.user);
+    console.log('errors');
+    console.log(this.user.errors);
   },
   methods: {
+    checkForm() {
+
+    },
+    checkTrue() {
+      let counter = 1;
+      // for (let i = 0; i < counter; i++){
+        console.log(this.user.type);
+      console.log(this.user.periode);
+      //}
+    },
   },
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    window(){
+      return window.location.origin
     },
   }
 }
@@ -53,9 +99,42 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  .wizard-checkbox-agb {
+    width: 100%;
+  }
+  .checkbox-link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .spacer {
     flex: 1;
   }
+  .options {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 -10px;
+
+    .option {
+      margin: 10px;
+      flex: 1;
+      cursor: pointer;
+      padding: 25px;
+      background-color: #FFF;
+      b {
+        padding-left: 25px;
+      }
+
+      &:hover {
+        border: 2px solid $color-orange;
+      }
+    }
+  }
+  /*.info {
+    position: absolute;
+    right: 0;
+    margin-right: 23%;
+  }*/
 }
 
 </style>

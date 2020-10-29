@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:doebi" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< Updated upstream
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98-IPadDashboard - mobiles Layout">
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/arrow-left-solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ImageSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
+    </list>
+=======
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+<<<<<<< Updated upstream
+  <component name="ComposerSettings">
+    <execution />
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/order.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6562">
+              <caret line="386" column="17" selection-start-line="386" selection-start-column="16" selection-end-line="394" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/screen/dashboard.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3128">
+              <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/shopItem.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/store/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7123">
+              <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/_language/news/index.vue">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/me/index.vue">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/me.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="230" column="17" lean-forward="true" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/ProductListItem.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> Stashed changes
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="CON-98-IPadDashboard" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
+      <recent name="H:\Daten\_Projects\GG\assets\img\icons" />
+      <recent name="C:\Users\katharina.resch\webapp\pages" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\katharina.resch\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-99 Kurse sind im Memberbereich auf der Website - Links zu Slides/PDF" />
+      <created>1594885264305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594885264305</updated>
+      <workItem from="1594885268870" duration="648000" />
+      <workItem from="1594886011148" duration="705000" />
+      <workItem from="1594887138773" duration="22383000" />
+      <workItem from="1594971883569" duration="16580000" />
+      <workItem from="1595223231750" duration="13761000" />
+      <workItem from="1595313633913" duration="21614000" />
+      <workItem from="1595396554296" duration="10989000" />
+      <workItem from="1595420757914" duration="7705000" />
+      <workItem from="1595484335657" duration="14547000" />
+      <workItem from="1595573889438" duration="11856000" />
+      <workItem from="1595829484459" duration="19101000" />
+      <workItem from="1595914862970" duration="22787000" />
+      <workItem from="1596004753440" duration="17182000" />
+      <workItem from="1596027208244" duration="141000" />
+      <workItem from="1596027358819" duration="79000" />
+      <workItem from="1596027449575" duration="4336000" />
+      <workItem from="1596087955470" duration="22949000" />
+      <workItem from="1596178111991" duration="8097000" />
+      <workItem from="1596433518125" duration="8681000" />
+      <workItem from="1596453104277" duration="8656000" />
+      <workItem from="1596519454606" duration="15919000" />
+      <workItem from="1596546190573" duration="1598000" />
+      <workItem from="1596548108244" duration="3758000" />
+      <workItem from="1596605876061" duration="8584000" />
+      <workItem from="1596692865286" duration="7754000" />
+      <workItem from="1596778517961" duration="2685000" />
+      <workItem from="1597038262025" duration="17754000" />
+      <workItem from="1597833504472" duration="1460000" />
+      <workItem from="1597835313868" duration="1796000" />
+      <workItem from="1597837124220" duration="1898000" />
+      <workItem from="1597839035765" duration="1193000" />
+      <workItem from="1598004703800" duration="778000" />
+      <workItem from="1598008313633" duration="1261000" />
+      <workItem from="1598010408221" duration="1416000" />
+      <workItem from="1598358070811" duration="1719000" />
+      <workItem from="1598359907938" duration="1377000" />
+      <workItem from="1598362286841" duration="1821000" />
+      <workItem from="1598364154492" duration="1796000" />
+      <workItem from="1598365964814" duration="1696000" />
+      <workItem from="1598367984780" duration="1669000" />
+      <workItem from="1598420666259" duration="610000" />
+      <workItem from="1598422735952" duration="1792000" />
+      <workItem from="1598424543372" duration="1008000" />
+      <workItem from="1598426410551" duration="1926000" />
+      <workItem from="1598430179609" duration="1641000" />
+      <workItem from="1598431995557" duration="1795000" />
+      <workItem from="1598433804831" duration="1799000" />
+      <workItem from="1598435645813" duration="1202000" />
+      <workItem from="1598439665916" duration="674000" />
+      <workItem from="1598442960523" duration="1795000" />
+      <workItem from="1598444769912" duration="1692000" />
+      <workItem from="1598446579116" duration="1155000" />
+      <workItem from="1598448642652" duration="713000" />
+      <workItem from="1598450455306" duration="1130000" />
+      <workItem from="1598452425597" duration="310000" />
+      <workItem from="1598504342869" duration="607000" />
+      <workItem from="1598506151451" duration="1849000" />
+      <workItem from="1598508392966" duration="599000" />
+      <workItem from="1598510361874" duration="1201000" />
+      <workItem from="1598512903678" duration="1795000" />
+      <workItem from="1598514715252" duration="706000" />
+      <workItem from="1598525902794" duration="1798000" />
+      <workItem from="1598527719044" duration="2117000" />
+      <workItem from="1598529893387" duration="605000" />
+      <workItem from="1598531703221" duration="1794000" />
+      <workItem from="1598533626142" duration="960000" />
+      <workItem from="1598535440785" duration="605000" />
+      <workItem from="1598593078955" duration="605000" />
+      <workItem from="1598594961744" duration="1319000" />
+      <workItem from="1598596931613" duration="1813000" />
+      <workItem from="1598599017137" duration="857000" />
+      <workItem from="1598600831011" duration="896000" />
+      <workItem from="1598603693615" duration="1795000" />
+      <workItem from="1598605501977" duration="974000" />
+      <workItem from="1598607724777" duration="606000" />
+      <workItem from="1599109369465" duration="15283000" />
+      <workItem from="1599217801723" duration="1013000" />
+      <workItem from="1599220426171" duration="1959000" />
+      <workItem from="1599222411024" duration="605000" />
+      <workItem from="1599225204867" duration="1776000" />
+      <workItem from="1599457558079" duration="764000" />
+      <workItem from="1599460227563" duration="775000" />
+      <workItem from="1599462050667" duration="1262000" />
+      <workItem from="1599463903049" duration="1454000" />
+      <workItem from="1599465726018" duration="1100000" />
+      <workItem from="1599468450710" duration="599000" />
+      <workItem from="1599470273837" duration="1413000" />
+      <workItem from="1599472082333" duration="1021000" />
+      <workItem from="1599478897389" duration="609000" />
+      <workItem from="1599480822041" duration="1201000" />
+      <workItem from="1599482669582" duration="1890000" />
+      <workItem from="1599487596052" duration="652000" />
+      <workItem from="1599544565294" duration="1029000" />
+      <workItem from="1599546388722" duration="1186000" />
+      <workItem from="1599548201143" duration="606000" />
+      <workItem from="1599550563349" duration="591000" />
+      <workItem from="1599552417190" duration="1215000" />
+      <workItem from="1599554461425" duration="1992000" />
+      <workItem from="1599556824123" duration="1828000" />
+      <workItem from="1599558665504" duration="1019000" />
+      <workItem from="1599562286629" duration="2210000" />
+      <workItem from="1599564749271" duration="1532000" />
+      <workItem from="1599567572803" duration="1266000" />
+      <workItem from="1599569387778" duration="1715000" />
+      <workItem from="1599571213869" duration="1220000" />
+      <workItem from="1599629382644" duration="741000" />
+      <workItem from="1599631619371" duration="1053000" />
+      <workItem from="1599633444246" duration="1457000" />
+      <workItem from="1599639072641" duration="1740000" />
+      <workItem from="1599640880066" duration="1207000" />
+      <workItem from="1599740553711" duration="1793000" />
+      <workItem from="1599742366153" duration="1792000" />
+      <workItem from="1599744216426" duration="1693000" />
+      <workItem from="1599746024949" duration="1670000" />
+      <workItem from="1599747834591" duration="998000" />
+      <workItem from="1599804545880" duration="619000" />
+      <workItem from="1599806671946" duration="610000" />
+      <workItem from="1599808825871" duration="1796000" />
+      <workItem from="1599810669593" duration="1796000" />
+      <workItem from="1599812481268" duration="696000" />
+      <workItem from="1599814294602" duration="1798000" />
+      <workItem from="1599816107496" duration="639000" />
+      <workItem from="1600067465820" duration="1728000" />
+      <workItem from="1600069484289" duration="1882000" />
+      <workItem from="1600071399063" duration="601000" />
+      <workItem from="1600073446142" duration="1182000" />
+      <workItem from="1600075382127" duration="1299000" />
+    </task>
+    <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
+      <created>1596026248307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596026248307</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".gitignore updated">
+      <created>1596027482199</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596027482199</updated>
+    </task>
+    <task id="LOCAL-00003" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch">
+      <created>1596191191555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596191191555</updated>
+    </task>
+    <task id="LOCAL-00004" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - Presentation">
+      <created>1596436154293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596436154293</updated>
+    </task>
+    <task id="LOCAL-00005" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - content">
+      <created>1596436773662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596436773662</updated>
+    </task>
+    <task id="LOCAL-00006" summary="IT-Homepage - HP-4 Blog 2.0 Relaunch - Header">
+      <created>1596441850407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596441850407</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CON-14 - Aktivitäten vom Connector auslesen und anzeigen">
+      <created>1596452895758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596452895758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="HP-4 Blog 2.0 Relaunch - Header Upate">
+      <created>1596457672202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596457672202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CON-99 Kurse sind im Memberbereich auf der Website">
+      <created>1596546001412</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596546001412</updated>
+    </task>
+    <task id="LOCAL-00010" summary="CON-99 Kurse sind im Memberbereich auf der Website">
+      <created>1597130022653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597130022654</updated>
+    </task>
+    <task id="LOCAL-00011" summary="CON-98 IPadDashboard ProductListItem">
+      <created>1598526110703</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598526110703</updated>
+    </task>
+    <task id="LOCAL-00012" summary="CON-98-IPadDashboard - Shop Basket Design">
+      <created>1600247496889</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600247496889</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+<<<<<<< Updated upstream
+=======
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6095000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09264413" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49900597" weight="0.32969603" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49662027" visible="true" weight="0.14029618" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033797" side_tool="true" visible="true" weight="0.14029618" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.04811133" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.086282305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49900597" visible="true" weight="0.3289166" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500994" side_tool="true" visible="true" weight="0.3289166" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.04811133" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
+    </layout-to-restore>
+  </component>
+>>>>>>> Stashed changes
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten" />
+    <MESSAGE value=".gitignore updated" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - Presentation" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - content" />
+    <MESSAGE value="IT-Homepage - HP-4 Blog 2.0 Relaunch - Header" />
+    <MESSAGE value="CON-14 - Aktivitäten vom Connector auslesen und anzeigen" />
+    <MESSAGE value="HP-4 Blog 2.0 Relaunch - Header Upate" />
+    <MESSAGE value="CON-99 Kurse sind im Memberbereich auf der Website" />
+    <MESSAGE value="CON-98 IPadDashboard ProductListItem" />
+<<<<<<< Updated upstream
+    <option name="LAST_COMMIT_MESSAGE" value="CON-98 IPadDashboard ProductListItem" />
+=======
+    <MESSAGE value="CON-98 IPad Dashboard - Local Changes" />
+    <MESSAGE value="CON-98-IPadDashboard - Shop Basket Design" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-98-IPadDashboard - Shop Basket Design" />
+>>>>>>> Stashed changes
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599739053310" />
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599739053310" />
+    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state width="1133" height="268" key="Git.Branch.Popup" timestamp="1599739058546">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1133" height="268" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739058546" />
+    <state x="2424" y="266" key="MergeDialog" timestamp="1599739053310" />
+    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599739053310" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2701" y="345" key="SettingsEditor" timestamp="1599739053310" />
+    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1599739053310" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599739053310" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599739053310" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1599739053310" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+    <state x="2856" y="330" key="run.anything.popup" timestamp="1599812216755">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+<<<<<<< Updated upstream
+    <state x="2856" y="330" key="run.anything.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599812216755" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599739053310" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
+=======
+    <state x="3022" y="599" key="git4idea.ui.GitStashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817754964" />
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog" timestamp="1599817771103">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599817522694" />
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pages/me.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7123">
+          <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="230" column="17" lean-forward="true" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
+  </component>
+</project>

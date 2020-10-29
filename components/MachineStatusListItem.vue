@@ -7,7 +7,8 @@
       </div>
       <div class="body">
         <div class="title">
-          {{content.title}}
+          <a :href="'machines/' + slug">
+          {{content.title}}</a>
         </div>
         <div class="tags">
           <span v-for="(tag, index) in tags">
@@ -30,6 +31,8 @@ export default {
   components: {
     MachineStatus
   },
+  created() {
+  },
   computed: {
     fabmanId() {
       return this.blok.content.machine_status_items[0].fabmanId;
@@ -37,6 +40,12 @@ export default {
     content() {
       return this.blok.content;
     },
+    slug() {
+      return this.blok.slug;
+    },
+    /*route() {
+       console.log (window);
+    },*/
     tags() {
       return this.blok.tag_list;
     }

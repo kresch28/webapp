@@ -16,6 +16,9 @@ import FeedbackForm from '~/components/FeedbackForm.vue'
 
 import TeamMember from '~/components/TeamMember.vue'
 import TeamMemberPreview from '~/components/TeamMemberPreview.vue'
+
+import Hotspot from "../components/Hotspot";
+
 import Mainstage from '~/components/Mainstage.vue'
 import Map from '~/components/Map.vue'
 import MembershipGrid from '~/components/MembershipGrid.vue'
@@ -78,6 +81,10 @@ import Icon from '~/components/Icon.vue'
 import PriceTable from '~/components/PriceTable.vue'
 import PriceTableItem from '~/components/PriceTableItem.vue'
 
+import ProductListItem from "../components/ProductListItem";
+import ProductItem from "../components/ProductItem";
+import ProductItemHeader from "../components/ProductItemHeader";
+
 Vue.component('page', Page)
 Vue.component('general-header', GeneralHeader)
 Vue.component('teaser', Teaser)
@@ -89,6 +96,7 @@ Vue.component('feature', Feature)
 Vue.component('sitemap-item', SitemapItem)
 Vue.component('team-member', TeamMember)
 Vue.component('team-member-preview', TeamMemberPreview)
+Vue.component('hotspot', Hotspot)
 Vue.component('mainstage', Mainstage)
 Vue.component('map-view', Map)
 Vue.component('membership-grid', MembershipGrid)
@@ -141,6 +149,10 @@ Vue.component('icon', Icon)
 
 Vue.component('price-table', PriceTable)
 Vue.component('price-table-item', PriceTableItem)
+
+Vue.component('product-list-item', ProductListItem)
+Vue.component('product-item', ProductItem)
+Vue.component('product-item-header', ProductItemHeader)
 
 Vue.component('level-slider', LevelSlider)
 Vue.component('level-item', LevelItem)

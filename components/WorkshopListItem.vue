@@ -52,12 +52,6 @@
                   <span>ausgebucht</span>
                 </div>
               </div>
-              <!-- <div class="info-block">
-                <div class="col" v-if="content.pax">
-                  <icon name="user" />
-                  <span>{{content.pax}}</span>
-                </div>
-              </div>-->
             </div>
           </div>
         </div>
@@ -71,7 +65,7 @@
 
 <script>
 export default {
-  props: ['blok', 'slim'],
+  props: ['blok', 'slim', 'date'],
   computed: {
     dates() {
       return this.blok.dates;
@@ -81,11 +75,8 @@ export default {
     },
     linktext() {
       return "Mehr Infos";
-    }
-  },
-  mounted() {
-    // console.log(this.blok.uuid);
-  },
+    },
+  }
 }
 </script>
 

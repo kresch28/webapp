@@ -2,9 +2,10 @@
   <div class="wizard" v-if="user !== null">
     <div class="header">
       <h2>Mitglied werden</h2>
-      <p>In 4 Schritten zu deiner Mitgliedschaft</p>
+      <p>In 4 Schritten zu deiner <a :href="window+'/de/mitgliedschaften'" target="_blank">Mitgliedschaft</a></p>
     </div>
     <div class="wizard-section">
+      <form @submit="checkForm" method="post">
       <div class="wizard-section-menu">
         <div class="steps">
           <div v-for="s,i in steps" class="step" :class="{ 'icon': index > i, 'color': index >= i}">
@@ -20,28 +21,71 @@
       <div class="wizard-section-content">
         <NuxtChild :key="$route.params.slug"></NuxtChild>
       </div>
-      <div class="wizard-section-nav">
+      <div class="wizard-section-nav" v-if="done == false">
         <div class="form">
           <div class="button-row">
             <button class="input-button-primary" v-if="index > 0" @click="back()">Zurück</button>
             <div class="spacer"></div>
-            <button class="input-button-primary" v-if="index < steps.length-1" @click="next()">Weiter</button>
+            <input class="input-button-primary" v-if="index < steps.length-1" @click="next()" type="submit" value="Weiter">
+            <input class="input-button-primary" v-if="index == steps.length-1" @click="submit" type="submit" value="Abschicken">
+            <!--<button class="input-button-primary" v-if="index < steps.length-1" @click="next()">Weiter </button>-->
           </div>
         </div>
       </div>
+        <div v-if="done == true" class="check">
+          Mitgliedschaft erflogreich abgeschlossen
+          <img src="~/assets/img/icons/check-solid.svg" class="status">
+        </div>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
+  // import saveAs from 'save-as'
+
 export default {
   middleware: 'authenticated',
   data () {
     return {
-      steps: ['index', 'contact', 'payment', 'done']
+      steps: ['index', 'contact', 'payment', 'done'],
+      done: false,
+      typeErrors: {
+        'type' : '',
+        'periode' : '',
+        'iban' : '',
+        'bank' : ''
+      },
+    profileData: {
+        'profile_type' : '',
+        'profile_period' : '',
+        'firstname' : '',
+        'lastname' : '',
+        'birthdate' : '',
+        'phone' : '',
+        'street' : '',
+        'street_additional' : '',
+        'zip' : '',
+        'city' : '',
+        'country' : '',
+        'iban' : '',
+        'bic' : '',
+      },
+      profileCheck: false,
+      personalData: [],
+      personalCheck: false,
+      payment: {},
+      paymentCheck: false,
+      newUser: {
+        'profile' : '',
+        'person' : '',
+        'payment' : '',
+        'file' : ''
+      },
     }
   },
   created() {
+    this.user.errors = this.typeErrors;
   },
   methods: {
     back() {
@@ -55,9 +99,171 @@ export default {
       this.$router.push('/wizard/onboarding/' + path);
     },
     next() {
-      let ni = this.index + 1 < 0 ? 0 : this.index + 1;
-      let path = this.steps[ni];
-      this.$router.push('/wizard/onboarding/' + path);
+
+      console.log(this.user.payment.iban.length);
+      console.log(this.user.payment.bank.length)
+
+      if (this.user.type !== undefined && this.user.periode !== undefined) {
+        if (this.user.agbBool == true && this.index < 1) {
+          let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+          let path = this.steps[ni];
+          this.$router.push('/wizard/onboarding/' + path);
+          if(this.user.periode == 'month') {
+            this.newUser = {'profile_period' : 1};
+          }
+          if(this.user.type == 'year') {
+            this.newUser= {'profile_period' : 2};
+          }
+          if(this.user.type == 'regulär') {
+            this.newUser.profile_type = 1;
+          }
+          if(this.user.type == 'ermäßigt') {
+            this.newUser.profile_type = 2;
+          }
+          if(this.user.type == 'free') {
+            this.newUser.profile_type = 3;
+          }
+          this.profileCheck = true;
+        }
+      }
+      if(this.profileCheck != true && this.index == 0){
+        if (this.user.type == undefined) {
+          this.typeErrors.type = false;
+        }
+        if (this.user.periode == undefined) {
+          this.typeErrors.periode = false;
+        }
+        this.user.errors = this.typeErrors;
+        this.profileCheck = null;
+        alert('Bitte alle Felder auswählen');
+      }
+      if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
+        alert('Hast du die ANB und die Werkstattordnung gelesen?');
+      }
+      if(this.user.dsBool == true && this.index == 1) {
+        let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+        let path = this.steps[ni];
+        this.$router.push('/wizard/onboarding/' + path);
+        this.newUser.birthdate = this.user.profile.birthdate;
+        this.newUser.phone = this.user.profile.phone;
+        this.newUser.street = this.user.profile.address;
+        this.newUser.street_additional = this.user.profile.address2;
+        this.newUser.zip = this.user.profile.zip;
+        this.newUser.city = this.user.profile.city;
+        /*this.personalData = {'birthday' : this.user.profile.birthdate};
+        this.personalData.phone = this.user.profile.phone;
+        this.personalData.address = this.user.profile.address;
+        this.personalData.address2 = this.user.profile.address2;
+        this.personalData.zip = this.user.profile.zip;
+        this.personalData.city = this.user.profile.city;
+        this.personalData.company = this.user.profile.company;
+        this.newUser.person = this.personalData;*/
+      }
+      if(this.user.dsBool != true && this.index == 1) {
+        alert('Hast du die Datenschutzerklärung gelesen?');
+        return;
+      }
+      if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
+        if(this.user.payment.iban.length > 19 && this.user.payment.bank.length > 10){
+        this.paymentCheck = false;
+          if (this.user.sepaBool == true) {
+            let ni = this.index + 1 < 0 ? 0 : this.index + 1;
+            let path = this.steps[ni];
+            console.log(ni);
+            this.$router.push('/wizard/onboarding/' + path);
+            /*this.payment = {'iban' : this.user.payment.iban};
+            this.payment.bank = this.user.payment.bank;*/
+            console.log(this.user.payment.iban.length);
+            this.newUser.iban = this.user.payment.iban;
+            this.newUser.bank = this.user.payment.bank;
+            this.paymentCheck = true;
+            /*this.newUser.payment = this.payment;*/
+            console.log(this.newUser);
+          }
+        }
+      }
+
+      if(this.index == 2) {
+        if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
+          if (this.user.payment.iban == '') {
+            this.typeErrors.iban = false;
+            alert('Bitte alle Felder auswählen');
+          }
+          if(this.user.payment.iban.length < 20) {
+            this.typeErrors.iban = false;
+            alert('Bitte einen gültigen IBAN angeben');
+          }
+          if (this.user.payment.bank == '' && this.user.payment.bank.length < 11) {
+            this.typeErrors.bank = false;
+            alert('Bitte alle Felder auswählen');
+          }
+          if(this.user.payment.bank.length < 11) {
+            this.typeErrors.iban = false;
+            alert('Bitte einen gültigen BIC angeben');
+          }
+
+          this.paymentCheck = null;
+        }
+      }
+
+      /*if(this.paymentCheck != true && this.index == 2){
+        if (this.user.payment.iban == '') {
+          this.typeErrors.iban = false;
+        }
+        if (this.user.payment.bank == '') {
+          this.typeErrors.bank = false;
+        }
+        alert('Bitte alle Felder auswählen');
+        this.paymentCheck = null;
+      }*/
+
+      console.log(this.paymentCheck);
+      if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
+        alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
+      }
+
+      if(this.user.file != null) {
+        this.newUser.file = this.user.file;
+      }
+
+      /*console.log(this.user);
+      console.log(this.newUser);
+      console.log(JSON.stringify(this.newUser));*/
+
+    },
+    checkForm(e){
+      e.preventDefault();
+    },
+    submit(e){
+      e.preventDefault();
+      this.profileData.profile_type = this.newUser.profile_type;
+      this.profileData.profile_period = this.newUser.profile_period;
+      this.profileData.firstname = this.user.profile.firstName;
+      this.profileData.lastname = this.user.profile.lastName;
+      this.profileData.birthdate = this.newUser.birthdate;
+      this.profileData.phone = this.newUser.phone;
+      this.profileData.street = this.newUser.street;
+      this.profileData.street_additional = this.newUser.street_additional;
+      this.profileData.zip = this.newUser.zip;
+      this.profileData.city = this.newUser.city;
+      this.profileData.country = 'at';
+      this.profileData.iban = this.newUser.iban;
+      this.profileData.bic = this.newUser.bank;
+      this.$store.dispatch("updateInvoiceContact", this.profileData).then((data) => {
+        if(data) {
+          this.done = true;
+        }
+        console.log(data);
+      }).catch((err)=> {
+        console.log(err);
+      });
+    },
+    getDocument() {
+        console.log(JSON.stringify(this.profileData));
+        let blob = new Blob([JSON.stringify(this.profileData)], { type: "application/json" });
+        console.log(blob);
+        saveAs(blob, 'onboarding.json');
+        return blob;
     },
   },
   computed: {
@@ -69,6 +275,9 @@ export default {
     },
     user() {
       return this.$store.state.user;
+    },
+    window(){
+      return window.location.origin
     },
   }
 }
@@ -83,6 +292,9 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
     .wizard-section-menu {
       .steps {
         .step {
@@ -151,6 +363,19 @@ export default {
         }
       }
     }
+  }
+  .missing {
+    border: 1px solid #ff0000 !important;
+  }
+  .missingInput {
+    outline: auto;
+  }
+  .status {
+    margin-left: 10px;
+    width: 5%;
+  }
+  .check {
+    text-align: center;
   }
 }
 </style>

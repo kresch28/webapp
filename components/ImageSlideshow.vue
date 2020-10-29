@@ -5,7 +5,7 @@
     </div>
     <div v-swiper:swiper="swiperOption">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" :key="s._uid" v-for="s in blok.items" :style="{ 'background-image': 'url(' + $resizeImage(s.image, '700x0') + ')' }">
+        <div class="swiper-slide" :key="s._uid" v-for="s in blok.items" jamask
         </div>
       </div>
         <div class="swiper-button-next"></div>

@@ -1,7 +1,11 @@
 <template>
   <div v-editable="blok" class="member-page" @touchstart="touch">
-    <a href="#" display="none" ref="hidden"></a>
+    <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
+      <b>{{firstName}} {{lastName}} - {{blok.title}}</b></a>
     <div class="header">
+      <div class="sidebar-info">
+        <a :href="back" display="none" ref="hidden" class="link-sidebar"><span>GRANDGARAGE <span class="blue">TEAM</span></span></a>
+      </div>
       <div class="image">
         <img class="picture" v-if="blok.image" :src="$resizeImage(blok.image, '700x700')" :alt="blok.name + ', ' + blok.title"/>
         <img class="picture image-alt" v-if="blok.image_alt" :src="$resizeImage(blok.image_alt, '700x700')" :alt="blok.name + ', ' + blok.title"/>
@@ -9,11 +13,20 @@
       <div class="info">
         <div class="short-info">
           <div class="name-contact">
-            <div class="name">{{blok.name}}</div>
+            <div class="name">{{firstName}} <br> {{lastName}}</div>
             <div class="contact-options">
               <a class="option email" v-if="blok.email" :href="'mailto:'+blok.email">
                 <img class="icon" src="~/assets/img/icons/envelope.svg" alt=""/>
-                <div class="text">{{blok.email}}</div>
+                <!--<div class="text">{{blok.email}}</div>-->
+              </a>
+              <a v-if="blok.fb_src" class="option-links" :href="blok.fb_src.url">
+                <img class="icon" :src="`/icons/fb.png`">
+              </a>
+              <a v-if="blok.linkedin_src" class="option-links linkedin" :href="blok.linkedin_src">
+                <img class="icon" src="~/assets/img/icons//linkedin.svg">
+              </a>
+              <a v-if="blok.twitter_src" class="option-links twitter" :href="blok.twitter_src.url">
+                <img class="icon" src="~/assets/img/icons/twitter.svg">
               </a>
             </div>
           </div>
@@ -36,12 +49,95 @@
         <markdown :value="blok.description"></markdown>
       </div>
     </div>
+    <div class="hotspots" v-if="blok.hotspots">
+      <div class="hotspots-header">
+        <div class="hotspots-title">Meine <br> Hotspots</div>
+        <div class="hotspots-link">
+          <img src="~/assets/img/arrow-right.svg" class="link-arrow">
+          <div>Alle Hotspots</div>
+        </div>
+      </div>
+      <!--<div class="hotspots-items">
+        <div v-for="h in blok.hotspots">
+          <hotspot :blok="h"></hotspot>
+        </div>
+      </div>-->
+      <div v-editable="blok" class="hotspot-slideshow">
+        <div class="hotspot-swiper-container" v-swiper:swiper="swiperOption">
+          <div class="hotspot-swiper-wrapper">
+            <!--<div v-for="h in blok.hotspots" class="swiper-slide" :style="{ 'background-image': 'url(' + $resizeImage(h.image, '700x0') + ')' }">-->
+            <div v-for="h in blok.hotspots" class="hotspot-swiper-slide">
+              <div class="hotspot-content" :style="{ 'background-image': 'url(' + $resizeImage(h.image, '700x0') + ')' }">
+              <!--<img class="picture" v-if="h.image" :src="$resizeImage(h.image, '700x700')"/>-->
+              <span class="title"><b>{{h.title}}</b></span>
+              <span class="description">{{h.description}}</span>
+              </div>
+            </div>
+          </div>
+          <div v-if="count > 3" class="swiper-button-next"></div>
+          <div v-if="count > 3" class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: ['blok'],
+  created() {
+    console.log(this.$route.path.split('/'))
+    },
+  computed: {
+    back() {
+      return '/' + this.$route.path.split('/')[1] + '/' + this.$route.path.split('/')[2]
+    },
+    count() {
+      return this.blok.hotspots.length
+    },
+    firstName() {
+      let name = this.blok.name.split(' ');
+      return name[0];
+    },
+    lastName() {
+      let name = this.blok.name.split(' ');
+      let last = '';
+      for (let i = 1; i < name.length; i++) {
+        last = last + ' ' + name[i];
+      }
+      return last;
+    },
+    swiperOption() {
+      return {
+        slidesPerView: this.num,
+        spaceBetween: this.spaceBetween,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    },
+    spaceBetween() {
+      if (process.client && window && window.innerWidth) {
+        if (window.innerWidth < 786) {
+          return 0;
+        }
+      }
+      return 30;
+    },
+    num() {
+      if (process.client && window && window.innerWidth) {
+        if (window.innerWidth < 786) {
+          return 1;
+        }
+      }
+      return 3;
+    },
+  },
   methods: {
     touch(e) {
       if (e.target.localName !== 'img') {
@@ -58,12 +154,41 @@ export default {
 .member-page {
   @include margin-page-wide();
   min-height: 150px;
+  .breadcrumb {
+    color: #000000;
+    font-size: smaller;
+    .icon-breadcrumb {
+      width: 12px;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+  }
   .header {
     display: flex;
+    margin-top: 20px;
+    position: relative;
+
+    .sidebar-info {
+      transform: rotate(270deg);
+      left: 0;
+      position: absolute;
+      top: 50%;
+      margin-left: -110px;
+      .link-sidebar{
+        color: #000000;
+      }
+      span {
+        font-weight: bold;
+        .blue {
+          color: $color-blue;
+        }
+      }
+    }
+
     .image {
       position: relative;
       flex-grow: 1;
-      width: 46%;
+      width: 33%;
       margin-right: 2%;
       text-align: right;
       &:hover {
@@ -88,21 +213,20 @@ export default {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      justify-content: center;
       width: 50%;
       margin-left: 2%;
       .short-info {
         display: flex;
-        flex-grow: 1;
         flex-direction: column;
-        justify-content: flex-end;
         .name-contact {
+          align-items: flex-end;
           padding-bottom: 1rem;
           border-bottom: .4rem solid black;
           margin-top: 1rem;
           margin-bottom: 1rem;
           display: flex;
-          flex-direction: column-reverse;
-          align-items: flex-end;
+          flex-direction: row;
           justify-content: space-between;
           .name {
             font-family: $font-secondary;
@@ -112,9 +236,9 @@ export default {
           }
           .contact-options {
             font-size: .9rem;
-            margin-bottom: .8rem;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: flex-end;
             .option {
               display: flex;
               flex-direction: row-reverse;
@@ -129,6 +253,35 @@ export default {
               .text {
               }
             }
+            .option-links{
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: center;
+              padding: .4em 0;
+              color: inherit;
+              text-decoration: none;
+              margin-right: 5px;
+              .icon {
+                width: 10px;
+                margin-left: .5em;
+              }
+              .text {
+              }
+            }
+
+            .option-links.twitter{
+              .icon {
+                width: 18px;
+                margin-left: .5em;
+              }
+            }
+
+            .option-links.linkedin{
+              .icon {
+                width: 18px;
+                margin-left: .5em;
+              }
+            }
           }
         }
         .title {
@@ -139,6 +292,7 @@ export default {
       }
       .short-description {
         line-height: 1.5;
+        margin-top: 40px;
         @include media-breakpoint-up(xl) {
           width: 80%;
         }
@@ -247,5 +401,100 @@ export default {
       }
     }
   }
+
+  .hotspot-slideshow {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    .hotspot-swiper-container {
+      width: 100%;
+      height: 100%;
+
+      .hotspot-swiper-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        .hotspot-swiper-slide {
+          height: 250px;
+          width: 33%;
+
+          .hotspot-content {
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .picture {
+                  width: 70%;
+              height: 50%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            .title {
+              width: 70%;
+              margin-right: auto;
+              margin-top: 280px;
+              font-family: $font-secondary;
+            }
+            .description {
+              width: 70%;
+              margin-right: auto;
+              margin-top: 15px;
+              font-family: $font-secondary;
+            }
+          }
+        }
+
+        padding-bottom: 60px;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $color-yellow;
+      background-size: 12px;
+    }
+  }
+
 }
+.hotspots-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin-left: 160px;
+  margin-bottom: 60px;
+  .hotspots-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .2em;
+  }
+  .hotspots-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+    .link-arrow {
+      width: 10%;
+      height: 20%;
+      margin-right: 15px;
+    }
+  }
+}
+
+  .hotspots-items {
+    display: flex;
+    justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    width: 70%;
+  }
+
+
+
 </style>

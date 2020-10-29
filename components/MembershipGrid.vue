@@ -33,6 +33,9 @@
       <div class="register-button" v-if="!hasUser">
         <button @click="register">Jetzt Mitglied werden</button>
       </div>
+      <div class="register-button" v-if="hasUser && !hasPackage">
+        <Nuxt-Link to="/wizard/onboarding/" class="link">Jetzt Mitglied werden</Nuxt-Link>
+      </div>
       <div v-if="blok.plans_text" class="plans-text">
         <markdown :value="blok.plans_text"></markdown>
       </div>
@@ -61,6 +64,12 @@ export default {
   computed: {
     hasUser() {
       return !!this.$store.state.user;
+    },
+    hasPackage(){
+      console.log(this.$store.state.user.packages);
+      console.log(this.$store.state.user.packages.length == 0)
+      console.log(!this.$store.state.user.packages.length == 0)
+      return !this.$store.state.user.packages.length == 0;
     }
   }
 }
@@ -175,6 +184,7 @@ export default {
     }
     .register-button {
       text-align: center;
+      margin: 50px 10px;
       button {
         outline: none;
         cursor: pointer;
@@ -183,6 +193,21 @@ export default {
         color: #FFF;
         border: none;
         padding: 15px;
+        background-color: $color-orange;
+        margin: 1.5em 0;
+        transition: background-color .3s linear;
+        &:hover {
+          background-color: saturate(darken($color-orange, 5%), 100%);
+        }
+      }
+      .link {
+        outline: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #FFF;
+        border: none;
+        padding: 15px 30px;
         background-color: $color-orange;
         margin: 1.5em 0;
         transition: background-color .3s linear;

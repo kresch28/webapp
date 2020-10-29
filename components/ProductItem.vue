@@ -1,0 +1,218 @@
+<template>
+    <div v-editable="product" class="product-page" v-if="product">
+        <div class="product-teaser">
+            <div class="body">
+                <div class="image">
+                    <img :src="$resizeImage(product.image, '700x0')" alt=""/>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">
+                        <h4>{{product.title}}</h4>
+                    </div>
+                    <div class="description text">
+                        <markdown :value="product.details"></markdown>
+                    </div>
+                    <div class="product-checkout" v-if="hasUser">
+                        <form>
+                            <select class="amount select" name="amount" id="amount">
+                                <option value="1" v-model="amount">1</option>
+                                <option value="2" v-model="amount">2</option>
+                                <option value="3" v-model="amount">3</option>
+                                <option value="4" v-model="amount">4</option>
+                                <option value="5" v-model="amount">5</option>
+                                <option value="6" v-model="amount">6</option>
+                                <option value="7" v-model="amount">7</option>
+                                <option value="8" v-model="amount">8</option>
+                                <option value="9" v-model="amount">9</option>
+                                <option value="10" v-model="amount">10</option>
+                            </select>
+                            <input class="button" type="submit" value="Bestellen">
+                        </form>
+                    </div>
+                    <div v-else class="product-checkout">
+                        <div class="product-checkout-warning">
+                            Du musst angemeldet sein um die Verfügbarkeit der Maschinen sehen zu können!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="inner-body">
+
+            </div>
+        </div>
+        <div class="body" v-if="product.links && product.links.length > 0">
+            <h3 class="blue">Links</h3>
+            <ul class="link-list">
+                <li class="link-item" v-for="(i, index) in product.links" v-bind:key="index">
+                    <div class="title">
+                        {{i.title}}
+                    </div>
+                    <a class="url" :href="i.url" target="_blank">{{i.url}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "ProductItem",
+        props: ['blok'],
+        computed: {
+            product() {
+                return this.blok;
+            },
+            hasUser() {
+                return !!this.$store.state.user;
+            },
+        }
+    }
+</script>
+
+<style lang="scss">
+    @import '@/assets/scss/styles.scss';
+
+    .button {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px;
+        border: none;
+        outline: none;
+        color: #FFF;
+        background-color: $color-orange;
+    }
+
+    .amount {
+        padding: 6px;
+    }
+
+    .product-page {
+        h3 {
+            &.blue {
+                color: $color-blue;
+            }
+        }
+        .product-teaser {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .title {
+                text-transform: uppercase;
+            }
+            .body {
+                display: flex;
+                @include media-breakpoint-down(md) {
+                    flex-direction: column;
+                }
+                .product-info {
+                    flex: 2;
+
+                    .product-title {
+                        margin-left: 40px;
+                        h4 {
+                            color: #ffffff;
+                            background-color: $color-blue;
+                            padding: 10px;
+                            width: 30%;
+                        }
+                    }
+                }
+                .text {
+                    flex: 1;
+                    display: flex;
+                    padding: 0 3em;
+                    line-height: 1.5;
+                    font-size: 1rem;
+                    @include media-breakpoint-down(sm) {
+                        padding: 0;
+                        font-size: 1rem;
+                        line-height: 1.4;
+                    }
+                }
+                .image {
+                    padding: 0 3em;
+                    flex: 1;
+                    @include media-breakpoint-down(md) {
+                        margin-top: 1em;
+                        padding-left: 0;
+                    }
+                    padding-right: 0;
+                    img {
+                        margin: auto;
+                        display: block;
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+        .body {
+            font-family: $font-mono;
+            margin: 0 4%;
+            margin-bottom: 1em;
+            .headline {
+                text-transform: uppercase;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 1.8em;
+                @include media-breakpoint-up(sm) {
+                    font-size: 2.8em;
+                }
+                letter-spacing: .03em;
+                white-space: pre-wrap;
+                line-height: 1.24;
+                margin-bottom: 4vh;
+            }
+            .description {
+                font-size: .9rem;
+                line-height: 2.2;
+                margin-bottom: 4vh;
+            }
+            .inner-body {
+                display: flex;
+                .description {
+                    flex: 1;
+                }
+            }
+            .link-list {
+                color: $color-blue;
+                display: block;
+                margin: 0;
+                padding: 1em;
+                padding-left: 0;
+                max-width: 80em;
+                .link-item {
+                    word-break: break-all;
+                    list-style-type: none;
+                    margin: 0;
+                    margin-bottom: 4vh;
+                    font-size: 1.1rem;
+                    line-height: 1.4;
+                    .title {
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                    .url {
+                        color: $color-blue;
+                        font-size: 0.9rem;
+                        font-family: $font-mono;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-checkout {
+        @include media-breakpoint-up(md){
+            margin-left: 60px;
+        }
+        @include media-breakpoint-down(md){
+            margin-left: 30px;
+        }
+    }
+</style>

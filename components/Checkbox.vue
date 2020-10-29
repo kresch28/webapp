@@ -17,10 +17,14 @@ export default {
     }
   },
   created() {
+    console.log(this.value);
     this.dvalue = Boolean(this.value);
     this.$watch('dvalue', () => {
       this.$emit('input', this.dvalue);
     });
+  },
+  computed() {
+    console.log(this.dvalue);
   }
 };
 </script>
