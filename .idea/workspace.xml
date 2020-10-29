@@ -38,114 +38,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-98-IPadDashboard - mobiles Layout">
-      <change afterPath="$PROJECT_DIR$/assets/img/icons/arrow-left-solid.svg" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-120 Blog Voting Funktion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ImageSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageSlideshow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MachineStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatus.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
     </list>
-=======
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="" />
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< Updated upstream
   <component name="ComposerSettings">
     <execution />
-=======
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/order.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6562">
-              <caret line="386" column="17" selection-start-line="386" selection-start-column="16" selection-end-line="394" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/screen/dashboard.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3128">
-              <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/shopItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7123">
-              <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/_language/news/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me/index.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/me.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="230" column="17" lean-forward="true" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/ProductListItem.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
->>>>>>> Stashed changes
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,12 +60,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CON-98-IPadDashboard" />
+        <entry key="$PROJECT_DIR$" value="CON-90-DashboardMemberBereich" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1el9MTXb8a58UBqMEc0nBzgGZxL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -174,15 +79,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webapp_newProfile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/screen" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\katharina.resch\webapp\pages\screen" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
       <recent name="H:\Daten\_Projects\GG\assets\img\icons" />
       <recent name="C:\Users\katharina.resch\webapp\pages" />
+      <recent name="C:\Users\katharina.resch\webapp\assets\img\icons" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -305,23 +213,23 @@
       <workItem from="1599633444246" duration="1457000" />
       <workItem from="1599639072641" duration="1740000" />
       <workItem from="1599640880066" duration="1207000" />
-      <workItem from="1599740553711" duration="1793000" />
-      <workItem from="1599742366153" duration="1792000" />
-      <workItem from="1599744216426" duration="1693000" />
-      <workItem from="1599746024949" duration="1670000" />
-      <workItem from="1599747834591" duration="998000" />
-      <workItem from="1599804545880" duration="619000" />
-      <workItem from="1599806671946" duration="610000" />
-      <workItem from="1599808825871" duration="1796000" />
-      <workItem from="1599810669593" duration="1796000" />
-      <workItem from="1599812481268" duration="696000" />
-      <workItem from="1599814294602" duration="1798000" />
-      <workItem from="1599816107496" duration="639000" />
-      <workItem from="1600067465820" duration="1728000" />
-      <workItem from="1600069484289" duration="1882000" />
-      <workItem from="1600071399063" duration="601000" />
-      <workItem from="1600073446142" duration="1182000" />
-      <workItem from="1600075382127" duration="1299000" />
+      <workItem from="1599656195097" duration="1972000" />
+      <workItem from="1599714144947" duration="10629000" />
+      <workItem from="1599818041253" duration="978000" />
+      <workItem from="1599821957242" duration="2099000" />
+      <workItem from="1600063812803" duration="1359000" />
+      <workItem from="1600157334773" duration="1369000" />
+      <workItem from="1600159767659" duration="607000" />
+      <workItem from="1600161621096" duration="1101000" />
+      <workItem from="1600169809601" duration="609000" />
+      <workItem from="1600172126374" duration="1934000" />
+      <workItem from="1600174767243" duration="599000" />
+      <workItem from="1600177202180" duration="599000" />
+      <workItem from="1600179239430" duration="599000" />
+      <workItem from="1600675397269" duration="1872000" />
+      <workItem from="1601272770694" duration="804000" />
+      <workItem from="1601274914246" duration="1201000" />
+      <workItem from="1602479575894" duration="815000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -400,72 +308,16 @@
       <option name="project" value="LOCAL" />
       <updated>1598526110703</updated>
     </task>
-    <task id="LOCAL-00012" summary="CON-98-IPadDashboard - Shop Basket Design">
-      <created>1600247496889</created>
+    <task id="LOCAL-00012" summary="CON-98-IpadDashboard - Link to order page">
+      <created>1602236854576</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1600247496889</updated>
+      <updated>1602236854576</updated>
     </task>
     <option name="localTasksCounter" value="13" />
     <servers />
   </component>
-<<<<<<< Updated upstream
-=======
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6095000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09264413" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49900597" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49662027" visible="true" weight="0.14029618" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033797" side_tool="true" visible="true" weight="0.14029618" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.086282305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49900597" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500994" side_tool="true" visible="true" weight="0.3289166" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3286385" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.04811133" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.20764618" />
-    </layout-to-restore>
-  </component>
->>>>>>> Stashed changes
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -506,85 +358,51 @@
     <MESSAGE value="HP-4 Blog 2.0 Relaunch - Header Upate" />
     <MESSAGE value="CON-99 Kurse sind im Memberbereich auf der Website" />
     <MESSAGE value="CON-98 IPadDashboard ProductListItem" />
-<<<<<<< Updated upstream
-    <option name="LAST_COMMIT_MESSAGE" value="CON-98 IPadDashboard ProductListItem" />
-=======
     <MESSAGE value="CON-98 IPad Dashboard - Local Changes" />
-    <MESSAGE value="CON-98-IPadDashboard - Shop Basket Design" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-98-IPadDashboard - Shop Basket Design" />
->>>>>>> Stashed changes
+    <MESSAGE value="CON-98-IpadDashboard - Link to order page" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-98-IpadDashboard - Link to order page" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599739053310" />
-    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599739053310" />
-    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state width="1133" height="268" key="Git.Branch.Popup" timestamp="1599739058546">
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
+    <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601993642782">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1133" height="268" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739058546" />
-    <state x="2424" y="266" key="MergeDialog" timestamp="1599739053310" />
-    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599739053310" />
-    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2701" y="345" key="SettingsEditor" timestamp="1599739053310" />
-    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1599739053310" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599739053310" />
-    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599739053310" />
-    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1599739053310" />
-    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-    <state x="2856" y="330" key="run.anything.popup" timestamp="1599812216755">
+    <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993642782" />
+    <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599817522694" />
+    <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state width="1131" height="266" key="Git.Branch.Popup" timestamp="1599817522694" />
+    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2424" y="266" key="MergeDialog" timestamp="1599817522694" />
+    <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599817522694" />
+    <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
+    <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1602236889756">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-<<<<<<< Updated upstream
-    <state x="2856" y="330" key="run.anything.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599812216755" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599739053310" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599739053310" />
-=======
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602236889756" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599817522694" />
+    <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />
+    <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog" timestamp="1601986239072">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2914" y="488" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601986239072" />
+    <state x="3022" y="599" key="git4idea.ui.GitStashDialog" timestamp="1599817754964">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
     <state x="3022" y="599" key="git4idea.ui.GitStashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817754964" />
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog" timestamp="1599817771103">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1599817522694" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/me.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7123">
-          <caret line="419" column="7" selection-start-line="419" selection-start-column="6" selection-end-line="419" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/ProductItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="28" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shop/basket.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="230" column="17" lean-forward="true" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> Stashed changes
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1602768596499">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602768596499" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600676483107" />
   </component>
 </project>

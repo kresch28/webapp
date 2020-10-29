@@ -1,14 +1,32 @@
 <template>
     <!--<component v-if="story && story.content && story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
     -->
+    <div class="order">
+    <div class="infos-order">
+        <div class="info-list">
+            <div>
+                <h4><a class="link-dashboard" href="/screen/dashboard"><- zurück zum Dashboard</a></h4>
+            </div>
+            <div class="daily">
+                <li class="list-item">
+                    <span><icon name="calendar" /></span>
+                    <span class="text">{{dateFormat}}</span>
+                </li>
+                <li class="list-item">
+                    <span><icon name="clock" /></span>
+                    <span class="text">{{timeFormat}}</span>
+                </li>
+            </div>
+        </div>
+    </div>
     <div class="order-wrapper">
         <div class="order-container info">
             <h4 class="headline">Materialien bestellen</h4>
             <div class="filter">
                 <div class="filter-producer">
-                    <span>Hersteller</span>
+                    <span>Händler</span>
                     <div>
-                        <input type="checkbox" id="producer1" name="producer1" value="Tiger-Coatings" v-model="producer">
+                        <input type="checkbox" id="producer1" name="producer1" value="CNC-Werkstatt" v-model="producer">
                         <label for="producer1">Tiger-Coatings</label><br>
                     </div>
                 </div>
@@ -24,7 +42,7 @@
                     </div>
                 </div>
                 <div class="filter-price">
-                    <span>Kategorie</span>
+                    <span>Bereich</span>
                         <ul class="filter-category">
                             <li v-for="t, c in tags">
                                 <input v-bind:id="tags[c].name" type="checkbox" v-model="category" v-bind:value="tags[c].name" />
@@ -59,18 +77,20 @@
                 </div>
             </div>
             <div v-if="articles > range" class="button-wrapper">
-                <button>Mehr laden</button>
+                <button v-on:click="more">Mehr laden</button>
             </div>
         </div>
+    </div>
     </div>
 </template>
 
 <script>
-    import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+    // import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+
 
     export default {
-        middleware: 'authenticated',
-        mixins: [storyblokLivePreview],
+        layout: 'screen',
+        // mixins: [storyblokLivePreview],
         data () {
             return {
                 products: [],
@@ -79,6 +99,7 @@
 
                 loading: false,
                 search: '',
+                sort: '',
                 producer: [],
                 category: [],
                 price: [],
@@ -87,8 +108,11 @@
                     2: [10,50],
                     3: [50,100]
                 },
+                productReturn : [],
                 amount: '',
                 tagsCollapsed: true,
+
+                date: new Date(),
             }
         },
         created() {
@@ -104,6 +128,12 @@
             },
         },
         methods: {
+            more() {
+                /*this.showMore[z] = this.range;
+                console.log(this.showMore);*/
+                this.range = this.range + 15;
+                console.log(this.range);
+            },
             update() {
                 this.loading = true;
                 let result = this.$store.dispatch("findMachines", this.filters).then((data) => {
@@ -133,26 +163,37 @@
                 console.log(this.producer);
                 console.log(this.price);
                 console.log(this.category);
-                this.products = this.products.filter(p => {
-                    var productReturn = [];
-                    let low;
-                    let high;
-                    for (let i = 0; i < this.price.length; i++) {
-                        low = this.priceRange[this.price[i]][0];
-                        high = this.priceRange[this.price[i]][1]
-                    }
-                   let productReturnTo = (''+p.id)[1] + (''+p.id)[2];
-                    if (productReturnTo >= low && productReturnTo <= high) {
-                        console.log(p);
-                        productReturn.push(p)
-                    }
-                    console.log(productReturn);
-                    return productReturn;
-                })
 
-                this.products = this.products.filter(function (p) {
-                    return this.category.includes(p.tag_list[0]);
-                }, this);
+                if(this.producer.length > 0) {
+                    this.products = this.products.filter(function (p) {
+                        return this.producer.includes(p.tag_list[0]);
+                    }, this);
+                }
+
+                if(this.price.length > 0){
+                    console.log('in');
+                    for(let j = 0; j < this.products.length; j++) {
+                        let low;
+                        let high;
+                        for (let i = 0; i < this.price.length; i++) {
+                            low = this.priceRange[this.price[i]][0];
+                            high = this.priceRange[this.price[i]][1]
+                        }
+                        let productReturnTo = (''+this.products[j].id)[1] + (''+this.products[j].id)[2];
+                        if (productReturnTo >= low && productReturnTo <= high) {
+                            console.log(this.products[j]);
+                            this.productReturn.push(this.products[j])
+                        }
+                        console.log(this.productReturn);
+                    }
+                    this.products = this.productReturn;
+                }
+
+                if(this.category.length > 0){
+                    this.products = this.products.filter(function (p) {
+                        return this.category.includes(p.tag_list[0]);
+                    }, this);
+                }
                 /*
                 let price = [];
                 for(let i = 0; i < this.products.length; i++){
@@ -198,7 +239,25 @@
                 }).map((t) => {
                     return t.name;
                 });
-            }
+            },
+            dateFormat() {
+                const ye = new Intl.DateTimeFormat('de', { year: 'numeric' }).format(this.date)
+                const mo = new Intl.DateTimeFormat('de', { month: 'short' }).format(this.date)
+                const da = new Intl.DateTimeFormat('de', { day: '2-digit' }).format(this.date)
+
+                return `${da}.${mo}.${ye}`;
+            },
+            timeFormat() {
+                let dateFormat = this.date.getHours();
+                if(this.date.getMinutes() < 10) {
+                    dateFormat = dateFormat + ":0" + this.date.getMinutes();
+                }
+                else {
+                    dateFormat = dateFormat + ":" + this.date.getMinutes();
+                }
+
+                return dateFormat;
+            },
         },
         async asyncData (context) {
             /*let path = '/members/shop';
@@ -228,6 +287,42 @@
 
 <style lang="scss">
     @import '@/assets/scss/styles.scss';
+    .infos-order {
+        background-color: #FFF;
+        padding: 25px;
+        height: 12vh;
+        .headline {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .info-list {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            .link-dashboard {
+                color: #000000;
+            }
+        }
+        .daily {
+            width: 15%;
+            @include media-breakpoint-down(sm) {
+                width: 60%;
+            }
+
+            div {
+                padding:0 20px;
+            }
+            li {
+                list-style: none;
+                svg {
+                    width: 10%;
+                }
+                .text {
+                    padding: 10px;
+                }
+            }
+        }
+    }
     .order-wrapper {
         @include media-breakpoint-up(sm){
             display: flex;
@@ -237,13 +332,15 @@
         .order-container.info {
             @include media-breakpoint-up(sm){
                 width: 20%;
+                height: 90vh;
+                margin-left: 20px;
             }
             border: 1px solid $color-blue;
             margin-top: 35px;
 
             .headline {
                 color: #fff;
-                background-color: $color-blue;
+                background-color: rgb(0, 105, 170);
                 font-weight: 700;
                 font-size: 1.8rem;
                 margin-left: 4%;
@@ -252,6 +349,8 @@
                 padding: 5px;
                 text-transform: uppercase;
                 letter-spacing: .05em;
+                width: 90%;
+                text-align: left;
             }
 
             .filter {
@@ -292,6 +391,7 @@
                     outline: none;
                     color: #FFF;
                     background-color: $color-orange;
+                    margin-bottom: 15px;
                 }
             }
         }
@@ -360,6 +460,7 @@
             }
             .button-wrapper {
                 width: 12%;
+                margin-top: 15px;
                 margin-left: auto;
                 display: flex;
                 flex-direction: column;

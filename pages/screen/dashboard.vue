@@ -23,38 +23,26 @@
                 <div class="headline">
                     <h4>Links</h4>
                 </div>
-                <!--<img src="~/assets/img/icons/idea.svg" class="links-icon">
-                <div v-for="h, c in home" class="links-wiki">
-                    <a v-if="c == 0" :href="h.link.url" target="_blank">Grand Garage Wiki</a>
-                </div>-->
                 <div class="shop-container">
                     <img src="~/assets/img/icons/idea.svg" class="links-icon-shop">
                     <div v-for="h, c in home" class="links-shop" v-if="c == 0">
                         <a :href="h.link.url" target="_blank">Grand Garage Wiki</a>
                     </div>
                 </div>
-                <!--<div class="links-partner">
-                    <img src="~/assets/img/icons/partner.svg" class="links-icon-small">
-                    <ul>
-                        <li><a href="https://bit.ly/2G8mprC" >Schachermayer</a></li>
-                        <li><a href="https://bit.ly/2DHJ3W1">Haberkorn</a></li>
-                        <li><a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a></li>
-                    </ul>
-                </div>-->
                 <div class="shop-container">
                     <img src="~/assets/img/icons/partner.svg" class="links-icon-partner">
                     <ul class="links-shop-list">
-                        <li><a href="https://bit.ly/2G8mprC" >Schachermayer</a></li>
-                        <li><a href="https://bit.ly/2DHJ3W1">Haberkorn</a></li>
-                        <li><a href="https://bit.ly/2Se2AFO">Kellner und Kunz</a></li>
+                        <li><a href="https://bit.ly/2G8mprC" target="_blank">Schachermayer</a></li>
+                        <li><a href="https://bit.ly/2DHJ3W1" target="_blank">Haberkorn</a></li>
+                        <li><a href="https://bit.ly/2Se2AFO" target="_blank">Kellner und Kunz</a></li>
                     </ul>
                 </div>
-                <div class="shop-container">
+                <!--<div class="shop-container">
                     <img src="~/assets/img/icons/supermarket.svg" class="links-icon-shop">
                     <div class="links-shop">
-                        <NuxtLink to="/order">Material bestellen</NuxtLink>
+                        <NuxtLink to= "order" target="_blank">Material bestellen</NuxtLink>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="faqs">
             </div>
@@ -86,13 +74,14 @@
             <div class="machine-list-wrapper">
                 <div v-if="machines && machines.length > 0" class="machine-list">
                     <transition-group name="list">
-                        <machine-status-list-item v-for="item in machines" :blok="item" :key="item.id" class="list-item"></machine-status-list-item>
+                        <machine-status-list-item  v-if="c+1 <= (range*10)" v-for="item, c in machines" :blok="item" :key="item.id" class="list-item"></machine-status-list-item>
                     </transition-group>
                 </div>
                 <div v-else class="machine-list-none">
                     <code>Keine Suchergebnisse</code>
                 </div>
             </div>
+            <button v-if="machines.length > range*10" class="more-machines" @click="more">more</button>
         </div>
     </div>
 </template>
@@ -102,6 +91,7 @@
 
     export default {
         name: "dashboard",
+        layout: 'screen',
         data () {
             return {
                 date: new Date(),
@@ -114,8 +104,6 @@
             }
         },
         created() {
-          console.log(this.workshops);
-            console.log(this.machines);
         },
         computed: {
             dateFormat() {
@@ -158,15 +146,8 @@
                 }
             },
             home() {
-                console.log(this.$store.state.settings.home_navi);
                 return this.$store.state.settings.home_navi;
             },
-            lang() {
-                console.log(this.$store.state.language+'/order');
-                console.log(this.$route.path);
-                // return '/'+this.$store.state.language+'/order';
-                return '/order';
-            }
         },
         methods: {
             update() {
@@ -180,8 +161,7 @@
             },
             more() {
                 this.range = this.range + 1;
-                console.log(this.range);
-            }
+            },
         },
         watch: {
             search() {
@@ -203,25 +183,23 @@
             let workshops = await context.store.dispatch("findWorkshops", filters).then((data) => {
                 let res = { workshops: [] };
                 if (data) {
-                    console.log(data);
+                    //console.log(data);
                     for (let i = 0; i < data.length; i++) {
-                        // console.log(data[i].dates);
+                        //console.log(data[i].dates);
                         for (let j = 0; j < data[i].dates.length; j++) {
-                            // console.log(data[i].dates[j].content.starttime);
                             let dt = data[i].dates[j].content.starttime.split('-', 3);
-                            // console.log(dt[1]);
                             let mth = new Date().getMonth() + 1;
                             mth = '0' + mth;
-                            if (dt[2].split(1)[0] == new Date().getDate() && dt[1] == mth) {
+                            if (dt[2].split(' ')[0] == new Date().getDate() && dt[1] == mth) {
                                 res.workshops.push(data[i]);
-                                // console.log(res);
+                               //console.log('res ' + res);
                             } else {
                                 // console.log(res);
                             }
                         }
                     }
-                    console.log(res.workshops)
-                    return { workshops : res.workshops };
+                    // console.log(res.workshops)
+                    return { workshops : res.workshops};
                 }
                 return { workshops: []};
             });
@@ -236,7 +214,8 @@
             };
             let machines = await context.store.dispatch("findStatusMachines", filtersM).then((data) => {
                 if (data.stories) {
-                    console.log(data.stories);
+                    //console.log(data.stories);
+                    //console.log(data.stories);
                     return { machines: data.stories };
                 }
                 return { machines: [] };
@@ -258,13 +237,15 @@
         }
         @include media-breakpoint-up(lg) {
             float: left;
-            width: 20%;
+            width: 35%;
         }
         align-items: flex-start;
         @include margin-page-middle();
         .infos {
             padding: 25px;
-
+            @include media-breakpoint-down(lg) {
+                padding: 25px 40px;
+            }
             .headline {
                 background-color: rgb(0, 105, 170);
                 color: #ffffff;
@@ -307,9 +288,9 @@
             }
             .daily {
                 margin-top: 20px;
-                width: 15%;
+                width: 22%;
                 @include media-breakpoint-down(sm) {
-                    width: 60%;
+                    width: 35%;
                 }
             }
             div {
@@ -321,7 +302,7 @@
                     width: 10%;
                 }
                 .text {
-                    padding: 10px;
+                    padding: 25px 10px;
                 }
             }
         }
@@ -385,9 +366,9 @@
                     @include margin-page-wide();
                     display: grid;
                     max-width: 70em;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                     @include media-breakpoint-down(lg) {
-                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
                     }
                     @include media-breakpoint-down(md) {
                         grid-template-columns: 1fr 1fr 1fr;
@@ -528,6 +509,24 @@
             left: 40%;
         }
     }
+
+    .more-machines {
+        background-color: #ff6f00;
+        border: 1px solid #ff8c33;
+        color: #FFF;
+        cursor: pointer;
+        left: 50%;
+        line-height: 1;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        outline: none;
+        padding: 7px 12px 8px;
+        position: absolute;
+        right: 50%;
+        @include media-breakpoint-down(sm) {
+            left: 40%;
+        }
+    }
     .links-icon {
         border-radius: 50%;
         height: 18%;
@@ -570,6 +569,9 @@
         padding: 10px;
         float: left;
         margin-top: 15px;
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
     }
 
     .links-icon-shop {
@@ -578,6 +580,9 @@
         width: 18%;
         padding: 10px;
         float: left;
+        @include media-breakpoint-down(lg) {
+            padding: 5px;
+        }
     }
 
     .shop-container {
@@ -594,7 +599,7 @@
     }
 
     .links-shop {
-        margin-left: 40px;
+        margin-left: 30px;
         margin-top: 4%;
         @include media-breakpoint-down(md) {
             margin-left: 80px;
@@ -609,7 +614,7 @@
     .links-shop-list {
         list-style: none;
         padding: 0;
-        margin-left: 40px;
+        margin-left: 15px;
         margin-top: 0px;
         @include media-breakpoint-down(md) {
             margin-left: 80px;
@@ -639,7 +644,7 @@
             > span {
                 @include media-breakpoint-up(sm) {
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 }
             }
             flex: 3;
@@ -664,6 +669,6 @@
         }
     }
     .machine-overview {
-        margin-top: 120px;
+        float: left;
     }
 </style>

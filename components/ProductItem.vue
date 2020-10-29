@@ -26,7 +26,8 @@
                                 <option value="9" v-model="amount">9</option>
                                 <option value="10" v-model="amount">10</option>
                             </select>
-                            <input class="button" type="submit" value="Bestellen">
+                            <!--<input class="button" type="submit" v-on:click="order" value="Bestellen">-->
+                            <NuxtLink :to="{ path: '/shop/basket', query: { product }}" class="button">Kaufen</NuxtLink>
                         </form>
                     </div>
                     <div v-else class="product-checkout">
@@ -60,12 +61,52 @@
     export default {
         name: "ProductItem",
         props: ['blok'],
+        data () {
+            return {
+                products: [],
+                loading: false,
+                search: '',
+            }
+        },
+        created() {
+            console.log(this.blok);
+        },
         computed: {
             product() {
                 return this.blok;
             },
             hasUser() {
                 return !!this.$store.state.user;
+            },
+            filters() {
+                return {
+                    filter_query: {
+                        'component': {
+                            'in': 'machine'
+                        }
+                    },
+                    search_term: this.search,
+                    with_tag: this.filterTags.join(',')
+                }
+            },
+            filterTags() {
+                return this.tags.filter((t) => {
+                    return t.value;
+                }).map((t) => {
+                    return t.name;
+                });
+            },
+        },
+        methods: {
+            order() {
+
+            },
+            suggested() {
+                this.loading = true;
+                let result = this.$store.dispatch("findMachines", this.filters).then((data) => {
+                    this.loading = false;
+                    this.products = data.stories;
+                });
             },
         }
     }
@@ -76,12 +117,16 @@
 
     .button {
         cursor: pointer;
+        font-size: medium;
         font-weight: bold;
         padding: 10px;
         border: none;
         outline: none;
         color: #FFF;
         background-color: $color-orange;
+        @include media-breakpoint-down(sm) {
+            font-size: smaller;
+        }
     }
 
     .amount {
@@ -110,12 +155,16 @@
                     flex: 2;
 
                     .product-title {
-                        margin-left: 40px;
+                        @include media-breakpoint-up(sm){
+                            margin-left: 40px;
+                        }
                         h4 {
                             color: #ffffff;
                             background-color: $color-blue;
                             padding: 10px;
-                            width: 30%;
+                            @include media-breakpoint-up(sm){
+                                width: 30%;
+                            }
                         }
                     }
                 }
