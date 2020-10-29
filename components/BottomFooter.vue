@@ -53,7 +53,11 @@
               <a href="https://www.facebook.com/grandgaragelinz/" class="social-icon" target="_blank">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"></path></svg>
               </a>
+              <span v-for="i in items"> </span>
               <span v-on:click="feed">Rss</span>
+              <div contenteditable="true"
+                   v-html="feed()">
+              </div>
             </div>
             <h4>{{item.headline}}</h4>
             <markdown :value="item.content"></markdown>
@@ -74,15 +78,23 @@ export default {
     return {
       news: [],
       entries: [],
+      myHtmlCode: '',
       loading: false,
       subscribed: false,
       form: {
         email: '',
-      }
+      },
+      sources: [
+        { name: "magazin3", key: "m3", selected: false },
+        { name: "youtube", key: "yt", selected: false },
+        { name: "facebook", key: "fb", selected: false },
+        { name: "twitter", key: "tw", selected: false },
+        { name: "instagram", key: "ig", selected: false }
+      ],
     }
   },
   created() {
-    console.log(this.items);
+    console.log(this.news)
   },
   methods: {
     encode (data) {
@@ -135,33 +147,54 @@ export default {
         return `\n<item>
                   <title>${story.content.title}</title>
                   <teaser>${story.content.teaser}</teaser>
-                  <link>http://www.example.com/${story.slug}</link>
+                  <link>http://www.grandgarage.eu/${story.full_slug} </link>
                   <pubDate>${story.content.datetime}</pubDate>
                </item>`
         })
+
       console.log(rss_entries);
+      let txt = "";
+      let x = rss_entries;
+      for (let i = 0; i < x.length; i++) {
+          txt = x[i] + "<br>";
+          console.log(txt);
+      }
+
       let rss = `<?xml version="1.0" encoding="UTF-8" ?>
                   <rss version="2.0">
                   <channel>
                    <title>RSS Title</title>
                    <description>This is an example of an RSS feed</description>
-                   <link>http://www.example.com/</link>
+                   <link>http://www.grandgarage.eu/</link>
                    <ttl>1800</ttl>
                    ${rss_entries.join('')}
                   </channel>
                   </rss>`
+      rss = parseString(rss, function (err, result) {
+        rss.items = result
+      });
       console.log(rss);
       console.log(rss.replace(/&/g, '&amp;')
               .replace(/</g, '&lt;')
               .replace(/>/g, '&gt;')
               .replace(/"/g, '&quot;')
               .replace(/'/g, '&apos;'));
-      return rss.replace(/&/g, '&amp;')
+      this.myHtmlCode = rss.replace(/&/g, '&amp;')
               .replace(/</g, '&lt;')
               .replace(/>/g, '&gt;')
               .replace(/"/g, '&quot;')
               .replace(/'/g, '&apos;');
-    }
+      return this.myHtmlCode;
+    },
+    update() {
+      this.loading = true;
+      let result = this.$store.dispatch("findNews", this.filters).then(data => {
+        this.loading = false;
+        this.news = data.stories;
+      }).catch((e) => {
+        this.loading = false;
+      });
+    },
   },
   asyncData(context) {
     let filters = {
@@ -172,9 +205,9 @@ export default {
       }
     };
     return context.store.dispatch("findNews", filters).then(data => {
-      // console.log(data);
+      console.log(data);
       for (let i = 0; i < data.stories.length; i++){
-        // console.log(data.stories[i].full_slug);
+        console.log(data.stories[i].full_slug);
       }
       return { news: data.stories };
     });
@@ -188,10 +221,24 @@ export default {
       let temp = [];
       let currentMonth = null;
       let m = null;
+      let filters = {
+        filter_query: {
+          component: {
+            in: "news-overview"
+          }
+        }
+      };
+      let result = this.$store.dispatch("findNews", filters).then(data => {
+        for (let i = 0; i < data.stories.length; i++){
+          // console.log(data.stories[i].full_slug);
+        }
+        this.news = data.stories;
+      });
       if (!this.news || !this.news.length || this.news.length == 0) {
         return [];
       }
-      this.news.forEach((n) => {
+      return this.news;
+      /*this.news.forEach((n) => {
         if (currentMonth != moment(n.content.datetime).month()) {
           if (currentMonth != null) {
             list.push({ items: temp, label: m.locale('de-at').format('MMMM') });
@@ -207,18 +254,8 @@ export default {
         temp.push({ type: 'item', ...n });
       });
       list.push({ items: temp, label: m.locale('de-at').format('MMMM') });
-      console.log(list)
-      return list;
+      return list;*/
     },
-    /*update() {
-      this.loading = true;
-      let result = this.$store.dispatch("findNews", this.filters).then(data => {
-        this.loading = false;
-        this.news = data.stories;
-      }).catch((e) => {
-        this.loading = false;
-      });
-    },*/
   }
 };
 </script>
