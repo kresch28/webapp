@@ -13,7 +13,7 @@ let webAuth = new auth0.WebAuth({
   responseType: 'token id_token',
   redirectUri:  origin + '/auth'
 });
-
+let connector;
 const version = process.env.NODE_ENV == 'development' ? 'draft' : 'published';
 
 const createStore = () => {
@@ -75,6 +75,27 @@ const createStore = () => {
         }
         return Promise.all(chain);
       },
+      getRssFeed(data) {
+        return axios.post('/rss', data, {
+          headers: {
+            'Content-Type': 'application/xml'
+          }
+        }).then((r) => {
+          console.log(r.data);
+          return(r.data)
+        })
+      },
+      getPDF({state},id){
+        return connector.get('/member/invoice/'+id, {}, {
+          headers: {
+            'Content-Type' : 'application/pdf'
+          }
+        }).then((r) => {
+          console.log(r);
+          r.responseType = 'arraybuffer';
+          return r;
+        })
+      },
       getBookings({ state }, id) {
         return axios.get(`${origin}/.netlify/functions/getBookings\?id\=${id}`).then((r) => {
           return r.data;
@@ -127,6 +148,10 @@ const createStore = () => {
                 }
                 setToken(authResult.accessToken);
                 commit('setAuth', auth);
+                connector = axios.create({
+                  baseURL: 'https://connector.grandgarage.eu/api',
+                  headers: {'Authorization': `Bearer ${auth.accessToken}`}
+                });
                 resolve();
               }
             });
