@@ -5,6 +5,7 @@ module.exports = {
   /*
    ** Headers of the page
    */
+  target: 'static',
   head: {
     title: 'GRAND GARAGE',
     meta: [
@@ -34,6 +35,7 @@ module.exports = {
       pathRewrite: {'^/.netlify/functions': ''},
     },
   },
+
   buildModules: [
     ['storyblok-nuxt', { accessToken: storyblokToken, cacheProvider: 'memory' }],
     '@nuxtjs/proxy',
@@ -53,6 +55,44 @@ module.exports = {
   router: {
     middleware: 'router'
   },
+  modules: [
+    '@nuxtjs/feed'
+  ],
+  feed: [
+    // A default feed configuration object
+    {
+      path: '/feed.xml', // The route to your feed.
+      async create (feed) {
+        feed.options = {
+          title: 'My blog',
+          link: 'https//localhost:3000/rss.xml',
+          description: 'This is my personal feed!'
+        }
+
+        const token = storyblokToken;
+        const version = process.env.NODE_ENV == 'development' ? 'draft' : 'published';
+
+        const posts = await (axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&starts_with=de/news`).then((result) => {
+              result.data.forEach(post => {
+                console.log(post);
+                feed.addItem({
+                  title: post.title,
+                  id: post.url,
+                  link: post.url,
+                  description: post.description,
+                  content: post.content
+                })
+              })
+            })
+        );
+
+        feed.addCategory('Nuxt.js')
+      },
+      cacheTime: 1000 * 60 * 15, // How long should the feed be cached
+      type: 'rss2', // Can be: rss2, atom1, json1
+      data: ['Some additional data'] // Will be passed as 2nd argument to `create` function
+    }
+  ],
   generate: {
     routes: function (callback) {
       const token = storyblokToken;
@@ -64,13 +104,14 @@ module.exports = {
       let routes = []
 
       // Call first Page of the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
-      axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&per_page=${per_page}&page=${page}&ts=${time}`).then((res) => {
-
-        Object.keys(res.data.links).forEach((key) => {
-          if (res.data.links[key].slug != 'home') {
-            routes.push('/' + res.data.links[key].slug)
-          }
-        })
+      axios.get(`https://api.storyblok.com/v1/cdn/stories?token=${token}&version=${version}&per_page=${per_page}&page=${page}&ts=${time}`).then((res) => {
+        if(res.data.links != null) {
+          Object.keys(res.data.links).forEach((key) => {
+            if (res.data.links[key].slug != 'home') {
+              routes.push('/' + res.data.links[key].slug)
+            }
+          })
+        }
 
         // Check if there are more pages available otherwise execute callback with current routes.
         const total = res.headers.total

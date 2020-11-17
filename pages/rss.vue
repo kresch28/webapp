@@ -19,8 +19,14 @@
         },
         computed: {
             rss() {
+                let xmlText;
                 console.log(this.$route.query.feed)
-                return this.$route.query.feed;
+                axios.get('http://localhost:3000/rss.xml')
+                    .then(response => {
+                        xmlText = response.data;
+                    });
+                return xmlText;
+                //return this.$route.query.feed;
             //return this.$store.dispatch('getRssFeed', this.$route.query.feed);
                 //console.log(typeof this.$route.query.feed.rawHTML);
                 /*var parser = new DOMParser();

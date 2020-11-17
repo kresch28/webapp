@@ -1,3 +1,25 @@
+{
+  "dir": "/",
+  "slug": "rss",
+  "path": "/rss",
+  "extension": ".xml",
+  "body": {
+    "xml": {
+      "item": [ {
+        "$": {
+          "prop": "abc"
+              },
+        "title": [
+          "Title"
+        ],
+        "description": [
+          "Hello World"
+        ]
+      }
+    ]
+  }
+}
+
 <template>
   <footer class="footer">
     <div class="pre-footer">
@@ -54,11 +76,8 @@
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="svg-inline--fa fa-facebook fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"></path></svg>
               </a>
               <span v-for="i in items"></span>
-              <a v-on:click="feed">Rss</a>
-              <nuxt-link :to="{ path: 'rss', query: { feed: feed }}">
-                RSS feed for this site
-              </nuxt-link>
-              <!-- <nuxt-link to="/rss">
+              <a v-on:click="feeds" href="/rss.xml">Rss</a>
+              <!--<nuxt-link :to="{ path: 'rss', query: { feed: feed }}">
                 RSS feed for this site
               </nuxt-link>-->
 
@@ -144,7 +163,7 @@ export default {
         this.loading = false;
       });
     },
-    /*feed(){
+    feeds(){
       let rss_entries = this.items.map((story) => {
         // you got access to every property of the stories here. Note the \n I've added to format it in the output - you don't need that in the real XML.
         // our post content type uses one property "content", if your content type is in a different structure - at this point you can prepare your entries as you need it to fit the format of an RSS feed.
@@ -154,13 +173,12 @@ export default {
                   <link>http://www.grandgarage.eu/${story.full_slug} </link>
                   <pubDate>${story.content.datetime}</pubDate>
                </item>`
-        })
+      })
       let txt = "";
       let x = rss_entries;
       for (let i = 0; i < x.length; i++) {
-          txt = x[i] + "<br>";
+        txt = x[i] + "<br>";
       }
-      console.log(rss_entries);
       let rss = `<?xml version="1.0" encoding="UTF-8" ?>
                   <rss version="2.0">
                   <channel>
@@ -177,11 +195,13 @@ export default {
               .replace(/>/g, '&gt;')
               .replace(/"/g, '&quot;')
               .replace(/'/g, '&apos;');
-
-      this.myHtmlCode = res;
-      console.log(this.myHtmlCode)
-      return this.myHtmlCode;
-    }, */
+      this.myHtmlCode = rss
+      axios.get('http://localhost:3000/rss.xml').then(response => {
+        console.log(response);
+        response.data = rss;
+      });
+      // return this.myHtmlCode;
+    },
     update() {
       this.loading = true;
       let result = this.$store.dispatch("findNews", this.filters).then(data => {
@@ -230,44 +250,45 @@ asyncData ({ store, route, context }) {
       }
       return this.news;
     },
-    feed(){
-      let rss_entries = this.items.map((story) => {
-        // you got access to every property of the stories here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-        // our post content type uses one property "content", if your content type is in a different structure - at this point you can prepare your entries as you need it to fit the format of an RSS feed.
-        return `\n<item>
-                  <title>${story.content.title}</title>
-                  <teaser>${story.content.teaser}</teaser>
-                  <link>http://www.grandgarage.eu/${story.full_slug} </link>
-                  <pubDate>${story.content.datetime}</pubDate>
-               </item>`
-      })
-      let txt = "";
-      let x = rss_entries;
-      for (let i = 0; i < x.length; i++) {
-        txt = x[i] + "<br>";
-      }
-      let rss = `<?xml version="1.0" encoding="UTF-8" ?>
-                  <rss version="2.0">
-                  <channel>
-                   <title>RSS Title</title>
-                   <description>This is an example of an RSS feed</description>
-                   <link>http://www.grandgarage.eu/</link>
-                   <ttl>1800</ttl>
-                   ${rss_entries.join('')}
-                  </channel>
-                  </rss>`
-
-      let res = rss.replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&apos;');
-      this.myHtmlCode = rss;
-      var parser = new DOMParser();
-      var doc = parser.parseFromString( this.myHtmlCode, "text/xml");
-      // return doc;
-      return this.myHtmlCode;
-    },
+    // feed(){
+    //   let rss_entries = this.items.map((story) => {
+    //     // you got access to every property of the stories here. Note the \n I've added to format it in the output - you don't need that in the real XML.
+    //     // our post content type uses one property "content", if your content type is in a different structure - at this point you can prepare your entries as you need it to fit the format of an RSS feed.
+    //     return `\n<item>
+    //               <title>${story.content.title}</title>
+    //               <teaser>${story.content.teaser}</teaser>
+    //               <link>http://www.grandgarage.eu/${story.full_slug} </link>
+    //               <pubDate>${story.content.datetime}</pubDate>
+    //            </item>`
+    //   })
+    //   let txt = "";
+    //   let x = rss_entries;
+    //   for (let i = 0; i < x.length; i++) {
+    //     txt = x[i] + "<br>";
+    //   }
+    //   let rss = `<?xml version="1.0" encoding="UTF-8" ?>
+    //               <rss version="2.0">
+    //               <channel>
+    //                <title>RSS Title</title>
+    //                <description>This is an example of an RSS feed</description>
+    //                <link>http://www.grandgarage.eu/</link>
+    //                <ttl>1800</ttl>
+    //                ${rss_entries.join('')}
+    //               </channel>
+    //               </rss>`
+    //
+    //   let res = rss.replace(/&/g, '&amp;')
+    //           .replace(/</g, '&lt;')
+    //           .replace(/>/g, '&gt;')
+    //           .replace(/"/g, '&quot;')
+    //           .replace(/'/g, '&apos;');
+    //   this.myHtmlCode = rss
+    //   axios.get('http://localhost:3000/rss.xml').then(response => {
+    //     console.log(response);
+    //     response.data = rss;
+    //   });
+    //   // return this.myHtmlCode;
+    // },
   }
 };
 </script>
