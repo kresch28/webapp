@@ -85,8 +85,7 @@
 </template>
 
 <script>
-    // import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-
+    import moment from 'moment'
 
     export default {
         layout: 'screen',
@@ -116,8 +115,6 @@
             }
         },
         created() {
-            console.log(this.products);
-            console.log(this.category);
             this.$watch('tags', (newVal, oldVal) => {
                 this.update();
             }, { deep: true });
@@ -129,10 +126,7 @@
         },
         methods: {
             more() {
-                /*this.showMore[z] = this.range;
-                console.log(this.showMore);*/
                 this.range = this.range + 15;
-                console.log(this.range);
             },
             update() {
                 this.loading = true;
@@ -150,20 +144,11 @@
                 } else {
                     this.filterApplied.push(filter);
                 }
-                console.log(this.filterApplied);
             },
             clearFilter(){
                 this.filterApplied = []
             },
             producers() {
-                /*return this.products.filter(function (p) {
-                    return this.producer.includes(p.tag_list[0]);
-                }, this);*/
-
-                console.log(this.producer);
-                console.log(this.price);
-                console.log(this.category);
-
                 if(this.producer.length > 0) {
                     this.products = this.products.filter(function (p) {
                         return this.producer.includes(p.tag_list[0]);
@@ -171,7 +156,6 @@
                 }
 
                 if(this.price.length > 0){
-                    console.log('in');
                     for(let j = 0; j < this.products.length; j++) {
                         let low;
                         let high;
@@ -181,10 +165,8 @@
                         }
                         let productReturnTo = (''+this.products[j].id)[1] + (''+this.products[j].id)[2];
                         if (productReturnTo >= low && productReturnTo <= high) {
-                            console.log(this.products[j]);
                             this.productReturn.push(this.products[j])
                         }
-                        console.log(this.productReturn);
                     }
                     this.products = this.productReturn;
                 }
@@ -194,21 +176,6 @@
                         return this.category.includes(p.tag_list[0]);
                     }, this);
                 }
-                /*
-                let price = [];
-                for(let i = 0; i < this.products.length; i++){
-                    price = (''+this.products[i].id)[1] + (''+this.products[i].id)[2];
-                }
-                this.products = this.products.filter(function (p) {
-                    return this.price  
-                })
-                return (''+price)[1] + (''+price)[2];
-                */
-
-                console.log(this.products);
-
-                /*this.search = this.producer;
-                this.update();*/
             },
         },
         computed: {
@@ -219,7 +186,6 @@
                 return this.products.length;
             },
             items() {
-                console.log(this.products);
                 return this.products;
             },
             filters() {
@@ -241,22 +207,10 @@
                 });
             },
             dateFormat() {
-                const ye = new Intl.DateTimeFormat('de', { year: 'numeric' }).format(this.date)
-                const mo = new Intl.DateTimeFormat('de', { month: 'short' }).format(this.date)
-                const da = new Intl.DateTimeFormat('de', { day: '2-digit' }).format(this.date)
-
-                return `${da}.${mo}.${ye}`;
+                return moment(this.date).locale('de').format("Do MMMM");
             },
             timeFormat() {
-                let dateFormat = this.date.getHours();
-                if(this.date.getMinutes() < 10) {
-                    dateFormat = dateFormat + ":0" + this.date.getMinutes();
-                }
-                else {
-                    dateFormat = dateFormat + ":" + this.date.getMinutes();
-                }
-
-                return dateFormat;
+                return moment(this.date).locale('de').format("HH:mm");
             },
         },
         async asyncData (context) {
@@ -275,7 +229,6 @@
             };
             let products = await context.store.dispatch("findStatusMachines", filtersM).then((data) => {
                 if (data.stories) {
-                    console.log(data.stories);
                     return { products: data.stories };
                 }
                 return { products: [] };

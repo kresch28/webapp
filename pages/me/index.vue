@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="membership-plans">
-          <component v-for="blok in story.content.body[0].columns" :blok="blok" :priceView="priceView" :is="blok.component"></component>
+          <component v-for="blok in story.content.body[0].columns" :blok="blok" :priceView="priceView" :is="blok.component" v-bind:key="blok.id"></component>
         </div>
         <div class="register-button">
           <!--<div class="register-button" v-if="!hasUser">

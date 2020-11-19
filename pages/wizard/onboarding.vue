@@ -82,6 +82,12 @@ export default {
         'payment' : '',
         'file' : ''
       },
+      rulesBIC: [
+        { message:"11 characters minimum.", regex:/.{11,}/ },
+      ],
+      rulesIBAN: [
+        { message:"16 characters minimum.", regex:/.{16,}/ },
+      ],
     }
   },
   created() {
@@ -92,17 +98,11 @@ export default {
       let ni = this.index - 1 < 0 ? 0 : this.index - 1;
       let path = this.steps[ni];
       if (ni == 0) {
-      console.log(ni);
-      console.log(ni);
         path = '';
       }
       this.$router.push('/wizard/onboarding/' + path);
     },
     next() {
-
-      console.log(this.user.payment.iban.length);
-      console.log(this.user.payment.bank.length)
-
       if (this.user.type !== undefined && this.user.periode !== undefined) {
         if (this.user.agbBool == true && this.index < 1) {
           let ni = this.index + 1 < 0 ? 0 : this.index + 1;
@@ -135,10 +135,8 @@ export default {
         }
         this.user.errors = this.typeErrors;
         this.profileCheck = null;
-        alert('Bitte alle Felder auswählen');
       }
       if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
-        alert('Hast du die ANB und die Werkstattordnung gelesen?');
       }
       if(this.user.dsBool == true && this.index == 1) {
         let ni = this.index + 1 < 0 ? 0 : this.index + 1;
@@ -160,7 +158,6 @@ export default {
         this.newUser.person = this.personalData;*/
       }
       if(this.user.dsBool != true && this.index == 1) {
-        alert('Hast du die Datenschutzerklärung gelesen?');
         return;
       }
       if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
@@ -169,16 +166,13 @@ export default {
           if (this.user.sepaBool == true) {
             let ni = this.index + 1 < 0 ? 0 : this.index + 1;
             let path = this.steps[ni];
-            console.log(ni);
             this.$router.push('/wizard/onboarding/' + path);
             /*this.payment = {'iban' : this.user.payment.iban};
             this.payment.bank = this.user.payment.bank;*/
-            console.log(this.user.payment.iban.length);
             this.newUser.iban = this.user.payment.iban;
             this.newUser.bank = this.user.payment.bank;
             this.paymentCheck = true;
             /*this.newUser.payment = this.payment;*/
-            console.log(this.newUser);
           }
         }
       }
@@ -187,19 +181,22 @@ export default {
         if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
           if (this.user.payment.iban == '') {
             this.typeErrors.iban = false;
-            alert('Bitte alle Felder auswählen');
           }
-          if(this.user.payment.iban.length < 20) {
-            this.typeErrors.iban = false;
-            alert('Bitte einen gültigen IBAN angeben');
+          //if(this.user.payment.iban.length < 20) {
+            for (let condition of this.rulesIBAN) {
+              if (!condition.regex.test(this.user.payment.iban)) {
+                this.typeErrors.iban = false;
+              }
+            }
+          for (let condition of this.rulesIBAN) {
+            if (this.user.payment.bank == '' && !condition.regex.test(this.user.payment.iban)) {
+              this.typeErrors.iban = false;
+            }
           }
-          if (this.user.payment.bank == '' && this.user.payment.bank.length < 11) {
-            this.typeErrors.bank = false;
-            alert('Bitte alle Felder auswählen');
-          }
-          if(this.user.payment.bank.length < 11) {
-            this.typeErrors.iban = false;
-            alert('Bitte einen gültigen BIC angeben');
+          for (let condition of this.rulesBIC) {
+            if (!condition.regex.test(this.user.payment.bank)) {
+              this.typeErrors.iban = false;
+            }
           }
 
           this.paymentCheck = null;
@@ -213,22 +210,15 @@ export default {
         if (this.user.payment.bank == '') {
           this.typeErrors.bank = false;
         }
-        alert('Bitte alle Felder auswählen');
         this.paymentCheck = null;
       }*/
 
-      console.log(this.paymentCheck);
       if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
-        alert('Bist du damit einverstanden, dass deine Mitgliedsbeiträge und zusätzlich anfallende Kosten per SEPA-Lastschrift von deinem angegeben Konto eingehoben werden?');
-      }
+       }
 
       if(this.user.file != null) {
         this.newUser.file = this.user.file;
       }
-
-      /*console.log(this.user);
-      console.log(this.newUser);
-      console.log(JSON.stringify(this.newUser));*/
 
     },
     checkForm(e){
@@ -253,15 +243,10 @@ export default {
         if(data) {
           this.done = true;
         }
-        console.log(data);
-      }).catch((err)=> {
-        console.log(err);
       });
     },
     getDocument() {
-        console.log(JSON.stringify(this.profileData));
         let blob = new Blob([JSON.stringify(this.profileData)], { type: "application/json" });
-        console.log(blob);
         saveAs(blob, 'onboarding.json');
         return blob;
     },

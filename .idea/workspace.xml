@@ -8,6 +8,11 @@
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:CON-104-Login" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -34,15 +39,52 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:doebi" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:webapp_fork" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:webapp_fork" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:CON-104-Login" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:webapp_fork" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:webapp_fork" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:webapp_fork" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:doebi" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-120 Blog Voting Funktion">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-29-RSS-grandgarage.eu nuxt feed setup">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Checkbox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ImageSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageSlideshow.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MachineStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MembershipGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MembershipGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,6 +272,10 @@
       <workItem from="1601272770694" duration="804000" />
       <workItem from="1601274914246" duration="1201000" />
       <workItem from="1602479575894" duration="815000" />
+      <workItem from="1605620865459" duration="2407000" />
+      <workItem from="1605623303580" duration="5813000" />
+      <workItem from="1605797120600" duration="429000" />
+      <workItem from="1605797565775" duration="802000" />
     </task>
     <task id="LOCAL-00001" summary="CON-93 - Resource Logs von Maschinen im Profil unter 'Meine Nutzung'&#10;CON-76 - Eventbrite durch Connector ersetzen&#10;CON-91 - Rechnungen auf website anzeigen&#10;CON-92 - Stammdaten im Profil aktualisieren &#10;CON-95 - News zu Blog updaten">
       <created>1596026248307</created>
@@ -371,8 +417,10 @@
     <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993642782" />
     <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599817522694" />
     <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state width="1131" height="266" key="Git.Branch.Popup" timestamp="1599817522694" />
-    <state width="1131" height="266" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state width="1135" height="270" key="Git.Branch.Popup" timestamp="1605627976265">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1135" height="270" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605627976265" />
     <state x="2424" y="266" key="MergeDialog" timestamp="1599817522694" />
     <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599817522694" />
@@ -399,10 +447,14 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1602768596499">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605797344579">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605620236914" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605797344579" />
+    <state x="2923" y="573" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605622015202">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602768596499" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600676483107" />
+    <state x="2923" y="573" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605622015202" />
   </component>
 </project>

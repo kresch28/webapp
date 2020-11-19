@@ -66,9 +66,6 @@ export default {
       return !!this.$store.state.user;
     },
     hasPackage(){
-      console.log(this.$store.state.user.packages);
-      console.log(this.$store.state.user.packages.length == 0)
-      console.log(!this.$store.state.user.packages.length == 0)
       return !this.$store.state.user.packages.length == 0;
     }
   }

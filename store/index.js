@@ -236,18 +236,11 @@ const createStore = () => {
           if(r.data.success) {
             return r.data;
           }
-        }).catch((err) => {
-          console.log(err);
-          console.log(err.response.data.msg);
         });
       },
       getInvoiceContact({state}){
         return connector.get('/member/getInvoiceContact').then((r) => {
             return r;
-
-        }).catch((err) => {
-          console.log(err);
-          console.log(err.response.data.msg);
         });
       },
 

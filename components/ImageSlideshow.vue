@@ -5,7 +5,7 @@
     </div>
     <div v-swiper:swiper="swiperOption">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" :key="s._uid" v-for="s in blok.items" jamask
+        <div class="swiper-slide" :key="s._uid" v-for="s in blok.items">
         </div>
       </div>
         <div class="swiper-button-next"></div>
