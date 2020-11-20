@@ -82,15 +82,11 @@ export default {
       this.resetInput = false;
     },
     resetPassword(){
-      console.log(this.emailReset);
       let data = {
         email: this.emailReset,
       }
       this.$store.dispatch('changePassword', data).then((r)=>{
-        console.log(r);
-              }).catch((e) => {
-                  console.log(e);
-      })
+              })
     },
     submit(e) {
       e.preventDefault();
@@ -101,7 +97,7 @@ export default {
 
         this.$store.dispatch('loginUser', data).then((r) => {
         }).catch((e) => {
-          // console.log(e);
+          console.log(e);
           if(e.error){
             this.errorMessage = 'Leider ist ein Fehler passiert'
           }
@@ -117,11 +113,9 @@ export default {
             }
           }
           else {
-            this.errorMessage = e.description || e.error || e.code;
-            // console.log(this.errorMessage);
+            this.errorMessage = 'Falsche Email-Adresse oder Passwort';
           }
         });
-      //}
     },
     clearErrorMessage() {
       this.errorMessage = null;
