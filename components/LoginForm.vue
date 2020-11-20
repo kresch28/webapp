@@ -97,7 +97,6 @@ export default {
 
         this.$store.dispatch('loginUser', data).then((r) => {
         }).catch((e) => {
-          console.log(e);
           if(e.error){
             this.errorMessage = 'Leider ist ein Fehler passiert'
           }
