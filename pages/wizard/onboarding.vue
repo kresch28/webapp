@@ -180,25 +180,25 @@ export default {
       if(this.index == 2) {
         if(this.user.payment.iban == '' || this.user.payment.bank == '' || this.user.payment.iban.length < 20 || this.user.payment.bank.length < 11) {
           if (this.user.payment.iban == '') {
-            this.typeErrors.iban = false;
+            this.user.errors.iban = false;
           }
           //if(this.user.payment.iban.length < 20) {
             for (let condition of this.rulesIBAN) {
               if (!condition.regex.test(this.user.payment.iban)) {
-                this.typeErrors.iban = false;
+                this.user.errors.iban = false;
               }
             }
           for (let condition of this.rulesIBAN) {
             if (this.user.payment.bank == '' && !condition.regex.test(this.user.payment.iban)) {
-              this.typeErrors.iban = false;
+              this.user.errors.iban = false;
+              this.user.errors.bank = false;
             }
           }
           for (let condition of this.rulesBIC) {
             if (!condition.regex.test(this.user.payment.bank)) {
-              this.typeErrors.iban = false;
+              this.user.errors.bank = false;
             }
           }
-
           this.paymentCheck = null;
         }
       }

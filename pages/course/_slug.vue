@@ -113,7 +113,6 @@ export default {
   mixins: [storyblokLivePreview],
   middleware: 'authenticated',
   created() {
-    console.log(this.quiz);
   },
   methods: {
     saveAnswer(ans) {
@@ -136,8 +135,6 @@ export default {
         answers: this.answers
       };
       this.$store.dispatch("saveQuiz", data).then((result) => {
-        console.log("result ");
-        console.log(result);
         this.done = true;
         this.score = result.score;
 
@@ -263,6 +260,8 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
+          margin-left: auto;
+          margin-right: auto;
           img {
             box-shadow: 5px 3px 5px #d3d3d3;
             margin-bottom: 25px;
@@ -275,7 +274,7 @@ export default {
         }
         .answer-text {
           text-align: center;
-          padding: 10px 420px 10px 20px;
+          padding: 10px 20px 10px 20px;
         }
       }
     }

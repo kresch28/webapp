@@ -6,15 +6,21 @@
     <div class="options">
       <div class="option" v-bind:class="{missing: user.errors.type === false}">
         <input class="radio" type="radio" v-model="user.type" id="regulär" name="type" value="regulär" @click="checkTrue">
-        <b>regulär</b>
+        <label for="regulär">
+          <div class="answer-text">regulär</div>
+        </label>
         </div>
       <div class="option" v-bind:class="{missing: user.errors.type === false}">
         <input class="radio"  type="radio" v-model="user.type" id="ermäßigt" name="type" value="ermäßigt" @click="checkTrue">
-        <b>ermäßigt</b>
+        <label for="ermäßigt">
+          <div class="answer-text">ermäßigt</div>
+        </label>
         </div>
       <div class="option" v-bind:class="{missing: user.errors.type === false}">
         <input class="radio" type="radio" v-model="user.type" id="free" name="type" value="free" @click="checkTrue">
-        <b>free</b>
+        <label for="free">
+          <div class="answer-text">free</div>
+        </label>
         </div>
     </div>
     <div>
@@ -25,11 +31,15 @@
         <div class="options">
           <div class="option" v-bind:class="{missing: user.errors.periode === false}">
             <input class="radio" type="radio"  v-model="user.periode" id="month" name="periode" value="month" @click="checkTrue">
-            <b>monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</b>
+            <label for="month">
+              <div class="answer-text">monatlich {{ user.type == 'regulär' ? "40€" : "15€"}}</div>
+            </label>
           </div>
           <div class="option" v-bind:class="{missing: user.errors.periode === false}">
             <input class="radio" type="radio"  v-model="user.periode" id="year" name="periode" value="year" @click="checkTrue">
-            <b>jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</b>
+            <label for="year">
+              <div class="answer-text">jährlich {{ user.type == 'regulär' ? "400€" : "150€"}}</div>
+            </label>
           </div>
         </div>
       </div>
@@ -65,9 +75,6 @@ export default {
     }
   },
   created() {
-    console.log(this.user);
-    console.log('errors');
-    console.log(this.user.errors);
   },
   methods: {
     checkForm() {
@@ -75,10 +82,6 @@ export default {
     },
     checkTrue() {
       let counter = 1;
-      // for (let i = 0; i < counter; i++){
-        console.log(this.user.type);
-      console.log(this.user.periode);
-      //}
     },
   },
   computed: {
@@ -117,14 +120,22 @@ export default {
 
     .option {
       margin: 10px;
-      flex: 1;
       cursor: pointer;
       padding: 25px;
       background-color: #FFF;
-      b {
-        padding-left: 25px;
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        .answer-text {
+          padding: 0 70px;
+        }
       }
-
       &:hover {
         border: 2px solid $color-orange;
       }

@@ -68,9 +68,7 @@ export default {
   },
   methods: {
     getFile(e) {
-      console.log(e.target.value);
       this.file = this.$refs.file.files[0];
-      console.log(this.file);
       this.user.file = this.file;
 
     }
