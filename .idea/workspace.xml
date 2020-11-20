@@ -73,18 +73,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="HP-29-RSS-grandgarage.eu nuxt feed setup">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="quiz - Pull Request #65 change requests - typo removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Checkbox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Checkbox.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ImageSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ImageSlideshow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MachineStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MachineStatus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MembershipGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MembershipGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/course/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/course/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +397,8 @@
     <MESSAGE value="CON-98 IPadDashboard ProductListItem" />
     <MESSAGE value="CON-98 IPad Dashboard - Local Changes" />
     <MESSAGE value="CON-98-IpadDashboard - Link to order page" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-98-IpadDashboard - Link to order page" />
+    <MESSAGE value="quiz - Pull Request #65 change requests - typo removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="quiz - Pull Request #65 change requests - typo removed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
