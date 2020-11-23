@@ -10,7 +10,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'GRAND GARAGE webapp' }
+      { hid: 'description', name: 'description', content: 'Grand Garage Makerspace Tabakfabrik Linz 3D Druck Werkstatt' }
     ],
     script: [
       { hid: 'stripe', src: 'https://js.stripe.com/v3/', defer: true }

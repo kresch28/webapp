@@ -24,6 +24,7 @@
             </div>
           </div>
         </div>
+        <div style="display: none;"><h1>Grand Garage Makerspace Tabakfabrik Linz 3D Druck Werkstatt</h1></div>
         <div class="spacer"></div>
         <main-nav-item class="desktop" :item="item" :key="item.id" v-for="item in main">
         </main-nav-item>

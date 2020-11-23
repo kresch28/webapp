@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+  import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 import Reveal from 'reveal.js';
 import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
 
