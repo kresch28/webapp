@@ -39,7 +39,8 @@ export default {
   created() {
     this.$store.dispatch('checkStatus', this.id).then((r) => {
       this.resource = r;
-    })
+    }).catch((err)=>{
+      this.resource = err;});
   },
   computed: {
     color() {

@@ -57,7 +57,7 @@
     <!--</form>-->
     <div class="wizard-checkbox">
       <p>Wir gehen verantwortungsvoll mit deinen Daten um.</p>
-      <label>
+      <label v-bind:class="{missingCheckbox: user.errors.dsBool === false}">
         <!--<Checkbox :value="dsBool" theme="form">Ja, ich habe die <a class="checkbox-link" :href="window+'/de/datenschutzerklaerung'" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden.</Checkbox>
         -->
         <input type="checkbox" id="ds" name="ds" value="!dsBool" v-model="user.dsBool">

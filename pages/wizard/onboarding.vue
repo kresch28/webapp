@@ -54,7 +54,10 @@ export default {
         'type' : '',
         'periode' : '',
         'iban' : '',
-        'bank' : ''
+        'bank' : '',
+        'agbBool' : '',
+        'dsBool' : '',
+        'sepaBool' : ''
       },
     profileData: {
         'profile_type' : '',
@@ -125,6 +128,10 @@ export default {
           }
           this.profileCheck = true;
         }
+        else {
+          this.typeErrors.agbBool = false;
+          this.user.errors = this.typeErrors;
+        }
       }
       if(this.profileCheck != true && this.index == 0){
         if (this.user.type == undefined) {
@@ -135,8 +142,6 @@ export default {
         }
         this.user.errors = this.typeErrors;
         this.profileCheck = null;
-      }
-      if(this.user.agbBool != true && this.profileCheck != true && this.index == 0) {
       }
       if(this.user.dsBool == true && this.index == 1) {
         let ni = this.index + 1 < 0 ? 0 : this.index + 1;
@@ -158,7 +163,8 @@ export default {
         this.newUser.person = this.personalData;*/
       }
       if(this.user.dsBool != true && this.index == 1) {
-        return;
+        this.typeErrors.dsBool = false;
+        this.user.errors = this.typeErrors;
       }
       if (this.user.payment.iban !== undefined && this.user.payment.bank !== undefined) {
         if(this.user.payment.iban.length > 19 && this.user.payment.bank.length > 10){
@@ -214,6 +220,8 @@ export default {
       }*/
 
       if(this.user.sepaBool != true && this.paymentCheck != true && this.paymentCheck != null && this.index == 2) {
+        this.typeErrors.sepaBool = false;
+        this.user.errors = this.typeErrors;
        }
 
       if(this.user.file != null) {
@@ -350,6 +358,10 @@ export default {
     }
   }
   .missing {
+    border: 1px solid #ff0000 !important;
+  }
+  .missingCheckbox {
+    padding: 10px;
     border: 1px solid #ff0000 !important;
   }
   .missingInput {

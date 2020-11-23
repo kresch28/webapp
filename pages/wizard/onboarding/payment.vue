@@ -34,7 +34,7 @@
     </form>
 
     <div class="wizard-checkbox">
-      <label>
+      <label v-bind:class="{missingCheckbox: user.errors.sepaBool === false}">
         <!--<Checkbox :value="sepaBool" theme="form">Meine Mitgliedsbeiträge und zusätzlich anfallende Kosten werden per SEPA-Lastschrift von meinem angegeben Konto eingehoben.</Checkbox>
         -->
         <input type="checkbox" id="sepa" name="sepa" value="!sepaBool" v-model="user.sepaBool">
@@ -86,13 +86,9 @@ export default {
 
 .onboarding-wizard {
   .options {
-    padding: 20px 0;
+    padding: 20px 5px;
     display: flex;
     justify-content: space-around;
-    margin: 0 -10px;
-    @include media-breakpoint-down(sm) {
-      display: block;
-    }
     .option {
       margin: 10px;
       flex: 1;
@@ -109,7 +105,9 @@ export default {
     }
   }
   .wizard-checkbox {
-    max-width: 500px;
+    @include media-breakpoint-down(xs) {
+      max-width: 500px;
+    }
   }
   .form {
     &.wizard {

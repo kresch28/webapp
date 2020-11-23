@@ -203,7 +203,7 @@ const createStore = () => {
         return axios.get(`${origin}/.netlify/functions/checkStatus\?id\=${id}`).then((r) => {
           return r.data;
         }).catch((err) => {
-          console.log(err);
+          return {state: "offline", offline: true};
         });
       },
       getFabman({ state, commit }) {
