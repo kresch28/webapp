@@ -10,7 +10,20 @@ import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 export default {
   data () {
     return {
-      story: null
+      story: null,
+      title: 'Hello World 3!'
+    }
+  },
+  head() {
+    return {
+      title: this.story.content.metadata.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.story.content.metadata.description,
+        }
+      ]
     }
   },
   mixins: [storyblokLivePreview],

@@ -63,6 +63,18 @@
       this.$watch("sources", this.update, { deep: true });
       this.url = "/assets/img/footer-bg.jpg";
     },
+    head() {
+      return {
+        title: this.story.content.metadata.title,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.story.content.metadata.content,
+          }
+        ]
+      }
+    },
     asyncData(context) {
       let filters = {
         filter_query: {

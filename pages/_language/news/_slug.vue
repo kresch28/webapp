@@ -58,6 +58,18 @@
         created() {
             console.log(this.item.content.images);
         },
+        head() {
+            return {
+                title: this.story.content.metadata.title,
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: this.story.content.metadata.content,
+                    }
+                ]
+            }
+        },
         computed: {
             item() {
                 // console.log(this.$route.query.item);

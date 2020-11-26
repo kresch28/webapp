@@ -10,7 +10,8 @@ import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 export default {
   data () {
     return {
-      story: null
+      story: null,
+      title: 'Grand Garage'
     }
   },
   mixins: [storyblokLivePreview],
@@ -18,6 +19,19 @@ export default {
     return context.store.dispatch("loadPage", "/").catch((e) => {
       context.error({ statusCode: e.response.status, message: e.response.statusText })
     });
-  }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz 3D Druck Werkstatt'
+        }
+      ]
+    }
+  },
 }
 </script>
