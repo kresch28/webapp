@@ -112,6 +112,7 @@
                 tagsCollapsed: true,
 
                 date: new Date(),
+                title: 'Grand Garage Shop'
             }
         },
         created() {
@@ -119,6 +120,19 @@
                 this.update();
             }, { deep: true });
         },
+        head() {
+            return {
+                title: this.title,
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Grand Garage Makerspace Tabakfabrik Linz Shop',
+                    }
+                ]
+            }
+        },
+
         watch: {
             search() {
                 this.update();

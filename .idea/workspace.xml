@@ -73,9 +73,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Team Teammember">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Workshops">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/workshops/_slug.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/workshops/_slug.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/news/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/news/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/team/_.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/_.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/team/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/invoices.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/invoices.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/log.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/packages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/packages.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/me/trainings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/trainings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/machine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/machine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/screen/workshop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/workshop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shopItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shopItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606737379320</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="CON-106-GoogleRanking Workshops">
+      <created>1606741795732</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1606741795732</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +462,8 @@
     <MESSAGE value="HP-28-Password Reset Error Messages consoles removed" />
     <MESSAGE value="CON-106-GoogleRanking Maschinen - Workshops" />
     <MESSAGE value="CON-106-GoogleRanking Team Teammember" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Team Teammember" />
+    <MESSAGE value="CON-106-GoogleRanking Workshops" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Workshops" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
@@ -462,10 +484,11 @@
     <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1606737385914">
-      <screen x="1920" y="0" width="2560" height="1400" />
+    <state x="654" y="322" key="Vcs.Push.Dialog.v2" timestamp="1606741804212">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606737385914" />
+    <state x="654" y="322" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606741804212" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599817522694" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />
@@ -482,11 +505,11 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
-    <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup" timestamp="1606208442965">
-      <screen x="1920" y="0" width="2560" height="1400" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606742766424">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="3487" y="457" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606208442965" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605797344579" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606742766424" />
     <state x="2923" y="573" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605622015202">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>

@@ -80,6 +80,7 @@
     data () {
       return {
         loading: false,
+        title: 'Grand Garage Profile',
         priceView: 'monthly',
         inUser: '',
         newInUser: {
@@ -106,6 +107,18 @@
       }).catch((err)=> {
         console.log(err);
       });
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Grand Garage Makerspace Tabakfabrik Linz Profile',
+          }
+        ]
+      }
     },
     methods: {
       register() {

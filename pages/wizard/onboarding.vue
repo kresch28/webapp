@@ -88,6 +88,19 @@ export default {
       rulesIBAN: [
         { message:"16 characters minimum.", regex:/.{16,}/ },
       ],
+      title: 'Grand Garage Member Oboarding',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz Member Onboarding',
+        }
+      ]
     }
   },
   created() {

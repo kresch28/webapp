@@ -26,8 +26,6 @@ head() {
       ]
     }
   },
-  created() {
-    console.log(this.story) },
   mixins: [storyblokLivePreview],
   asyncData (context) {
     return context.store.dispatch('loadFullPage', context.route.fullPath).catch((e) => {

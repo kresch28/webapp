@@ -109,7 +109,6 @@
         for(let k = 0; k < this.news.length; k++) {
           if(this.news[k].content.content = 'Header'){
             if(this.news[k].content.metadata != undefined) {
-              console.log(this.news[k].content.metadata);
               this.metainfo = this.news[k].content.metadata;
             }
           }

@@ -48,8 +48,6 @@ export default {
       ]
     }
   },
-  created() {
-    console.log(this.story) },
   mixins: [storyblokLivePreview],
   async asyncData(context) {
     let team = await context.store

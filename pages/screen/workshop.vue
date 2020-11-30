@@ -33,10 +33,23 @@ export default {
       loading: false,
       search: '',
       workshops: [],
-      tags: []
+      tags: [],
+      title: 'Grand Garage Workshops'
     }
   },
   created() {
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz Workshops',
+        }
+      ]
+    }
   },
   watch: {
     search() {

@@ -26,12 +26,25 @@ export default {
       loading: false,
       search: '',
       tagsCollapsed: true,
+      title: 'Grand Garage Machines'
     }
   },
   created() {
     this.$watch('tags', (newVal, oldVal) => {
       this.update();
     }, { deep: true });
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz Machines',
+        }
+      ]
+    }
   },
   watch: {
     search() {

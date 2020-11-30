@@ -126,11 +126,24 @@
                 count_: [],
                 showMore: [],
                 range: 1,
+                title: 'Grand Garage User Log'
             }
         },
         created() {
             this.getLogs();
             this.getActivity();
+        },
+        head() {
+            return {
+                title: this.title,
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Grand Garage Makerspace Tabakfabrik Linz User Log',
+                    }
+                ]
+            }
         },
         methods: {
             getLogs(){

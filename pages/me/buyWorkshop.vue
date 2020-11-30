@@ -103,11 +103,24 @@
             return {
                 isHidden: true,
                 isFull: false,
+                title: 'Grand Garage Workshop Booking'
             }
         },
         computed: {
             date() {
                 return this.$route.query.date;
+            }
+        },
+        head() {
+            return {
+                title: this.title,
+                meta: [
+                    {
+                        hid: 'description',
+                        name: 'description',
+                        content: 'Grand Garage Makerspace Tabakfabrik Linz Workshop Booking',
+                    }
+                ]
             }
         },
         mounted() {

@@ -31,9 +31,23 @@
 export default {
   middleware: 'authenticated',
   data () {
-    return {}
+    return {
+      title: 'Grand Garage Trainings'
+    }
   },
   created() {
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz Member Trainings',
+        }
+      ]
+    }
   },
   methods: {
   },
