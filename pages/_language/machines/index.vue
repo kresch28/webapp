@@ -54,6 +54,18 @@ export default {
       this.update();
     }, { deep: true });
   },
+  head() {
+    return {
+      title: this.story.content.metadata.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.story.content.metadata.content,
+        }
+      ]
+    }
+  },
   watch: {
     search() {
       this.update();

@@ -56,7 +56,6 @@
             });
         },
         created() {
-            console.log(this.item.content.images);
         },
         head() {
             return {
