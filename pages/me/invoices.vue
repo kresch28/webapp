@@ -88,12 +88,10 @@
                         this.status_id = data.data[i].status;
                         for (let j = 0; j < statusDescription.length; j++){
                             if(data.data[i].status == j){
-                                console.log(statusDescription[j]);
                                 this.status = statusDescription[j-1];
                             }
                         }
                         this.url = data.data[i].url.split('/')[6];
-                        console.log(this.url);
                     }
                     }).catch((err) => {
                     console.log(err);
@@ -102,9 +100,7 @@
             getDocument(id) {
                 this.$store.dispatch('getPDF', id).then((data) => {
                     // data.responseType = 'arraybuffer';
-                    console.log(data.data);
                     let blob = new Blob([data.data], { type: "application/pdf" });
-                    console.log(blob);
                     saveAs(blob, 'hello world')
                     /*this.fileURL = window.open(URL.createObjectURL(blob));
                         }).catch((err) => {

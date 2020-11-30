@@ -167,12 +167,6 @@
 
                         }
                     }
-                    for (let j=0; j < this.machines.length; j++) {
-                        // console.log(this.machines[j].items.length);
-                        for(let k = 0; k < this.machines[j].items.length; k ++) {
-                         console.log(this.machines[j].items[k]);
-                        }
-                    }
                     /*for (let j=0; j < this.machines.length; j++){
                         // console.log(this.machines[j].items.length)
                         if(j < this.count){
@@ -196,7 +190,6 @@
                         // this.items[j].date = data.data[this.resource_name][j].created_at;
                     }*/
 
-                    console.log(this.showMore);
                     this.machineType();
 
 
@@ -213,28 +206,23 @@
                         }
                     }
                 }
-                console.log(this.empty);
+
             },
             getActivity() {
                 this.$store.dispatch('getCurrentActivities').then((data) => {
-                    console.log('activity: ');
-                    console.log(data.data);
+
                     for (let i = 0; i < data.data.length; i ++ ){
                         this.activity_item = {date : data.data[i].service_date, cost: data.data[i].cost_brutto, item: data.data[i].product.internal_name};
                         this.activities.push(this.activity_item);
                     }
-                    console.log(this.activities);
+
 
                 }).catch((err) => {
                     console.log(err);
                 });
             },
             more(z) {
-                console.log(z);
-                /*this.showMore[z] = this.range;
-                console.log(this.showMore);*/
                 this.range = this.range + 1;
-                console.log(this.range);
             },
             getCount(i) {
                 this.count

@@ -124,9 +124,9 @@
             }
         },
         mounted() {
-            console.log(this.$route.query);
+            /*console.log(this.$route.query);
             console.log(this.$route.query.date.uuid);
-            console.log(this.$store);
+            console.log(this.$store);*/
         },
 
         methods: {
@@ -136,7 +136,6 @@
                     payment_method: 1,
                 }
                 this.$store.dispatch("bookWorkshop", data).then((data) => {
-                    console.log(data);
                    if(data.success) {
                        var stripe = Stripe('pk_test_ZoipqWabXVjKz7iIGCT1D2Nl00CNnYoQQL');
                        stripe.redirectToCheckout({
@@ -144,7 +143,6 @@
                        });
                    }
                 });
-                console.log(this.$store);
 
                 /* neues Stripe by success
                 var stripe = Stripe('pk_test_ZoipqWabXVjKz7iIGCT1D2Nl00CNnYoQQL');
@@ -162,12 +160,9 @@
                 }
                 this.$store.dispatch("bookWorkshop", data).then((data) => {
                     if(data.success){
-                        console.log(data);
                         this.isHidden = false;
                     }
                 }).catch((err) => {
-                    console.log(err);
-                    console.log(err.response.data.msg);
                     this.isFull = true;
                 });;
             }

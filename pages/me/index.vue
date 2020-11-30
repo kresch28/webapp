@@ -101,7 +101,6 @@
       }
     },
     created() {
-      console.log(this.story);
       this.$store.dispatch("getInvoiceContact", this.profileData).then((data) => {
         this.inUser =  data.data;
       }).catch((err)=> {
@@ -144,7 +143,6 @@
         this.newInUser.iban = this.inUser.iban;
         this.newInUser.bic = this.inUser.bank;
         this.$store.dispatch("updateInvoiceContact", this.newInUser).then((data) => {
-          console.log(data);
         }).catch((err)=> {
           console.log(err);
         });
@@ -167,7 +165,6 @@
     },
     computed: {
       user() {
-        console.log(this.$store.state.user);
         return this.$store.state.user;
       },
       invoiceUser(){

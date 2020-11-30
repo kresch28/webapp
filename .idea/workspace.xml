@@ -73,23 +73,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Workshops">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Profile - Dashboard - Onboarding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/news/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/news/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/team/_.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/_.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/team/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/me/invoices.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/invoices.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/me/log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/log.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/packages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/packages.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/trainings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/trainings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/machine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/machine.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/screen/workshop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/screen/workshop.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shopItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shopItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/wizard/onboarding.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wizard/onboarding.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606741795732</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="CON-106-GoogleRanking Profile - Dashboard - Onboarding">
+      <created>1606743168862</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606743168862</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +459,8 @@
     <MESSAGE value="CON-106-GoogleRanking Maschinen - Workshops" />
     <MESSAGE value="CON-106-GoogleRanking Team Teammember" />
     <MESSAGE value="CON-106-GoogleRanking Workshops" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Workshops" />
+    <MESSAGE value="CON-106-GoogleRanking Profile - Dashboard - Onboarding" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Profile - Dashboard - Onboarding" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
