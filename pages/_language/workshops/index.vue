@@ -106,7 +106,21 @@ export default {
       loading: false,
       search: '',
       workshops: [],
-      tags: []
+      tags: [],
+      title: 'Grand Garage Workshops & Events'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Grand Garage Makerspace Tabakfabrik Linz Workshops & Events'
+        }
+      ]
     }
   },
   created() {

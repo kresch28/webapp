@@ -59,12 +59,12 @@
         },
         head() {
             return {
-                title: this.story.content.metadata.title,
+                title: this.item[0].content.metadata.title,
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content: this.story.content.metadata.content,
+                        content: this.item[0].content.metadata.content,
                     }
                 ]
             }

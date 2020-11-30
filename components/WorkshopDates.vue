@@ -83,7 +83,7 @@ export default {
 
       console.log(data);
 
-      this.$store.dispatch("getWorkshopDateMetadata", data).then((data) => {
+      /*this.$store.dispatch("getWorkshopDateMetadata", data).then((data) => {
           console.log(data);
 
         for(let j = 0; j <= this.dates.length; j++){
@@ -104,7 +104,7 @@ export default {
 
         }).catch((err) => {
           console.log(err);
-        });
+        });*/
     }
   }
 }

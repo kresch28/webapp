@@ -12,6 +12,18 @@ export default {
     return {}
   },
   mixins: [storyblokLivePreview],
+  head() {
+    return {
+      title: this.machine.metadata.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.machine.metadata.description,
+        }
+      ]
+    }
+  },
   computed: {
     machine() {
       return this.story.content;

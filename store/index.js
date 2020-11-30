@@ -106,7 +106,7 @@ const createStore = () => {
           console.log(err);
         });
       },
-      getWorkshopDateMetadata({state}, data){
+     getWorkshopDateMetadata({state}, data){
         console.log(state);
         console.log(data);
         console.log(connector);

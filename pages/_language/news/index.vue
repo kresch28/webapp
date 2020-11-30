@@ -57,20 +57,29 @@
           { name: "instagram", key: "ig", selected: false }
         ],
         url : null,
+        metainfo: {},
       };
     },
     created() {
+      for(let k = 0; k < this.news.length; k++) {
+        if(this.news[k].content.content = 'Header'){
+          if(this.news[k].content.metadata != undefined) {
+            console.log(this.news[k].content.metadata);
+            this.metainfo = this.news[k].content.metadata;
+          }
+        }
+      }
       this.$watch("sources", this.update, { deep: true });
       this.url = "/assets/img/footer-bg.jpg";
     },
     head() {
       return {
-        title: this.story.content.metadata.title,
+        title: this.metainfo.title,
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: this.story.content.metadata.content,
+            content: this.metainfo.content,
           }
         ]
       }
@@ -84,14 +93,28 @@
         }
       };
       return context.store.dispatch("findNews", filters).then(data => {
-        console.log(data.stories);
-        for (let i = 0; i < data.stories.length; i++){
-          // console.log(data.stories[i].full_slug);
+        for(let k = 0; k < data.stories .length; k++) {
+          if(data.stories[k].content.content = 'Header'){
+            if(data.stories [k].content.metadata != undefined) {
+              console.log(data.stories[k].content.metadata);
+              this.metainfo = data.stories[k].content.metadata;
+            }
+          }
         }
         return { news: data.stories };
       });
     },
     methods: {
+      metaInfo() {
+        for(let k = 0; k < this.news.length; k++) {
+          if(this.news[k].content.content = 'Header'){
+            if(this.news[k].content.metadata != undefined) {
+              console.log(this.news[k].content.metadata);
+              this.metainfo = this.news[k].content.metadata;
+            }
+          }
+        }
+      },
       update() {
         this.loading = true;
         let result = this.$store.dispatch("findNews", this.filters).then(data => {
