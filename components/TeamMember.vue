@@ -86,6 +86,7 @@
 export default {
   props: ['blok'],
   created() {
+    console.log(this.blok)
     console.log(this.$route.path.split('/'))
     },
   computed: {

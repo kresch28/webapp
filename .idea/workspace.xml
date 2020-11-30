@@ -73,16 +73,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-95-BlogDetailView console.log removed">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_07_2020_10_45__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Maschinen - Workshops">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WorkshopDates.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/WorkshopDates.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/machines/_slug.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/machines/_slug.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/machines/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/machines/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/news/_slug.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/news/_slug.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/news/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/news/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/workshops/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/workshops/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/team/_.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/_.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/team/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -384,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605866480272</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="CON-106-GoogleRanking Maschinen - Workshops">
+      <created>1606735385878</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606735385878</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +434,8 @@
     <MESSAGE value="quiz - Pull Request #65 change requests - typo removed" />
     <MESSAGE value="HP-28-Password Reset Error Messages" />
     <MESSAGE value="HP-28-Password Reset Error Messages consoles removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="HP-28-Password Reset Error Messages consoles removed" />
+    <MESSAGE value="CON-106-GoogleRanking Maschinen - Workshops" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Maschinen - Workshops" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
@@ -453,10 +456,10 @@
     <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605866487244">
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1606735389365">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605866487244" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606735389365" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599817522694" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />
