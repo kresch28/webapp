@@ -73,11 +73,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Maschinen - Workshops">
+    <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Team Teammember">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TeamMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TeamMember.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/team/_.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/_.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_language/team/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/team/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/workshops/_slug.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/workshops/_slug.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606735385878</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="CON-106-GoogleRanking Team Teammember">
+      <created>1606737379319</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1606737379320</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +440,8 @@
     <MESSAGE value="HP-28-Password Reset Error Messages" />
     <MESSAGE value="HP-28-Password Reset Error Messages consoles removed" />
     <MESSAGE value="CON-106-GoogleRanking Maschinen - Workshops" />
-    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Maschinen - Workshops" />
+    <MESSAGE value="CON-106-GoogleRanking Team Teammember" />
+    <option name="LAST_COMMIT_MESSAGE" value="CON-106-GoogleRanking Team Teammember" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2948" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599817522694" />
@@ -456,10 +462,10 @@
     <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1606735389365">
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2" timestamp="1606737385914">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606735389365" />
+    <state x="2792" y="433" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606737385914" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599817522694" />
     <state x="3009" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2980" y="413" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599817522694" />

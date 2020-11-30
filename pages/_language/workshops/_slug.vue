@@ -14,6 +14,19 @@ export default {
       uid: null,
     }
   },
+  head() {
+    return {
+      title: this.workshop.content.metadata.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.workshop.content.metadata.description,
+        }
+      ]
+    }
+  },
   methods: {
     bookWorkshop(){
       let data = {
