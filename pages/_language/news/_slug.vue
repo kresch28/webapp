@@ -120,7 +120,6 @@
         created() {
             // console.log(this.$route);
             // console.log(this.$route.query);
-            console.log(this.item);
         },
         methods: {
             filters() {

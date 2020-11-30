@@ -76,13 +76,8 @@
       };
     },
     created() {
-      // this.getStory();
-      console.log(this.news);
     },
     computed: {
-      getStory(){
-        // console.log(this.news);
-      }
     },
     asyncData (context) {
     }
