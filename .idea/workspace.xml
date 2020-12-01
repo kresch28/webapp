@@ -75,10 +75,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f84a283-d7b2-41c6-b001-d27dfa403701" name="Default Changelist" comment="CON-106-GoogleRanking Profile - Dashboard - Onboarding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/buyWorkshop.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/invoices.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/invoices.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/me/log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/me/log.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WorkshopListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/WorkshopListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_language/workshops/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_language/workshops/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="quiz" />
+        <entry key="$PROJECT_DIR$" value="CON-106-GoogleRanking" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -471,16 +470,20 @@
     <state x="2931" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1601993642782" />
     <state x="2965" y="455" key="FileChooserDialogImpl" timestamp="1599817522694" />
     <state x="2965" y="455" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
-    <state width="1153" height="288" key="Git.Branch.Popup" timestamp="1605867080055">
+    <state width="1157" height="292" key="Git.Branch.Popup" timestamp="1606828414843">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1153" height="288" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605867080055" />
+    <state width="1157" height="292" key="Git.Branch.Popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606828414843" />
     <state x="2424" y="266" key="MergeDialog" timestamp="1599817522694" />
     <state x="2424" y="266" key="MergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2838" y="461" key="MultipleFileMergeDialog" timestamp="1599817522694" />
     <state x="2838" y="461" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor" timestamp="1599817522694" />
     <state x="2701" y="345" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817522694" />
+    <state x="2960" y="405" key="VCS.ChangeListViewerDialog" timestamp="1606828266323">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2960" y="405" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606828266323" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2" timestamp="1606741804212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -498,10 +501,10 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3022" y="599" key="git4idea.ui.GitStashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1605867064430" />
-    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog" timestamp="1599817771103">
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog" timestamp="1606828267099">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1599817771103" />
+    <state x="2823" y="546" key="git4idea.ui.GitUnstashDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1606828267099" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606742766424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

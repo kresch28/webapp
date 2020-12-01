@@ -107,9 +107,9 @@ const createStore = () => {
         });
       },
      getWorkshopDateMetadata({state}, data){
-        console.log(state);
+       /* console.log(state);
         console.log(data);
-        console.log(connector);
+        console.log(connector);*/
         return connector.post('/member/getWorkshopDateMetadata', data).then((r) => {
           if(r.data) {
             return r.data;
@@ -144,7 +144,6 @@ const createStore = () => {
         })
       },
       getInvoiceDocument({ commit, dispatch, state }, id) {
-        console.log(id);
         let instance;
         if (state.auth || getUserFromLocalStorage()) {
           // renew Token
@@ -514,12 +513,17 @@ const createStore = () => {
           let workshops = {};
           for (let w of workshopdates) {
             let wid;
-            wid = w.content.workshop.uuid;
-            if (wid in workshops) {
-            } else {
-              workshops[wid] = Object.assign({ dates: [] }, w.content.workshop);
+            if(w.content.workshop != null){
+              wid = w.content.workshop.uuid;
+              if (wid in workshops) {
+              } else {
+                workshops[wid] = Object.assign({ dates: [] }, w.content.workshop);
+              }
+              workshops[wid].dates.push(w);
             }
-            workshops[wid].dates.push(w);
+            else {
+              continue;
+            }
           }
           return Object.values(workshops);
         }).catch((res) => {

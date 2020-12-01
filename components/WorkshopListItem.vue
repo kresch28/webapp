@@ -64,11 +64,19 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   props: ['blok', 'slim', 'date'],
   computed: {
     dates() {
-      return this.blok.dates;
+      for(var i = 0; i < this.blok.dates.length; i++) {
+        var limit = moment().subtract(24, "hours").format("YYYY-MM-DD HH:mm");
+        var isafter = moment(this.blok.dates[i].content.starttime).isAfter(limit);
+        if(isafter == true) {
+          return this.blok.dates;
+        }
+      }
     },
     content() {
       return this.blok.content;

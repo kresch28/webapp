@@ -172,7 +172,7 @@ export default {
           in: "workshop-date"
         },
         starttime: {
-          "gt-date": moment().subtract(24, "hours").format("YYYY-MM-DD HH:mm")
+          "gt-date": moment().subtract(120, "days").format("YYYY-MM-DD HH:mm")
         }
       }
     };
