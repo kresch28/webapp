@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="member-page" @touchstart="touch">
-    <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
+    <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg"src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
       <b>{{firstName}} {{lastName}} - {{blok.title}}</b></a>
     <div class="header">
       <div class="sidebar-info">
@@ -86,8 +86,7 @@
 export default {
   props: ['blok'],
   created() {
-    console.log(this.blok)
-    console.log(this.$route.path.split('/'))
+    //console.log(this.$route.path.split('/'))
     },
   computed: {
     back() {

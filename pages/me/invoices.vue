@@ -54,7 +54,7 @@
                 year: null,
                 url: null,
                 fileURL : null,
-                title: 'Grand Garage Invoice'
+                title: 'Grand Garage Rechnungen'
             }
         },
         created() {
@@ -67,7 +67,7 @@
                     {
                         hid: 'description',
                         name: 'description',
-                        content: 'Grand Garage Makerspace Tabakfabrik Linz Invoice',
+                        content: 'Grand Garage Makerspace Tabakfabrik Linz Profil Rechnungen',
                     }
                 ]
             }

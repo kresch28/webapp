@@ -33,6 +33,103 @@
         <button v-else type="submit" class="input-button-primary" @click="updateUser">Speichern</button>
       </div>
     </form>
+    <h2>Deine Badges</h2>
+    <p>Hier findest du deine Auszeichnungen für bestandene Kurse und MSUs und du bekommst Auszeichnungen für Maschinenstunden verliehen:</p>
+    <!--<div class="badge-container">
+  </div>-->
+    <div class="badge-info">
+      <div class="info-row">
+        <span class="badge-header">Kurse und MSUs</span>
+      </div>
+      <div class="info-row">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Lasercutter.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Lasercut-Hero für 10 Stunden Lasercutten</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Workshop.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>ASU erfolgreich abgeschlossen</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Lasercutter.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Lasercut-Hero für 10 Stunden Lasercutten</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Workshop.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>ASU erfolgreich abgeschlossen</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Workshop.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>ASU erfolgreich abgeschlossen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="badge-header">Maschinenstunde</span>
+      </div>
+      <div class="info-row">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Lasercutter.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Lasercut-Hero für 10 Stunden Lasercutten</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Lasercutter.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>Lasercut-Hero für 10 Stunden Lasercutten</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/img/Garmin_Connect_Badges_Workshop.jpg" alt="Avatar" style="width:100px;height:100px;">
+            </div>
+            <div class="flip-card-back">
+              <p>ASU erfolgreich abgeschlossen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <div v-else class="section">
     <h2>Mitgliedschaft</h2>
@@ -79,6 +176,8 @@
     mixins: [storyblokLivePreview],
     data () {
       return {
+        messages: {},
+        hover: false,
         loading: false,
         title: 'Grand Garage Profile',
         priceView: 'monthly',
@@ -109,17 +208,23 @@
     },
     head() {
       return {
-        title: this.title,
+        title: this.story.content.metadata.title,
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Grand Garage Makerspace Tabakfabrik Linz Profile',
+            content: this.story.content.metadata.description,
           }
         ]
       }
     },
     methods: {
+      change : function(key, message) {
+        this.$set(this.messages, key, message)
+      },
+      reset() {
+        this.messages = {};
+      },
       register() {
         //console.log(this.priceView);
       },
@@ -254,5 +359,146 @@
       }
     }
 
+  }
+  .badge-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  .badge-item {
+    width: 60%;/*
+    display: flex;
+    justify-content: space-between;*/
+    margin-bottom: 10px;
+    @include media-breakpoint-up(xl) {
+      width: 40%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+    .icon {
+      width: 100%;
+      /*@include media-breakpoint-up(xl) {
+        width: 12%;
+      }*/
+    }
+  }
+
+  /*.badge-info {
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    left: 100px;
+    top: -70px;
+    @include media-breakpoint-up(xl) {
+      top: -80px;
+    }
+  }*/
+  .flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 150px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    flex: 1 0 21%;
+    @include media-breakpoint-down(xs) {
+      width: 50%;
+    }
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    color: black;
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #ffffff;
+    color: black;
+    transform: rotateY(180deg);
+  }
+
+  .badge-info {
+    background-color: #FFF;
+    border: 1px solid $color-orange;
+    border-radius: 5px;
+    padding: 40px 30px;
+    position: relative;
+    @include media-breakpoint-up(sm) {
+      float: left;
+    }
+    @include media-breakpoint-down(sm) {
+      margin: 10px 0px;
+      width: 100%;
+    }
+    .info-row {
+      font-family: $font-mono;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: flex;
+      line-height: 1.6;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .info-block {
+        flex-direction: row;
+        display: flex;
+        .log-info {
+          margin-top: 10px;
+          width: 75%;
+          .heading{
+            font-weight: 500;
+          }
+        }
+        .col {
+          padding: 8px;
+        }
+      }
+      .info-block.left{
+        flex: 2;
+      }
+      .info-block.right {
+        flex: 1;
+      }
+
+    }
+    .more {
+      background-color: #ff6f00;
+      border: 1px solid #ff8c33;
+      color: #FFF;
+      cursor: pointer;
+      left: 45%;
+      line-height: 1;
+      outline: none;
+      padding: 7px 12px 8px;
+      position: absolute;
+      right: 50%;
+      margin-top: 5px;
+      @include media-breakpoint-down(sm) {
+        left: 40%;
+      }
+    }
   }
 </style>

@@ -2,7 +2,10 @@
   <div class="training-item" v-if="course && memberCourse != undefined" >
     <div class="body">
       <div class="content">
-        <span class="course-heading"><b>{{course.name}}</b></span>
+        <div class="course-header">
+          <span class="course-heading"><b>{{course.name}}</b></span>
+          <img v-if="memberCourse.manual_activation == 0 && memberCourse.is_valid == 0" class="icon" style="width: 10%" src="~/assets/img/Garmin_Connect_Badges_Workshop.jpg">
+        </div>
       <!--</div>-->
       <div class="course-info" v-if="!memberCourse">
         <button class="input-button-primary" @click="startCourse">Kurs starten</button>
@@ -12,7 +15,7 @@
         <div class="course-info"><!--<span>Praxistest: {{!!memberCourse.manual_activation}}</span>-->
           <span>Praxistest: </span>
           <img v-if="memberCourse.manual_activation == 0" src="~/assets/img/icons/times-solid.svg" class="status-course">
-          <img v-if="memberCourse.manual_activation != 0" src="~/assets/img/icons/check-solid.svg" class="status-course"></div>
+          </div>
         <div class="course-info"><!--<span>Online-Quiz: {{!!memberCourse.is_valid}}</span>-->
           <span>Online-Quiz: </span>
           <img v-if="memberCourse.is_valid == 0" src="~/assets/img/icons/times-solid.svg" class="status-course">
@@ -49,7 +52,7 @@ export default {
   computed: {
     memberCourse() {
       if(this.$store.getters.getMemberCourseById(this.course.id) != undefined){
-        console.log(this.$store.getters.getMemberCourseById(this.course.id));
+        //console.log(this.$store.getters.getMemberCourseById(this.course.id));
         return this.$store.getters.getMemberCourseById(this.course.id);
       }
     },
@@ -91,6 +94,10 @@ export default {
     }
     .content {
       flex: 1;
+    }
+    .course-header {
+      display: flex;
+      justify-content: space-between;
     }
     .course-info {
       padding: 10px;

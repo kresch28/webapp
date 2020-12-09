@@ -4,42 +4,43 @@
         <div class="resources">
             <span v-if="machines.length < 1" class="resource-header">Hier kannst du bald eine Übersicht zur Nutzung der Maschinen einsehen</span>
 
-          <!--      <div class="info-row">
-                    <div class="info-block">
-                        <div class="col log-info">
-                            <span class="heading">Datum</span>
-                        </div>
-                    </div>
-                    <div class="info-block">
-                        <div class="col log-info">
-                            <span class="heading">Item</span>
-                        </div>
-                    </div>
+            <!--      <div class="info-row">
+                      <div class="info-block">
+                          <div class="col log-info">
+                              <span class="heading">Datum</span>
+                          </div>
+                      </div>
+                      <div class="info-block">
+                          <div class="col log-info">
+                              <span class="heading">Item</span>
+                          </div>
+                      </div>
 
-                    &lt;!&ndash;<div class="info-block">
-                        <div class="col info">
-                            <span class="heading">Preis</span>
-                        </div>
-                    </div>&ndash;&gt;
-                </div>
-                <div class="info-row">
-                    <div class="info-block">
-                        <span class="resource-header">{{a.date | date }}</span>
-                    </div>
-                    <div class="info-block">
-                        <span class="resource-header">{{a.item }}</span>
-                    </div>
-                    &lt;!&ndash;<div class="info-block">
-                        <span class="resource-header">{{a.cost}} €</span>
-                    </div>&ndash;&gt;
-                </div>
-            </div>
-        </div>
-        <h2>Meine Maschinen Nutzung</h2>-->
+                      &lt;!&ndash;<div class="info-block">
+                          <div class="col info">
+                              <span class="heading">Preis</span>
+                          </div>
+                      </div>&ndash;&gt;
+                  </div>
+                  <div class="info-row">
+                      <div class="info-block">
+                          <span class="resource-header">{{a.date | date }}</span>
+                      </div>
+                      <div class="info-block">
+                          <span class="resource-header">{{a.item }}</span>
+                      </div>
+                      &lt;!&ndash;<div class="info-block">
+                          <span class="resource-header">{{a.cost}} €</span>
+                      </div>&ndash;&gt;
+                  </div>
+              </div>
+          </div>
+          <h2>Meine Maschinen Nutzung</h2>-->
 
             <div v-for="m, z in machines" class="resource-info">
                 <div class="info-row">
                     <span class="resource-header">{{m.name}}</span>
+                    <img v-if="(z%3)" class="icon" style="width: 5%" src="~/assets/img/Garmin_Connect_Badges_Lasercutter.jpg">
                 </div>
                 <div class="info-row">
                     <div class="info-block left">
@@ -66,36 +67,36 @@
                 <!--<div v-for="c in count">
                     <div v-for="i in m.items" class="info-row" v-if="count_[i] <= (range * 10)"> -->
                 <div v-for="i, c in m.items" class="info-row" v-if="c <= (range*10)">
-                        <div class="info-block left">
-                            <div class="col log-info">
-                                <span>{{i.created_at | date }} - {{i.created_at | time}}</span>
-                            </div>
+                    <div class="info-block left">
+                        <div class="col log-info">
+                            <span>{{i.created_at | date }} - {{i.created_at | time}}</span>
                         </div>
-                        <div v-if="!empty" class="info-block">
-                            <div class="col log-info">
-                                <span>{{i.active_seconds}} Sekunden</span>
-                            </div>
-                        </div>
-                        <div class="info-block  right">
-                            <div class="col log-info">
-                                <span>{{ i.all_seconds >= 120 ||  i.all_seconds < 60 ? (Math.round(i.all_seconds/60)) + ' Minuten' : (Math.round(i.all_seconds/60)) + ' Minute'}}</span>
-                                <!--<span>{{ i.all_seconds < 60 ? 'Sekunde' : 'Sekunden'}}</span>-->
-                            </div>
-                            <!--<div class="col info">
-                                Status: <span v-bind:class="{ paid: status_id == 4 || status_id == 5}">{{status}}</span>
-                            </div>
-                            <div class="col info">
-                                <span>Datum: {{date | date}}</span>
-                            </div>-->
-                        </div>
-                        <!--<div class="info-block">
-                            <div class="col info">
-                                <span>0€</span>
-                            </div>
-                        </div>
-                        -->
-                    <p>{{c}}</p>
                     </div>
+                    <div v-if="!empty" class="info-block">
+                        <div class="col log-info">
+                            <span>{{i.active_seconds}} Sekunden</span>
+                        </div>
+                    </div>
+                    <div class="info-block  right">
+                        <div class="col log-info">
+                            <span>{{ i.all_seconds >= 120 ||  i.all_seconds < 60 ? (Math.round(i.all_seconds/60)) + ' Minuten' : (Math.round(i.all_seconds/60)) + ' Minute'}}</span>
+                            <!--<span>{{ i.all_seconds < 60 ? 'Sekunde' : 'Sekunden'}}</span>-->
+                        </div>
+                        <!--<div class="col info">
+                            Status: <span v-bind:class="{ paid: status_id == 4 || status_id == 5}">{{status}}</span>
+                        </div>
+                        <div class="col info">
+                            <span>Datum: {{date | date}}</span>
+                        </div>-->
+                    </div>
+                    <!--<div class="info-block">
+                        <div class="col info">
+                            <span>0€</span>
+                        </div>
+                    </div>
+                    -->
+                    <p>{{c}}</p>
+                </div>
                 <!--</div>-->
                 <button v-if="m.items.length >= 10" class="more" @click="more(z)">mehr</button>
             </div>
@@ -264,6 +265,7 @@
                 margin: -8px;
                 display: flex;
                 line-height: 1.6;
+                justify-content: space-between;
                 .info-block {
                     flex-direction: row;
                     display: flex;
