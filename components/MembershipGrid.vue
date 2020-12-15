@@ -16,6 +16,12 @@
       </div>
     </div>
     <div class="membership-details">
+      <div class="register-button" v-if="!hasUser">
+        <button @click="register">Jetzt Mitglied werden</button>
+      </div>
+      <div class="register-button" v-if="hasUser && !hasPackage">
+        <Nuxt-Link to="/wizard/onboarding/" class="link">Jetzt Mitglied werden</Nuxt-Link>
+      </div>
       <div class="payment-options">
         <div class="payment-options-title">Zahlungsintervall:</div>
         <div class="pricetabs">
@@ -29,12 +35,6 @@
       </div>
       <div class="membership-plans">
         <component :key="blok.uid" v-for="blok in blok.columns" :blok="blok" :priceView="priceView" :is="blok.component"></component>
-      </div>
-      <div class="register-button" v-if="!hasUser">
-        <button @click="register">Jetzt Mitglied werden</button>
-      </div>
-      <div class="register-button" v-if="hasUser && !hasPackage">
-        <Nuxt-Link to="/wizard/onboarding/" class="link">Jetzt Mitglied werden</Nuxt-Link>
       </div>
       <div v-if="blok.plans_text" class="plans-text">
         <markdown :value="blok.plans_text"></markdown>
@@ -184,7 +184,7 @@ export default {
     }
     .register-button {
       text-align: center;
-      margin: 50px 10px;
+      margin: 10px 10px 50px 10px;
       button {
         outline: none;
         cursor: pointer;

@@ -3,8 +3,8 @@
     <a :href="back" display="none" ref="hidden" class="breadcrumb"><img class="icon-breadcrumb" src="~/assets/img/icons/arrow-left-solid.svg" alt=""/>
       <b>{{firstName}} {{lastName}} - {{blok.title}}</b></a>
     <div class="header">
-      <div class="sidebar-info">
-        <a :href="back" display="none" ref="hidden" class="link-sidebar"><span>GRANDGARAGE <span class="blue">TEAM</span></span></a>
+      <div v-bind:class="blok.team_gap">
+        <a :href="back" display="none" ref="hidden" class="sidebar-link"><span>GRANDGARAGE <span v-if="blok.category" class="blue">{{blok.category}}</span></span></a>
       </div>
       <div class="image">
         <img class="picture" v-if="blok.image" :src="$resizeImage(blok.image, '700x700')" :alt="blok.name + ', ' + blok.title"/>
@@ -86,7 +86,7 @@
 export default {
   props: ['blok'],
   created() {
-    console.log(this.$route.path.split('/'))
+    //console.log(this.$route.path.split('/'))
     },
   computed: {
     back() {
@@ -167,13 +167,44 @@ export default {
     display: flex;
     margin-top: 20px;
     position: relative;
-
     .sidebar-info {
       transform: rotate(270deg);
       left: 0;
       position: absolute;
       top: 50%;
-      margin-left: -110px;
+      margin-left: -150px;
+      .link-sidebar{
+        color: #000000;
+      }
+      span {
+        font-weight: bold;
+        .blue {
+          color: $color-blue;
+        }
+      }
+    }
+    .sidebar-info-small {
+      transform: rotate(270deg);
+      left: 0;
+      position: absolute;
+      top: 50%;
+      margin-left: -120px;
+      .link-sidebar{
+        color: #000000;
+      }
+      span {
+        font-weight: bold;
+        .blue {
+          color: $color-blue;
+        }
+      }
+    }
+    .sidebar-info-big {
+      transform: rotate(270deg);
+      left: 0;
+      position: absolute;
+      top: 50%;
+      margin-left: -180px;
       .link-sidebar{
         color: #000000;
       }

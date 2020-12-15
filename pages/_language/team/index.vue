@@ -11,8 +11,62 @@
         <div class="subline">
           <markdown :value="story.content.introduction"></markdown>
         </div>
-        <div class="member-grid">
-          <team-member-preview :key="m.id" v-for="m in members" :story="m"></team-member-preview>
+        <select class="member-filters" id="departments" v-model="filters" v-on:change="filter">
+          <option v-for="d in departments" v-bind:value="d">{{d}}</option>
+        </select>
+        <div v-if="filters == 'GESCHÄFTSFÜHRUNG' || filters == 'Departments filtern'">
+          <div class="category">GESCHÄFTSFÜHRUNG</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.category == 'GESCHÄFTSFÜHRUNG'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div v-if="filters == 'OFFICE' || filters == 'Departments filtern'">
+          <div class="category">OFFICE</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.category == 'OFFICE'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div v-if="filters == 'WERKSTATT OG1' || filters == 'Departments filtern'">
+          <div class="category">WERKSTATT OG1</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.category == 'WERKSTATT OG1'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div v-if="filters == 'WERKSTATT OG2' || filters == 'Departments filtern'">
+          <div class="category" >WERKSTATT OG2</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.category == 'WERKSTATT OG2'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div  v-if="filters == 'KOLLABORATION' || filters == 'Departments filtern'">
+          <div class="category">KOLLABORATION</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.category == 'KOLLABORATION'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div  v-if="filters == 'KOMMUNIKATION' || filters == 'Departments filtern'">
+          <div class="category">KOMMUNIKATION</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.title.includes('Communications')" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div v-if="filters == 'IT' || filters == 'Departments filtern'">
+          <div class="category">IT</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.title.includes('IT')" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div  v-if="filters == 'HAUSTECHNIK' || filters == 'Departments filtern'">
+          <div class="category">HAUSTECHNIK</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.title == 'Haustechnik'" :story="m"></team-member-preview>
+          </div>
+        </div>
+        <div v-if="filters == 'FRONTDESK' || filters == 'Departments filtern'">
+          <div class="category">FRONTDESK</div>
+          <div class="member-grid">
+            <team-member-preview :key="m.id" v-for="m in members" v-if="m.content.title.includes('Frontdesk')" :story="m"></team-member-preview>
+          </div>
         </div>
       </div>
     </div>
@@ -32,8 +86,36 @@ import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 export default {
   data() {
     return {
-      story: null
+      story: null,
+      filters: 'Departments filtern',
+      all: [],
+      departments : {
+        'Departments filtern' : 'Departments filtern',
+        'GESCHÄFTSFÜHRUNG' : 'GESCHÄFTSFÜHRUNG',
+        'OFFICE' : 'OFFICE',
+        'WERKSTATT OG1' : 'WERKSTATT OG1',
+        'WERKSTATT OG2' : 'WERKSTATT OG2',
+        'KOLLABORATION' : 'KOLLABORATION',
+        'KOMMUNIKATION' : 'KOMMUNIKATION',
+        'IT' : 'IT',
+        'HAUSTECHNIK' : 'HAUSTECHNIK',
+        'FRONTDESK' : 'FRONTDESK',
+      }
     };
+  },
+  created() {
+    console.log(this.members)
+    },
+  methods: {
+    filter(){
+      console.log(this.filters);
+      for (var i = 0; i < this.members.length; i++) {
+        if(this.members[i].content.category == this.filters) {
+          this.all.push(this.members[i]);
+        }
+      }
+      console.log(this.all);
+    }
   },
   mixins: [storyblokLivePreview],
   async asyncData(context) {
@@ -113,13 +195,23 @@ export default {
       line-height: 1.5;
     }
 
-    .member-filters {
+
+
+    .member-filters {/*
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      margin: 10px;
+      justify-content: center;*/
+      appearance: none;
+      border: none;
+      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+      border-radius: 3px;
+      margin: 25px;
+      padding: 15px;
 
-      .department-label {
+      option {
+      }
+
+      /*department-label {
         margin: 0 5px;
         background-color: #eee;
         padding: 2px 5px;
@@ -138,12 +230,21 @@ export default {
           background-color: $color-orange;
           color: #fff;
         }
-      }
+      }*/
+    }
+
+    .category {
+      background-color: $color-blue;
+      color: white;
+      margin: 5px 20px;
+      padding: 15px;
+      width: 20%;
     }
 
     .member-grid {
       grid-template-columns: 1fr 1fr;
-      grid-gap: 20px;
+      grid-gap: 15px;
+      margin: 40px 0;
 
       .member-item {
         width: 100%;

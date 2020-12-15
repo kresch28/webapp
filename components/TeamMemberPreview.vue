@@ -23,7 +23,6 @@ export default {
   props: ["story"],
   computed: {
     member() {
-      console.log(this.story);
       return this.story.content;
     }
   },
